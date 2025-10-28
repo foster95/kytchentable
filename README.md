@@ -15,6 +15,7 @@ Welcome to our table. Welcome home.
     * [Scope](#scope)
     * [Structure](#structure)
     * [Skeleton](#skeleton)
+
 [Tools & Technologies Used](#tools--technologies-used)
 
 # UX
@@ -52,7 +53,7 @@ To build out Kytchen Table, I used the theory of the 5 planes of UX, going throu
 * Management teams will be able to amend any and all upcoming reservations, and cancel the reservation if required
 * Mangement will be able to amend the information seen by the users, including menus and allergens
 
-Content Requirements
+### Content Requirements
 * A favicon must be visible on desktop use
 * The header must include the logo and a navigation bar (this will collapse for mobile users)
 * The footer must include restaurant details and social media details
@@ -89,6 +90,8 @@ I used Balsamiq to create mobile and desktop wireframes for Kytchen Table:
 ![Mobile Wireframes One](https://github.com/foster95/kytchentable/blob/main/static/images/readme/mobile-wireframes-set-one.png)
 
 ![Mobile Wireframes Two](https://github.com/foster95/kytchentable/blob/main/static/images/readme/mobile-wireframes-set-two.png)
+
+### Desktop Wireframes
 
 
 
