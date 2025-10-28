@@ -15,6 +15,7 @@ Welcome to our table. Welcome home.
     * [Scope](#scope)
     * [Structure](#structure)
     * [Skeleton](#skeleton)
+    * [Surface](#surface)
 
 [Tools & Technologies Used](#tools--technologies-used)
 
@@ -92,6 +93,29 @@ I used Balsamiq to create mobile and desktop wireframes for Kytchen Table:
 ![Mobile Wireframes Two](https://github.com/foster95/kytchentable/blob/main/static/images/readme/mobile-wireframes-set-two.png)
 
 ### Desktop Wireframes
+![Desktop Wireframes One](https://github.com/foster95/kytchentable/blob/main/static/images/readme/desktop-wireframes-set-one.png)
+
+![Desktop Wireframes Two](https://github.com/foster95/kytchentable/blob/main/static/images/readme/desktop-wireframes-set-two.png)
+
+![Desktop Wireframes Three](https://github.com/foster95/kytchentable/blob/main/static/images/readme/desktop-wireframes-set-three.png)
+
+![Desktop Wireframes Four](https://github.com/foster95/kytchentable/blob/main/static/images/readme/desktop-wireframes-set-four.png)
+
+## Surface
+Kytchen Table is a luxury restaurant, modelled after the typical website of a Michelin starred restaurant, which I looked into prior to beginning the project as a form of research. The website therefore, should mirror this as a luxury, sleek website which is not litered with images, and has a consistent colour palette across the website which is mirrored in the logo design and tied together with a cohesive set of fonts. 
+
+### Kytchen Table Colour Palette
+![Ktychen Table Colour Palette](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-colour-palette.png)
+
+### Kytchen Table Logo
+![Kytchen Table Logo/Watermark](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-wordmark.png)
+
+### Kytchen Table Branded Fonts
+To figure out the best font pairings I used the Our Own Thing font pairing website, which allowed me to look through all of the fonts available through Google Fonts and choose. As a result, the following fonts were chosen:
+
+* ![Aboreto Regular](https://fonts.google.com/specimen/Aboreto?preview.text=Kytchen%20Table) is used as the primary font for headings and is also the font used for the logo and for the favicon. The font was chosen as it was a readable font whilst still providing a statement that fitted with the sleek, upmarket feel of the website
+* ![Abyssinica SIL](https://fonts.google.com/specimen/Abyssinica+SIL?preview.text=Kytchen%20Table) is used for all secondary font and body text. I chose this font as I felt it paired nicely, providing a warmth and softness to give the website a bit more of a comforting feel
+* ![Font Awesome](https://fontawesome.com/) was used for the social media icons used in the footer
 
 
 
@@ -103,3 +127,4 @@ I used Balsamiq to create mobile and desktop wireframes for Kytchen Table:
 * Gemini AI as a prompt to create content for menus
 * Google Fonts for web fonts
 * Coolors for colour palette generation
+* Our Own Thing's Font Pairing website for typography
