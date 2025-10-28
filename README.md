@@ -1,4 +1,4 @@
-# kytchentable
+# Kytchen Table
 
 Kytchen Table: Come Home to the Table
 
@@ -9,12 +9,12 @@ The target audience for Kytchen Table is middle class and wealthy food lovers, w
 Welcome to our table. Welcome home.
 
 # Table of Contents 
-[UX]
-[Five Planes of UX Design](#five-planes-of-ux-design)
-[Strategy](#strategy)
-[Scope](#scope)
-[Structure](#structure)
-[Skeleton](#skeleton)
+1. [UX](#ux)
+2. [Five Planes of UX Design](#five-planes-of-ux-design)
+    * [Strategy](#strategy)
+    * [Scope](#scope)
+    * [Structure](#structure)
+    * [Skeleton](#skeleton)
 [Tools & Technologies Used](#tools--technologies-used)
 
 # UX
@@ -86,7 +86,9 @@ Site Managers | Want to see current bookings | Home -> Login
 I used Balsamiq to create mobile and desktop wireframes for Kytchen Table:
 
 ### Mobile Wireframes
-WOW THIS IS WEIRD
+![Mobile Wireframes One](https://github.com/foster95/kytchentable/blob/main/static/images/readme/mobile-wireframes-set-one.png)
+
+![Mobile Wireframes Two](https://github.com/foster95/kytchentable/blob/main/static/images/readme/mobile-wireframes-set-two.png)
 
 
 
