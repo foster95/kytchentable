@@ -1,5 +1,5 @@
 """
-WSGI config for kychen_table project.
+WSGI config for kytchen_table project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
