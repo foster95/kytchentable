@@ -16,6 +16,7 @@ Welcome to our table. Welcome home.
     * [Structure](#structure)
     * [Skeleton](#skeleton)
     * [Surface](#surface)
+3. [Development Using Agile Methodology](#development-using-agile-methodology)
 
 [Tools & Technologies Used](#tools--technologies-used)
 
@@ -83,6 +84,7 @@ User | Wants to see confirmed reservations | Home -> Login -> User provides logi
 User | Wants to ammend reservation | Home -> Login -> User provides login information -> My Reservations -> Amend
 User | Wants to cancel reservation | Home -> Login -> User provides login information -> My Reservations -> Cancel
 Site Managers | Want to see current bookings | Home -> Login
+Site Managers | Want to update menu | Home -> Login
 
 ## Skeleton
 I used Balsamiq to create mobile and desktop wireframes for Kytchen Table:
@@ -113,10 +115,70 @@ Kytchen Table is a luxury restaurant, modelled after the typical website of a Mi
 ### Kytchen Table Branded Fonts
 To figure out the best font pairings I used the Our Own Thing font pairing website, which allowed me to look through all of the fonts available through Google Fonts and choose. As a result, the following fonts were chosen:
 
-* ![Aboreto Regular](https://fonts.google.com/specimen/Aboreto?preview.text=Kytchen%20Table) is used as the primary font for headings and is also the font used for the logo and for the favicon. The font was chosen as it was a readable font whilst still providing a statement that fitted with the sleek, upmarket feel of the website
-* ![Abyssinica SIL](https://fonts.google.com/specimen/Abyssinica+SIL?preview.text=Kytchen%20Table) is used for all secondary font and body text. I chose this font as I felt it paired nicely, providing a warmth and softness to give the website a bit more of a comforting feel
-* ![Font Awesome](https://fontawesome.com/) was used for the social media icons used in the footer
+* [Aboreto Regular](https://fonts.google.com/specimen/Aboreto?preview.text=Kytchen%20Table) is used as the primary font for headings and is also the font used for the logo and for the favicon. The font was chosen as it was a readable font whilst still providing a statement that fitted with the sleek, upmarket feel of the website
+* [Abyssinica SIL](https://fonts.google.com/specimen/Abyssinica+SIL?preview.text=Kytchen%20Table) is used for all secondary font and body text. I chose this font as I felt it paired nicely, providing a warmth and softness to give the website a bit more of a comforting feel
+* [Font Awesome](https://fontawesome.com/) was used for the social media icons used in the footer
 
+## Development using Agile Methodology
+### User Stories
+Using the Agile Methodology, I first created a series of user stories to help break down the requirements of the website. These user stories were all writen in the following formation: As a *Role* I can *Capability* so that *Recieve Benefit*. I then used the GitHub issues section to create these user stories. These can be found below:
+
+* As a Site Admin I can create and amend menu items so that I can add or remove food options as new dishes are created in the restaurant
+* As a Site Admin I can create times and days of the week slots the restaurant is open so that I can monitor booking availability throughout the week
+* As a Site Admin I can book tables in the booking slots so that I can book tables on behalf of guests
+* As a Site Admin I can see all of the bookings currently made so that I can be informed about how many covers are required at the restaurant at any given day and make any changes to bookings if needed
+* As a Site Admin I can be blocked from any more bookings that slots available per time slot so that I do not overbook any tables
+* As a Site Admin I can delete any account so that I can control access to the user panel
+* As a User I can register for an account with Kytchen Table so that I can log into the user portal
+* As a User I can delete my account so that *I no longer have an account with Kytchen Table
+* As a User I can see the availability of tables at any given day and time slot so that I can decide what day and time to book a table
+* As a User I can book a table in a slot so that I can reserve my table at the restaurant
+* As a User I can amend an upcoming booking so that I can change the details provided to the restaurant
+* As a User I can log out of the user portal so that I can know that I am no longer in my account
+* As a User I can see a home page which provides an overview of the restaurant so that I can know more about the restaurant
+* As a User I can see the contact details of the restaurant so that I know where to go and what number to call
+* As a User I can find out about the ethos of the restaurant so that I can decide if it is my sort of place to visit
+* As a User I can view the menu so that I can decide what I would like to have
+* As a User I can sign up to the restaurants mailing list so that I can recieve up to date information about changing menus at the restuarant
+* As a User I can see a 404 error page so that I can know I've gone to the wrong page
+* As a User  I can filter the menu by allergen so that I can easily see what items contain food I am allergic to
+
+Each story was then broken down with a series of acceptance criteria that must be fulfilled before the user story can be considered complete.
+
+After this I used the MoSCoW Prioritisation method to break these user stories down even further. MoSCow stands for the following:
+* Must Have - should be no more than 60% of the project
+* Should Have
+* Could Have
+* Won't Have
+
+With this in mind the stories were then grouped in the issues board before being transferred to the project board
+
+### Must Have
+* As a Site Admin I can create and amend menu items so that I can add or remove food options as new dishes are created in the restaurant
+* As a Site Admin I can create times and days of the week slots the restaurant is open so that I can monitor booking availability throughout the week
+* As a Site Admin I can book tables in the booking slots so that I can book tables on behalf of guests
+* As a Site Admin I can see all of the bookings currently made so that I can be informed about how many covers are required at the restaurant at any given day and make any changes to bookings if needed
+* As a User I can register for an account with Kytchen Table so that I can log into the user portal
+* As a Site Admin I can delete any account so that I can control access to the user panel
+* As a User I can delete my account so that *I no longer have an account with Kytchen Table
+* As a User I can book a table in a slot so that I can reserve my table at the restaurant
+* As a User I can amend an upcoming booking so that I can change the details provided to the restaurant
+* As a User I can log out of the user portal so that I can know that I am no longer in my account
+* As a user I can view the menu so that I can decide what I would like to have
+
+### Should Have
+* As a Site Admin I can be blocked from any more bookings that slots available per time slot so that I do not overbook any tables
+* As a User I can see the availability of tables at any given day and time slot so that I can decide what day and time to book a table
+* As a User I can see a home page which provides an overview of the restaurant so that I can know more about the restaurant
+* As a User I can see the contact details of the restaurant so that I know where to go and what number to call
+* As a user I can find out about the ethos of the restaurant so that I can decide if it is my sort of place to visit
+
+### Could Have
+* As a user I can sign up to the restaurants mailing list so that I can recieve up to date information about changing menus at the restuarant
+* As a User I can see a 404 error page so that I can know I've gone to the wrong page
+
+### Won't Have
+* As a User I can filter the menu by allergen so that I can easily see what items contain food I am allergic to
 
 
 
