@@ -17,6 +17,10 @@ Welcome to our table. Welcome home.
     * [Skeleton](#skeleton)
     * [Surface](#surface)
 3. [Development Using Agile Methodology](#development-using-agile-methodology)
+    * [User Stories](#user-stories)
+    * [GitHub Issues](#github-issues)
+    * [GitHub Projects](#github-projects)
+4. [Database Design](#database-design)    
 
 [Tools & Technologies Used](#tools--technologies-used)
 
@@ -184,16 +188,20 @@ With this in mind the stories were then grouped in the issues board before being
 From the beginning of development, I used GitHub Issues as means to manage and create EPICS with user stories inside them, as well as build out the acceptance criteria for each user story. In the later stages of development, I used GitHub issues to manage and track bugs that had developed throughout the project
 
 ### GitHub Issues - Start of Project Prior to Coding
+![GitHub Issues - Start of Project Prior to Coding](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ghi-start-of-project.png)
 
 ## GitHub Projects
 In the later stages of development I used GitHub Projects kanban board as a tracker. EPICS with user stories inside them, were placed in the Todo section and were steadily moved over as they were completed.
 
 ### GitHub Projects Board - Start of Project Prior to Coding
+![GitHub Projects - Start of Project Prior to Coding](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ghp-start-of-project.png)
 
 
 # Database Design
 ## Data Models
 Prior to beginning the actual build of the website, I created an Entity Relationship Diagram to help me visualise the relationships between the different databases that would run through the project. To create this I used Mermaid.
+
+![Kytchen Table ERD](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-erd.png)
 
 
 
