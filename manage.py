@@ -6,7 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kychen_table.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kytchen_table.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

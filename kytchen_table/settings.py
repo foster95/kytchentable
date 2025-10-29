@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'kychen_table.urls'
+ROOT_URLCONF = 'kytchen_table.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'kychen_table.wsgi.application'
+WSGI_APPLICATION = 'kytchen_table.wsgi.application'
 
 
 # Database
