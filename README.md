@@ -119,9 +119,9 @@ To figure out the best font pairings I used the Our Own Thing font pairing websi
 * [Abyssinica SIL](https://fonts.google.com/specimen/Abyssinica+SIL?preview.text=Kytchen%20Table) is used for all secondary font and body text. I chose this font as I felt it paired nicely, providing a warmth and softness to give the website a bit more of a comforting feel
 * [Font Awesome](https://fontawesome.com/) was used for the social media icons used in the footer
 
-## Development using Agile Methodology
-### User Stories
-Using the Agile Methodology, I first created a series of user stories to help break down the requirements of the website. These user stories were all writen in the following formation: As a *Role* I can *Capability* so that *Recieve Benefit*. I then used the GitHub issues section to create these user stories. These can be found below:
+# Development using Agile Methodology
+## User Stories
+Using the Agile Methodology, I first created a series of user stories to help break down the requirements of the website. These user stories were all writen in the following formation: As a *Role* I can *Capability* so that *Recieve Benefit*.
 
 * As a Site Admin I can create and amend menu items so that I can add or remove food options as new dishes are created in the restaurant
 * As a Site Admin I can create times and days of the week slots the restaurant is open so that I can monitor booking availability throughout the week
@@ -151,7 +151,7 @@ After this I used the MoSCoW Prioritisation method to break these user stories d
 * Could Have
 * Won't Have
 
-With this in mind the stories were then grouped in the issues board before being transferred to the project board
+With this in mind the stories were then grouped in the issues board before being transferred to the GitHub Projects kanban board which were then tracked across the remainder of the project
 
 ### Must Have
 * As a Site Admin I can create and amend menu items so that I can add or remove food options as new dishes are created in the restaurant
@@ -180,6 +180,23 @@ With this in mind the stories were then grouped in the issues board before being
 ### Won't Have
 * As a User I can filter the menu by allergen so that I can easily see what items contain food I am allergic to
 
+## GitHub Issues
+From the beginning of development, I used GitHub Issues as means to manage and create EPICS with user stories inside them, as well as build out the acceptance criteria for each user story. In the later stages of development, I used GitHub issues to manage and track bugs that had developed throughout the project
+
+### GitHub Issues - Start of Project Prior to Coding
+
+## GitHub Projects
+In the later stages of development I used GitHub Projects kanban board as a tracker. EPICS with user stories inside them, were placed in the Todo section and were steadily moved over as they were completed.
+
+### GitHub Projects Board - Start of Project Prior to Coding
+
+
+# Database Design
+## Data Models
+Prior to beginning the actual build of the website, I created an Entity Relationship Diagram to help me visualise the relationships between the different databases that would run through the project. To create this I used Mermaid.
+
+
+
 
 
 # Tools & Technologies Used
@@ -190,3 +207,7 @@ With this in mind the stories were then grouped in the issues board before being
 * Google Fonts for web fonts
 * Coolors for colour palette generation
 * Our Own Thing's Font Pairing website for typography
+* Mermaid to create an ERD for Kytchen Table
+* GitHub
+* GitHub Issues
+* GitHub Projects Kanban Board
