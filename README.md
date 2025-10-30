@@ -196,7 +196,6 @@ In the later stages of development I used GitHub Projects kanban board as a trac
 ### GitHub Projects Board - Start of Project Prior to Coding
 ![GitHub Projects - Start of Project Prior to Coding](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ghp-start-of-project.png)
 
-
 # Database Design
 ## Data Models
 Prior to beginning the actual build of the website, I created an Entity Relationship Diagram to help me visualise the relationships between the different databases that would run through the project. To create this I used Mermaid.
@@ -219,3 +218,4 @@ Prior to beginning the actual build of the website, I created an Entity Relation
 * GitHub
 * GitHub Issues
 * GitHub Projects Kanban Board
+* VSCode
