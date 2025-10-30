@@ -9,4 +9,6 @@ Display the home page.
 
 def home(request): 
     return render(
-        request, 'home.html')
+        request,
+        'home/index.html', 
+    )
