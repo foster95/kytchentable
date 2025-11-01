@@ -1,0 +1,59 @@
+/* Google Fonts Imports - Aboreto and Abyssinica SIL */
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Abyssinica+SIL&display=swap');
+
+/* CSS Variables */
+:root {
+    --primary-color: #5a2c59;
+    --secondary-color: #5B664B;
+    --tertiary-color: #F8F7F4;
+    --quaternary-color: #1A1A1A;
+    --accent-color: #CAD2C5;
+    --font-heading: 'Aboreto', cursive;
+    --font-body: 'Abyssinica SIL', serif;
+}
+
+/* General Styling Rules */
+body {
+    font-family: var(--font-body);
+    background-color: var(--tertiary-color);
+    color: var(--quaternary-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--tertiary-color);
+}
+
+/* Override Bootstrap default colors for navbar and footer */
+.navbar,
+.footer {
+    background-color: var(--primary-color) !important;
+}
+
+.navbar-nav .nav-link {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--tertiary-color) !important;
+    padding: 0 !important;          
+    margin: 0 1rem;                 
+    line-height: 1;                 
+    display: flex;
+    align-items: center;            
+    height: 40px;        
+}
+
+/* Branding Elements */
+#brand {
+    font-family: var(--font-heading) !important;
+    font-size: 4rem;
+    color: var(--primary-color)
+}
+
+#brand-subtitle {
+    font-family: var(--font-body) !important;
+    font-size: 1rem;
+    text-decoration: italic;
+    color: var(--primary-color);
+}
