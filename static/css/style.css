@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-nav .nav-link {
     font-family: var(--font-body);
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--tertiary-color) !important;
     padding: 0 !important;          
     margin: 0 1rem;                 
@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Branding Elements */
 #brand {
     font-family: var(--font-heading) !important;
-    font-size: 4rem;
+    font-size: 1.5rem;
     color: var(--primary-color)
 }
 
@@ -56,4 +56,40 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem;
     text-decoration: italic;
     color: var(--primary-color);
+}
+
+/* Hero Section */
+#hero-image {
+    position: relative;
+    width: 100vw;
+    height: 20vh; 
+    background-size: cover;
+    background-position: center 60%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -1.5rem;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding: 0;
+    overflow: hidden;
+    opacity: 0.6;
+}
+
+#hero-subtitle {
+    font-family: var(--font-heading) !important;
+    font-size: 1.75rem;
+    color: var(--tertiary-color);
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Footer Styling */
+.footer p {
+    font-size: 12px;
+}
+
+.footer h3 {
+    font-size: 20px;
 }

@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if hero %}
+<div id="hero-image" style="background-image: url('{{ hero.image.url }}');">
+    <div class="hero-text">
+        <p id="hero-subtitle">Welcome to Our Table</p>
+    </div>
+</div>
+{% endif %}
+
+wow words
 
 {% endblock content %}  

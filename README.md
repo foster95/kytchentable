@@ -202,7 +202,21 @@ Prior to beginning the actual build of the website, I created an Entity Relation
 
 ![Kytchen Table ERD](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-erd.png)
 
+## Developmental Bugs
+### Base.html
+During development I noticed an issue where the logo font size directly impacted the alignment of the navigation bar, sending it slightly out of alignment with the other items in the bar. To fix this issue I updated my personal CSS overriding the Bootstrap styling that was originally in place. 
 
+        .navbar-nav .nav-link {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--tertiary-color) !important;
+            padding: 0 !important;          
+            margin: 0 1rem;                 
+            line-height: 1;                 
+            display: flex;
+            align-items: center;            
+            height: 40px;        
+}
 
 
 
@@ -212,6 +226,7 @@ Prior to beginning the actual build of the website, I created an Entity Relation
 * Canva & Photoshop for favicon, logo and watermark creation
 * Gemini AI as a prompt to create content for menus
 * Google Fonts for web fonts
+* Favicon for favicon
 * Coolors for colour palette generation
 * Our Own Thing's Font Pairing website for typography
 * Mermaid to create an ERD for Kytchen Table
