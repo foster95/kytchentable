@@ -12,3 +12,13 @@ class HeroImage(models.Model):
 
     def __str__(self):
         return self.title
+    
+class ImageGallery(models.Model):
+    """
+    Model to store images for the image gallery.
+    """
+    title = models.CharField(max_length=200)
+    image = CloudinaryField('image', default='placeholder')
+
+    def __str__(self):
+        return self.title

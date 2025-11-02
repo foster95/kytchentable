@@ -23,7 +23,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    color: var(--tertiary-color);
+    color: var(--quaternary-color);
 }
 
 /* Override Bootstrap default colors for navbar and footer */
@@ -44,10 +44,17 @@ h1, h2, h3, h4, h5, h6 {
     height: 40px;        
 }
 
+/* Override Bootstrap default button styles */
+.btn {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--tertiary-color) !important;
+}
+
 /* Branding Elements */
 #brand {
     font-family: var(--font-heading) !important;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: var(--primary-color)
 }
 
@@ -62,10 +69,9 @@ h1, h2, h3, h4, h5, h6 {
 #hero-image {
     position: relative;
     width: 100vw;
-    height: 20vh; 
+    height: 25vh; 
     background-size: cover;
     background-position: center 60%;
-    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,9 +86,17 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero-subtitle {
     font-family: var(--font-heading) !important;
-    font-size: 1.75rem;
+    font-size: 2rem;
     color: var(--tertiary-color);
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Image Gallery */
+.carousel-image {
+    height: 30vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Footer Styling */
@@ -92,4 +106,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer h3 {
     font-size: 20px;
+}
+
+.footer-details {
+    color: var(--tertiary-color);
 }

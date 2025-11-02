@@ -4,11 +4,52 @@
 {% if hero %}
 <div id="hero-image" style="background-image: url('{{ hero.image.url }}');">
     <div class="hero-text">
-        <p id="hero-subtitle">Welcome to Our Table</p>
+        <p id="hero-subtitle">Welcome to Our Kitchen</p>
     </div>
 </div>
 {% endif %}
 
-wow words
+<div class="container">
+    <div class="row mt-4">
+        <div class="col text-center">
+            <h2>Come Home to the Table</h2>
+            <div class="text-center">At Kytchen Table, we believe the kitchen table is the heart of every 
+                home—a place where everyone is truly welcome to gather, share, and belong. 
+                We invite you to experience our deep connection to the land and the local community.</p>
+
+                <p>Our menu is a celebration of honest, nourishing flavours, built entirely on farm-to-table
+                ingredients sourced from our trusted local partners. Taste the difference that true 
+                seasonality makes in every comforting dish, crafted with care and a deep commitment 
+                to sustainable, ethical farming.</p>        
+
+                <p>Here at Kytchen Table, we view our space as a venue for unpretentious excellence and
+                distinguished hosting. The cuisine is restorative, the atmosphere is one of sophisticated 
+                ease, and every shared meal cultivates a deeply settled feeling of belonging.</p>
+
+                <p><em>Welcome to our table. Welcome home.</em></p>
+
+                <p><button type="button" class="btn btn-dark">Reserve a Table</button></p>
+                </div>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col text-center">
+            <h2>Gallery</h2>
+            <p>Explore the ambiance and culinary delights that await you at Kytchen Table.</p>
+        </div>
+
+        {% if gallery %}
+        <div id="heroCarousel" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner">
+                {% for slide in gallery %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="carousel-image" style="background-image: url('{{ slide.image.url }}');"></div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
 
 {% endblock content %}  
