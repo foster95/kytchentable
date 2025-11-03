@@ -150,6 +150,10 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
 }
 
+h3 {
+    font-size: 1.5rem;
+}
+
 /* Footer Styling */
 .footer p {
     font-size: 15px;
@@ -161,4 +165,66 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-details {
     color: var(--tertiary-color);
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* Small devices */
+@media screen and (min-width: 481px){
+
+    .navbar-nav .nav-link {
+        font-size: 1.25rem;
+    }
+
+    #brand a {
+        font-size: 3.5rem;
+    }
+
+    #brand-subtitle {
+        font-size: 1.25rem;
+    }
+
+    #hero-image {
+        height: 30vh;
+        background-position: 55%
+    }
+
+    #hero-subtitle {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    .btn {
+        font-size: 1.25rem;
+    }
+
+    .nav-pills .nav-link {
+        font-size: 1.25rem;
+    }
+
+    .menu-overview h3 {
+        font-size: 1.75rem;
+    }
+
+    .signature-menu li,
+    .ala-carte-menu li{
+        font-size: 1.25rem;
+    }
+
+    .footer p {
+        font-size: 1.25rem;
+    }
+
+    .footer h3 {
+        font-size: 1.5rem;
+    }
+
 }

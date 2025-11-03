@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<div class="introduction-to-menu"><h1>Menus</h1>
+<div class="introduction-to-menu"><h2>Menus</h2>
     <p>Our kitchen is guided by the calendar. We believe the best food is found right here, right now, which is why our menu
      is a direct reflection of the seasons. Our À La Carte Menu celebrates the freshest produce from local farms and
      trusted suppliers. For the full journey, choose our Signature Tasting Menu, a curated, multi-course experience 
@@ -20,17 +20,17 @@
     </li>
     <li class="nav-item" role="presentation">
         <button class="nav-link" id="ala-carte-tab" data-bs-toggle="pill" data-bs-target="#ala-carte" type="button" role="tab">
-            À la carte Menu
+            À La Carte Menu
         </button>
     </li>
 </ul>
 
-<div class="tab-content" id="menuOverviewTabsContent">
+<div class="tab-content menu-overview" id="menuOverviewTabsContent">
 
     <!-- Signature Tasting Menu -->
     <div class="tab-pane fade show active" id="signature" role="tabpanel" aria-labelledby="signature-tab">
         <div class="container text-center mt-4">
-            <h2>Signature Tasting Menu</h2>
+            <h3>Signature Tasting Menu</h3>
             <ul class = "list-unstyled text-center signature-menu">
                 {% for item in menu_items.tasting %}
                 <li class="mb-3">
@@ -50,10 +50,10 @@
         </div>
     </div>
 
-    <!-- À la carte Menu -->
+    <!-- À La Carte Menu -->
     <div class="tab-pane fade" id="ala-carte" role="tabpanel" aria-labelledby="ala-carte-tab">
         <div class="container ala-carte-menu text-center mt-4">
-            <h2>À la carte</h2>
+            <h3>À La Carte</h3>
 
             <!-- Nested Pill Buttons for A La Carte -->
             <ul class="nav nav-pills justify-content-center mb-3" id="menuTabs" role="tablist">
@@ -64,7 +64,7 @@
                     <button class="nav-link" id="mains-tab" data-bs-toggle="pill" data-bs-target="#mains" type="button" role="tab">Mains</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="sides-tab" data-bs-toggle="pill" data-bs-target="#sides" type="button" role="tab">From the Garden</button>
+                    <button class="nav-link" id="sides-tab" data-bs-toggle="pill" data-bs-target="#sides" type="button" role="tab">Sides</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="desserts-tab" data-bs-toggle="pill" data-bs-target="#desserts" type="button" role="tab">Desserts</button>
