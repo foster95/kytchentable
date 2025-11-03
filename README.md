@@ -218,6 +218,53 @@ During development I noticed an issue where the logo font size directly impacted
             height: 40px;        
 }
 
+Menu
+Allergen picker in Django Administration
+Whilst creating the model for the menu to show on the website, I incorporated the allergens into the model so that side admins could update this information regularly.
+
+Initially I found that despite adding the allergens as a seperate model into the menu panel, the allergens were duplicating and showing as the same set of allergens on every item.
+
+        ALLERGEN_CHOICES = [
+            ('Celery', 'Celery'),
+            ('Cereals', 'Cereals containing gluten'),
+            ('Crustaceans', 'Crustaceans'),
+            ('Eggs', 'Eggs'),
+            ('Fish', 'Fish'),
+            ('Lupin', 'Lupin'),
+            ('Milk', 'Milk'),
+            ('Molluscs', 'Molluscs'),
+            ('Mustard', 'Mustard'),
+            ('Nuts', 'Nuts'),
+            ('Peanuts', 'Peanuts'),
+            ('Sesame', 'Sesame seeds'),
+            ('Soya', 'Soya'),
+            ('Sulphites', 'Sulphur dioxide and sulphites'),
+            ]
+
+        class Allergen(models.Model):
+            name = models.CharField(max_length=50, choices=ALLERGEN_CHOICES)
+
+        class Meta:
+            ordering = ['name']
+
+        def __str__(self):
+            return self.name
+
+        class MenuItem(models.Model):
+
+            """
+            Stores information about a menu item.
+            """
+
+            category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+            name = models.CharField(max_length=200)
+            description = models.TextField()
+            allergen = models.ManyToManyField(Allergen, blank=True)
+
+            def __str__(self):
+            return self.name
+
+To fix this I removed the choices=ALLERGEN_CHOICES which instantly removed the duplicate allergens appearing
 
 
 # Tools & Technologies Used

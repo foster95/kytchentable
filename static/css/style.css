@@ -101,6 +101,15 @@ h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
 }
 
+/* Menu Styling */
+.ala-carte-menu li {
+    list-style-type: none;
+}
+
+.ala-carte-menu ul {
+    padding-left: 0px;
+}
+
 /* Footer Styling */
 .footer p {
     font-size: 15px;

@@ -9,5 +9,5 @@ Display philosophy page.
 def philosophy(request): 
     return render(
         request,
-        'philosophy.html',
+        'philosophy/philosophy.html',
     )

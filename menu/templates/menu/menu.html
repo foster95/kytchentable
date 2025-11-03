@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container ala-carte-menu">
+    <h2>À la carte</h2>
+    <div class="row mt-4">
+        <div class="col">
+            <h3>Entree</h3>
+            <ul>
+                {% for item in menu_items.entrees %}
+                <li>
+                    <em>{{ item.name }}</em> <br> {{ item.description }} <br>
+                    {% if item.allergen.exists %}
+                    <em>(A: 
+                        {% for allergen in item.allergen.all %}
+                            {{ allergen.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    )</em>
+                    {% endif %}
+                </li>
+                <br>
+                {% endfor %}
+            </ul>
+
+            <h3>Main Courses</h3>
+            <ul>
+                {% for item in menu_items.mains %}
+                <li>
+                    <em>{{ item.name }}</em> <br> {{ item.description }} <br>
+                    {% if item.allergen.exists %}
+                    <em>(A: 
+                        {% for allergen in item.allergen.all %}
+                            {{ allergen.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    )</em>
+                    {% endif %}
+                </li>
+                <br>
+                {% endfor %}
+            </ul>
+
+            <h3>From the Garden</h3>
+            <ul>
+                {% for item in menu_items.side %}
+                <li>
+                    <em>{{ item.name }}</em> <br> {{ item.description }} <br>
+                    {% if item.allergen.exists %}
+                    <em>(A: 
+                        {% for allergen in item.allergen.all %}
+                            {{ allergen.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    )</em>
+                    {% endif %}
+                </li>
+                <br>
+                {% endfor %}
+            </ul>
+
+            <h3>Desserts</h3>
+            <ul>
+                {% for item in menu_items.desserts %}
+                <li>
+                    <em>{{ item.name }}</em> <br> {{ item.description }} <br>
+                    {% if item.allergen.exists %}
+                    <em>(A: 
+                        {% for allergen in item.allergen.all %}
+                            {{ allergen.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    )</em>
+                    {% endif %}
+                </li>
+                <br>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
