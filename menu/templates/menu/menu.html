@@ -2,78 +2,160 @@
 {% load static %}
 {% block content %}
 
-<div class="container ala-carte-menu">
-    <h2>À la carte</h2>
-    <div class="row mt-4">
-        <div class="col">
-            <h3>Entree</h3>
-            <ul>
-                {% for item in menu_items.entrees %}
-                <li>
-                    <em>{{ item.name }}</em> <br> {{ item.description }} <br>
-                    {% if item.allergen.exists %}
-                    <em>(A: 
-                        {% for allergen in item.allergen.all %}
-                            {{ allergen.name }}{% if not forloop.last %}, {% endif %}
-                        {% endfor %}
-                    )</em>
-                    {% endif %}
-                </li>
-                <br>
-                {% endfor %}
-            </ul>
+<div class="introduction-to-menu"><h1>Menus</h1>
+    <p>Our kitchen is guided by the calendar. We believe the best food is found right here, right now, which is why our menu
+     is a direct reflection of the seasons. Our À La Carte Menu celebrates the freshest produce from local farms and
+     trusted suppliers. For the full journey, choose our Signature Tasting Menu, a curated, multi-course experience 
+     showcasing the best seasonal ingredients of the week. Please be aware that, due to the hyper-seasonal nature of our 
+     ingredients, dishes are subject to change. All 14 major allergens are clearly identified on both menus 
+     to ensure you can dine safely and with confidence.</p>
+</div>
 
-            <h3>Main Courses</h3>
-            <ul>
-                {% for item in menu_items.mains %}
-                <li>
-                    <em>{{ item.name }}</em> <br> {{ item.description }} <br>
-                    {% if item.allergen.exists %}
-                    <em>(A: 
-                        {% for allergen in item.allergen.all %}
-                            {{ allergen.name }}{% if not forloop.last %}, {% endif %}
-                        {% endfor %}
-                    )</em>
-                    {% endif %}
-                </li>
-                <br>
-                {% endfor %}
-            </ul>
+<!-- Overview Pill Buttons -->
+<ul class="nav nav-pills justify-content-center mb-3" id="menuOverviewTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="signature-tab" data-bs-toggle="pill" data-bs-target="#signature" type="button" role="tab">
+            Signature Tasting Menu
+        </button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="ala-carte-tab" data-bs-toggle="pill" data-bs-target="#ala-carte" type="button" role="tab">
+            À la carte Menu
+        </button>
+    </li>
+</ul>
 
-            <h3>From the Garden</h3>
-            <ul>
-                {% for item in menu_items.side %}
-                <li>
-                    <em>{{ item.name }}</em> <br> {{ item.description }} <br>
-                    {% if item.allergen.exists %}
-                    <em>(A: 
-                        {% for allergen in item.allergen.all %}
-                            {{ allergen.name }}{% if not forloop.last %}, {% endif %}
-                        {% endfor %}
-                    )</em>
-                    {% endif %}
-                </li>
-                <br>
-                {% endfor %}
-            </ul>
+<div class="tab-content" id="menuOverviewTabsContent">
 
-            <h3>Desserts</h3>
-            <ul>
-                {% for item in menu_items.desserts %}
-                <li>
-                    <em>{{ item.name }}</em> <br> {{ item.description }} <br>
-                    {% if item.allergen.exists %}
-                    <em>(A: 
+    <!-- Signature Tasting Menu -->
+    <div class="tab-pane fade show active" id="signature" role="tabpanel" aria-labelledby="signature-tab">
+        <div class="container text-center mt-4">
+            <h2>Signature Tasting Menu</h2>
+            <ul class = "list-unstyled text-center signature-menu">
+                {% for item in menu_items.tasting %}
+                <li class="mb-3">
+                    <em>{{ item.name }}</em><br>{{ item.description }}<br>
+                    {% if item.allergen.all %}
+                    <small><em>( A:
                         {% for allergen in item.allergen.all %}
                             {{ allergen.name }}{% if not forloop.last %}, {% endif %}
-                        {% endfor %}
-                    )</em>
+                        {% endfor %})
+                    </em></small>
                     {% endif %}
                 </li>
-                <br>
+                {% empty %}
+                <p>No signature tasting menu items available.</p>
                 {% endfor %}
-            </ul>
+            </p>
         </div>
     </div>
 
+    <!-- À la carte Menu -->
+    <div class="tab-pane fade" id="ala-carte" role="tabpanel" aria-labelledby="ala-carte-tab">
+        <div class="container ala-carte-menu text-center mt-4">
+            <h2>À la carte</h2>
+
+            <!-- Nested Pill Buttons for A La Carte -->
+            <ul class="nav nav-pills justify-content-center mb-3" id="menuTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="entree-tab" data-bs-toggle="pill" data-bs-target="#entree" type="button" role="tab">Entrées</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="mains-tab" data-bs-toggle="pill" data-bs-target="#mains" type="button" role="tab">Mains</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="sides-tab" data-bs-toggle="pill" data-bs-target="#sides" type="button" role="tab">From the Garden</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="desserts-tab" data-bs-toggle="pill" data-bs-target="#desserts" type="button" role="tab">Desserts</button>
+                </li>
+            </ul>
+
+            <!-- À la carte Inner Tabs -->
+            <div class="tab-content" id="menuTabContent">
+
+                <!-- Entrées -->
+                <div class="tab-pane fade show active" id="entree" role="tabpanel" aria-labelledby="entree-tab">
+                    <ul class="list-unstyled text-center">
+                        {% for item in menu_items.entrees %}
+                        <li class="mb-3">
+                            <em>{{ item.name }}</em><br>{{ item.description }}<br>
+                            {% if item.allergen.all %}
+                            <small><em>(A:
+                                {% for allergen in item.allergen.all %}
+                                    {{ allergen.name }}{% if not forloop.last %}, {% endif %}
+                                {% endfor %})
+                            </em></small>
+                            {% endif %}
+                        </li>
+                        {% empty %}
+                        <p>No entrées available.</p>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- Mains -->
+                <div class="tab-pane fade" id="mains" role="tabpanel" aria-labelledby="mains-tab">
+                    <ul class="list-unstyled text-center">
+                        {% for item in menu_items.mains %}
+                        <li class="mb-3">
+                            <em>{{ item.name }}</em><br>{{ item.description }}<br>
+                            {% if item.allergen.all %}
+                            <small><em>(A:
+                                {% for allergen in item.allergen.all %}
+                                    {{ allergen.name }}{% if not forloop.last %}, {% endif %}
+                                {% endfor %})
+                            </em></small>
+                            {% endif %}
+                        </li>
+                        {% empty %}
+                        <p>No mains available.</p>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- Sides -->
+                <div class="tab-pane fade" id="sides" role="tabpanel" aria-labelledby="sides-tab">
+                    <ul class="list-unstyled text-center">
+                        {% for item in menu_items.side %}
+                        <li class="mb-3">
+                            <em>{{ item.name }}</em><br>{{ item.description }}<br>
+                            {% if item.allergen.all %}
+                            <small><em>(A:
+                                {% for allergen in item.allergen.all %}
+                                    {{ allergen.name }}{% if not forloop.last %}, {% endif %}
+                                {% endfor %})
+                            </em></small>
+                            {% endif %}
+                        </li>
+                        {% empty %}
+                        <p>No sides available.</p>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- Desserts -->
+                <div class="tab-pane fade" id="desserts" role="tabpanel" aria-labelledby="desserts-tab">
+                    <ul class="list-unstyled text-center">
+                        {% for item in menu_items.desserts %}
+                        <li class="mb-3">
+                            <em>{{ item.name }}</em><br>{{ item.description }}<br>
+                            {% if item.allergen.all %}
+                            <small><em>(A:
+                                {% for allergen in item.allergen.all %}
+                                    {{ allergen.name }}{% if not forloop.last %}, {% endif %}
+                                {% endfor %})
+                            </em></small>
+                            {% endif %}
+                        </li>
+                        {% empty %}
+                        <p>No desserts available.</p>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </div> <!-- end of nested tab content -->
+        </div> <!-- end of ala-carte container -->
+    </div> <!-- end of ala-carte pane -->
+</div> <!-- end of overview tab content -->
 {% endblock %}

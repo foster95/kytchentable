@@ -7,6 +7,7 @@ CATEGORY_CHOICES = [
     ('Main', 'Main Course'),
     ('Side', 'Side Dish'),
     ('Dessert', 'Dessert'),
+    ('Tasting', 'Tasting Menu'),
 ]
 
 class Allergen(models.Model):

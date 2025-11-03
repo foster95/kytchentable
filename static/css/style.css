@@ -102,12 +102,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Menu Styling */
+
+.nav-pills {
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    gap: 1rem; 
+}
+
+.nav-pills .nav-link {
+    color: var(--primary-color); 
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.nav-pills .nav-link:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
 .ala-carte-menu li {
     list-style-type: none;
 }
 
 .ala-carte-menu ul {
     padding-left: 0px;
+}
+
+.ala-carte-menu em {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.signature-menu em {
+    font-weight: bold;
+    color: var(--primary-color);
 }
 
 /* Footer Styling */
