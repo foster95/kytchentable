@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<!-- Hero Section -->
+ 
 {% if hero %}
 <div id="hero-image" style="background-image: url('{{ hero.image.url }}');">
     <div class="hero-text">
@@ -8,6 +11,8 @@
     </div>
 </div>
 {% endif %}
+
+<!-- Main Content -->
 
 <div class="container">
     <div class="row mt-4">
@@ -32,6 +37,8 @@
                 </div>
         </div>
     </div>
+
+    <!-- Gallery Section -->
 
     <div class="row mt-2">
         <div class="col text-center">

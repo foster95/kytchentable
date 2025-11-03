@@ -43,10 +43,10 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav text-center mt-0 pt-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ home_url }}">Home</a>
+                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" href="{{ home_url }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Our Philosophy</a>
+                        <a class="nav-link {% if request.path == '/philosophy/' %}active{% endif %}" href="{% url 'philosophy' %}">Our Philosophy</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Menu</a>

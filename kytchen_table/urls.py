@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from home.views import home
+from philosophy.views import philosophy
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
+    path('philosophy/', philosophy, name='philosophy'),
 ]
