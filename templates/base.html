@@ -1,6 +1,11 @@
 {% load static %}
 
 {% url 'home' as home_url %}
+{% url 'philosophy' as philosophy_url %}
+{% url 'menu' as menu_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +57,7 @@
                         <a class="nav-link {% if request.path == '/menu/' %}active{% endif %}" href="{% url 'menu' %}">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Reservations</a>
+                        <a class="nav-link" href="#">Dine with Us</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -63,7 +68,7 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link {% if request.path == '/accounts/login/' %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                 </ul>

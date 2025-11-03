@@ -25,4 +25,5 @@ urlpatterns = [
     path('', home, name='home'),
     path('philosophy/', philosophy, name='philosophy'),
     path('menu/', menu, name='menu'),
+    path('accounts/', include('allauth.urls')),
 ]
