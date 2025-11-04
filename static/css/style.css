@@ -154,9 +154,10 @@ h3 {
     font-size: 1.5rem;
 }
 
-/* Sign In/Sign Up styling */
+/* Sign In/Sign Up/Sign Out styling */
 .login-page a,
-.signup-page a{ 
+.signup-page a,
+.logout-page a { 
     color: var(--primary-color); 
     text-decoration: none; 
 }
