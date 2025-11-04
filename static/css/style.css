@@ -157,7 +157,8 @@ h3 {
 /* Sign In/Sign Up/Sign Out styling */
 .login-page a,
 .signup-page a,
-.logout-page a { 
+.logout-page a,
+.logout-success-page a {
     color: var(--primary-color); 
     text-decoration: none; 
 }

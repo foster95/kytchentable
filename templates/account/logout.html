@@ -12,6 +12,8 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
         {% endif %}
+        <!--Redirect user to log out confirmation page-->
+        <input type="hidden" name="next" value="{% url 'logout_success' %}"/>
         <button class="btn btn-dark w-30 py-2 mt-2" type="submit">{% trans 'Sign Out' %}</button>
     </form>
 </div>
