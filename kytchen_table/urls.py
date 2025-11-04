@@ -20,7 +20,7 @@ from django.views.generic import TemplateView as TemplatesView
 from home.views import home
 from philosophy.views import philosophy
 from menu.views import menu
-from reserve.views import reserve
+from reserve.views import reservation
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +29,5 @@ urlpatterns = [
     path('menu/', menu, name='menu'),
     path('accounts/', include('allauth.urls')),
     path('accounts/logout/success/', TemplatesView.as_view(template_name='account/logout_success.html'), name='logout_success'),
-    path('reserve/', reserve, name='reserve'),
+    path('reserve/', reservation, name='reserve'),
 ]

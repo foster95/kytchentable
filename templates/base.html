@@ -57,7 +57,7 @@
                         <a class="nav-link {% if request.path == '/menu/' %}active{% endif %}" href="{% url 'menu' %}">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Dine with Us</a>
+                        <a class="nav-link {% if request.path == '/reserve/' %}active{% endif %}" href="{% url 'reserve' %}">Dine with Us</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">

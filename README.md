@@ -266,6 +266,10 @@ Initially I found that despite adding the allergens as a seperate model into the
 
 To fix this I removed the choices=ALLERGEN_CHOICES which instantly removed the duplicate allergens appearing
 
+Reservation
+Reservation time showing as midnight on all bookings
+Whilst tweaking the administrative panel for reservations, I noticed that for some reason all of my bookings were coming up as midnight, though the date was correct. To fix this I 
+updated the reservation model, and split the time and the date so that this would show up correctly. 
 
 # Tools & Technologies Used
 * Balsamiq for wireframes
