@@ -154,6 +154,13 @@ h3 {
     font-size: 1.5rem;
 }
 
+/* Sign In/Sign Up styling */
+.login-page a,
+.signup-page a{ 
+    color: var(--primary-color); 
+    text-decoration: none; 
+}
+
 /* Footer Styling */
 .footer p {
     font-size: 15px;
