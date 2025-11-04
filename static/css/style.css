@@ -176,6 +176,11 @@ h3 {
     color: var(--tertiary-color);
 }
 
+/* Reservation Form Styling */
+.allergies-list {
+    padding-left: 4rem;
+}
+
 
 /* Media Queries for Responsiveness */
 

@@ -5,7 +5,15 @@ from .models import Reservation
 
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ('user', 'reservation_date', 'time_slot', 'number_of_guests', 'special_requests')
+    list_display = ('user', 'reservation_date', 'time_slot', 'guestNo', 'special_requests', 'seeAllergies')
     list_filter = ('reservation_date',)
     search_fields = ('user__username',)
 
+    def guestNo(self, obj):
+        return obj.number_of_guests
+    guestNo.short_description = 'Guest No.'
+
+
+    def seeAllergies(self, obj):
+        return ", ".join([allergen.name for allergen in obj.allergies.all()])
+    seeAllergies.short_description = 'Allergies'

@@ -1,8 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from menu.models import Allergen
 
 # Create your models here.
+
+OPENING_HOURS = {
+        'Tuesday': ('11:00 AM', '10:00 PM'),
+        'Wednesday': ('11:00 AM', '10:00 PM'),
+        'Thursday': ('11:00 AM', '10:00 PM'),
+        'Friday': ('10:00 AM', '11:00 AM'),
+        'Saturday': ('10:00 AM', '11:00 AM'),
+        'Sunday': ('10:00 AM', '8:00 PM'),
+        'Monday' : None,
+    }
 
 """
 
@@ -15,6 +26,10 @@ class Reservation(models.Model):
     NO_GUESTS = [(i, str(i)) for i in range(1, 7)]  # Options for number of guests from 1 to 7
 
     TIME_SLOTS = [
+        ('10:00 AM', '10:00 AM'),
+        ('10:15 AM', '10:15 AM'),
+        ('10:30 AM', '10:30 AM'),
+        ('10:45 AM', '10:45 AM'),
         ('11:00 AM', '11:00 AM'),
         ('11:15 AM', '11:15 AM'),
         ('11:30 AM', '11:30 AM'),
@@ -71,6 +86,7 @@ class Reservation(models.Model):
     reservation_date = models.DateField()
     time_slot = models.CharField(max_length=10, choices=TIME_SLOTS)
     number_of_guests = models.PositiveIntegerField(choices=NO_GUESTS)
+    allergies = models.ManyToManyField(Allergen, blank=True)
     special_requests = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(default=timezone.now)
 
