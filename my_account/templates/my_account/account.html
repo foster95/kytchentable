@@ -21,7 +21,10 @@
               <p class="card-text mb-1">
                 <strong>Guests:</strong> {{ booking.number_of_guests }}
               </p>
-      </button>
+                <button class="btn btn-outline-dark btn-sm mt-2 data-id="{{ booking.id }} data-date="{{ booking.reservation_date|date:'Y-m-d' }}" data-time="{{ booking.time_slot }}" data-guests="{{ booking.number_of_guests }}" data-bs-toggle="modal" data-bs-target="#editBookingModal">
+                Edit Reservation
+                </button>
+            </div>
           </div>
         </div>
       {% endfor %}
