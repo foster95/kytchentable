@@ -76,21 +76,21 @@
           <label for="id_date">Date:</label>
           <input type="date" name="reservation_date" id="id_date" class="form-control">
 
-          <label for="id_time_slot" class="mt-2">Time Slot:</label>
+          <label for="id_time_slot" class="mt-3">Time Slot:</label>
           <select name="time_slot" id="id_time_slot" class="form-select">
             {% for time, label in TIME_SLOTS %}
             <option value="{{ time }}">{{ label }}</option>
             {% endfor %}
         </select>
 
-          <label for="id_guests" class="mt-2">Guests:</label>
+          <label for="id_guests" class="mt-3">Guests:</label>
           <select name="number_of_guests" id="id_guests" class="form-select">
             {% for count, label in NO_GUESTS %}
             <option value="{{ count }}">{{ label }}</option>
             {% endfor %}
         </select>
 
-        <label class="mt-2 d-block">Allergies:</label>
+        <label class="mt-3 d-block">Allergies:</label>
         <div id="id_allergens" class="row row-cols-2">
           {% for allergen in allergens %}
           <div class="col form-check">
@@ -109,8 +109,16 @@
             {% endfor %}
           </div>
 
+          <!--Clear allergies incase accidentally added-->
+          <div class="text-end mt-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="clear-allergies-button">
+              Clear All Allergies
+            </button>
+          </div>
 
-          <label for="id_special_requests" class="mt-2">Special Requests:</label>
+
+
+          <label for="id_special_requests" class="mt-3">Special Requests:</label>
           <textarea name="special_requests" id="id_special_requests" class="form-control"></textarea>
         </div>
 

@@ -1,5 +1,4 @@
 // Edit Reservation Modal
-
 document.addEventListener('DOMContentLoaded', function() {
   const editButtons = document.querySelectorAll('.edit-btn');
   const editModalEl = document.getElementById('editReservationModal');
@@ -16,9 +15,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const editTimeSlot = editForm.querySelector('#id_time_slot');
   const editGuestNo = editForm.querySelector('#id_guests');
   const editSpecialRequests = editForm.querySelector('#id_special_requests');
-  const editAllergyCheckboxes = document.querySelectorAll('.allergy-checkbox'); // ✅ fixed variable name
+  const editAllergyCheckboxes = document.querySelectorAll('.allergy-checkbox');
+  const clearAllergiesBtn = document.getElementById('clear-allergies-button'); //
 
-  // Loop through edit buttons
+  // Clear allergies button — no confirmation
+  if (clearAllergiesBtn) {
+    clearAllergiesBtn.addEventListener('click', function() {
+      editAllergyCheckboxes.forEach(cb => cb.checked = false);
+      console.log("All allergies cleared instantly.");
+    });
+  }
+
+  // Handle edit button clicks
   editButtons.forEach(button => {
     button.addEventListener('click', function() {
       const bookingId = this.dataset.bookingId;
@@ -35,10 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
       if (editGuestNo) editGuestNo.value = guests;
       if (editSpecialRequests) editSpecialRequests.value = special.trim();
 
-      // Clear all allergy checkboxes first
+      // Clear all checkboxes first
       editAllergyCheckboxes.forEach(cb => cb.checked = false);
 
-      // Re-check the user’s existing allergies if they have them
+      // Re-check existing allergies
       allergies.forEach(id => {
         const checkbox = document.getElementById(`allergen_${id}`);
         if (checkbox) checkbox.checked = true;
@@ -49,14 +57,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  //Confirm before submitting edits
+  // Confirm before submitting edits
   editForm.addEventListener('submit', function(event) {
     event.preventDefault(); // Stop default submit
 
     if (confirmModal) {
       confirmModal.show(); 
     } else {
-
       if (confirm("Are you sure you want to update this reservation?")) {
         editForm.submit();
       }
@@ -72,18 +79,16 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-
 // Delete Reservation Modal
-
 const deleteButtons = document.querySelectorAll(".delete-btn");
-  const deleteForm = document.getElementById("delete-form");
+const deleteForm = document.getElementById("delete-form");
 
-  if (deleteButtons.length && deleteForm) {
-    deleteButtons.forEach(button => {
-      button.addEventListener("click", function() {
-        const bookingId = this.dataset.bookingId;
-        deleteForm.action = `/my_reservations/delete_reservation/${bookingId}/`;
-        console.log("Deleting booking:", bookingId);
-      });
+if (deleteButtons.length && deleteForm) {
+  deleteButtons.forEach(button => {
+    button.addEventListener("click", function() {
+      const bookingId = this.dataset.bookingId;
+      deleteForm.action = `/my_reservations/delete_reservation/${bookingId}/`;
+      console.log("Deleting booking:", bookingId);
     });
-  };
+  });
+}
