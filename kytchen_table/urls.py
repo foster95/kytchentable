@@ -31,5 +31,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('accounts/logout/success/', TemplatesView.as_view(template_name='account/logout_success.html'), name='logout_success'),
     path('reserve/', reservation, name='reserve'),
-    path('my_account/', my_account, name='my_account'),
+    path('my_reservations/', my_account, name='my_reservations'),
 ]
