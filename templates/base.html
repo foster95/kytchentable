@@ -76,6 +76,14 @@
         </div>
     </nav>
 
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} text-center">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
 
 <!-- Page Content-->
 <main class="container mt-4">
@@ -96,10 +104,10 @@
 
             <div class="col-md-4 mb-3">
                 <h3 class="footer-details mb-3">Opening Hours</h5>
-                <p>Tuesday - Thursday: 11:00 AM - 10:00 PM
-                    <br>Friday - Saturday: 10:00 AM - 11:00 PM
-                    <br>Sunday - 10:00 AM - 8:00 PM
-                    <br>Monday - Closed</p>
+                <p>Tuesday - Thursday: 11:00-23:00
+                    <br>Friday - Saturday: 10:00-23:00
+                    <br>Sunday: 10:00-20:00
+                    <br>Monday: Closed</p>
             </div>
 
             <div class="col-md-4 mb-3">

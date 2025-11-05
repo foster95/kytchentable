@@ -176,7 +176,6 @@ h3 {
     color: var(--tertiary-color);
 }
 
-/* Reservation Form Styling */
 .allergies-list {
     padding-left: 4rem;
 }
@@ -241,4 +240,28 @@ h3 {
         font-size: 1.5rem;
     }
 
+    .reservation-form .mx-auto {
+        font-size: 1.25rem;
+    }
+
+}
+
+/* Medium devices */
+@media screen and (min-width: 769px){
+
+    #hero-image {
+        height: 40vh;
+    }
+
+    .our-philosophy img {
+        max-height: 45vh;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    footer p {
+        font-size: 1.15rem;
+    }
 }

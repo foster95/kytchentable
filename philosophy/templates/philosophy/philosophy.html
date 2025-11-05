@@ -2,22 +2,54 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
-    <h2>Our Philosophy</h2>
-    <div class="row mt-4">
-        <div class="col">
-            <h3>Rooted in the Land</h3>
-            <p>Our guiding belief is in the importance of belonging and connection, inspired by the quiet permanence of the countryside. We source exclusively from the local area, committed to nourishing our community from field to fork. Here, you are a most welcome guest, and every meal feels like a true homecoming.</p>
-            <img src="{% static '/images/chef-hands.avif' %}" class="img-fluid mb-3" alt="Chef's hands preparing food">
+<div class="container our-philosophy my-5">
+  <h2 class="text-center mb-5">Our Philosophy</h2>
 
-            <h3>The Rhythm of the Season</h3>
-            <p>We celebrate the land and the diligent hands that tend to it, allowing nature to dictate the menu. Our dedication to farm-to-table excellence involves honouring the natural cycle of the seasons, ensuring every ingredient is a vibrant testament to local quality and ethical provenance. This is cooking in harmony with the year.</p>
-            <img src="{% static '/images/chef-dusting.jpg' %}" class="img-fluid mb-3" alt="Chef dusting seasonal ingredients">
+  <div class="row align-items-center mb-5">
+    <div class="col-12 col-md-6">
+      <h3>Rooted in the Land</h3>
+      <p>
+        Our guiding belief is in the importance of belonging and connection, inspired by the quiet
+        permanence of the countryside. We source exclusively from the local area, committed to 
+        nourishing our community from field to fork. Here, you are a most welcome guest, and every
+        meal feels like a true homecoming.
+      </p>
+    </div>
+    <div class="col-12 col-md-6">
+      <img src="{% static 'images/chef-hands.avif' %}" class="img-fluid rounded shadow-sm" alt="Chef's hands preparing food">
+    </div>
+  </div>
 
-            <h3>Refined, Not Restricted</h3>
-            <p>We treat the finest local produce with the meticulous care of an artisan and the inherent sincerity of the kitchen table. Our pursuit is elevated dining that is never stuffy—thoughtfully prepared and elegantly presented, yet delivering the deep, essential comfort of one's own home.</p>
-            <img src="{% static '/images/chef-cooking.jpg' %}" class="img-fluid mb-3" alt="Chef cooking in the kitchen">
+  <div class="row align-items-center mb-5 flex-md-row-reverse">
+    <div class="col-12 col-md-6">
+      <h3>The Rhythm of the Season</h3>
+      <p>
+        We celebrate the land and the diligent hands that tend to it, allowing nature to dictate the
+        menu. Our dedication to farm-to-table excellence involves honouring the natural cycle of the
+        seasons, ensuring every ingredient is a vibrant testament to local quality and ethical 
+        provenance. This is cooking in harmony with the year.
+      </p>
+    </div>
+    <div class="col-12 col-md-6">
+      <img src="{% static 'images/chef-dusting.jpg' %}" class="img-fluid rounded shadow-sm" alt="Chef dusting seasonal ingredients">
+    </div>
+  </div>
+
+  <div class="row align-items-center mb-5">
+    <div class="col-12 col-md-6">
+      <h3>Refined, Not Restricted</h3>
+      <p>
+        We treat the finest local produce with the meticulous care of an artisan and the inherent sincerity
+        of the kitchen table. Our pursuit is elevated dining that is never stuffy—thoughtfully prepared and
+        elegantly presented, yet delivering the deep, essential comfort of one's own home.
+      </p>
+    </div>
+    <div class="col-12 col-md-6">
+      <img src="{% static 'images/chef-cooking.jpg' %}" class="img-fluid rounded shadow-sm" alt="Chef cooking in the kitchen">
+    </div>
+  </div>
 </div>
+
 
 
 {% endblock %}

@@ -14,11 +14,17 @@ users to make reservations.
 
 """
 
+@login_required
 def reservation(request):
     reserve = Reservation.objects.all()
     reservation_form = ReservationForm()
 
     if request.method == 'POST':
+
+        if not request.user.is_authenticated:
+            messages.error(request, 'You must be logged in to make a reservation.')
+            return redirect('login')
+
         form = ReservationForm(request.POST)
         if form.is_valid():
             reservation = form.save(commit=False)
@@ -29,6 +35,7 @@ def reservation(request):
             return redirect('reserve')
         else:
             messages.error(request, 'There was an error with your reservation. Please try again.')
+            return redirect('reserve')
     else:
         form = ReservationForm()
 
