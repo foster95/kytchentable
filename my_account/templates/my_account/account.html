@@ -23,11 +23,12 @@
               </p>
               <button
                 type="button"
-                class="btn btn-outline-dark btn-sm mt-2 edit-btn"
+                class="btn btn-outline-dark btn-sm mt-2 edit-btn mx-auto"
                 data-booking-id="{{ booking.id }}"
                 data-date="{{ booking.reservation_date|date:'Y-m-d' }}"
                 data-time="{{ booking.time_slot }}"
                 data-guests="{{ booking.number_of_guests }}"
+                data-allergies=",{% for allergy in booking.allergies.all %}{{ allergy.id }}{% if not forloop.last %},{% endif %}{% endfor %}"
                 data-special-requests="{{ booking.special_requests }}"
                 data-bs-toggle="modal"
                 data-bs-target="#editReservationModal"
@@ -36,11 +37,12 @@
               </button>
               <button
               type="button"
-                class="btn btn-outline-dark btn-sm mt-2 delete-btn"
+                class="btn btn-outline-dark btn-sm mt-2 delete-btn mx-auto"
                 data-booking-id="{{ booking.id }}"
                 data-date="{{ booking.reservation_date|date:'Y-m-d' }}"
                 data-time="{{ booking.time_slot }}"
                 data-guests="{{ booking.number_of_guests }}"
+                data-allergies="{% for allergy in booking.allergies.all %}{{ allergy.id }}{% if not forloop.last %},{% endif %}{% endfor %}"
                 data-special-requests="{{ booking.special_requests }}"
                 data-bs-toggle="modal"
                 data-bs-target="#deleteReservationModal"
@@ -88,6 +90,26 @@
             {% endfor %}
         </select>
 
+        <label class="mt-2 d-block">Allergies:</label>
+        <div id="id_allergens" class="row row-cols-2">
+          {% for allergen in allergens %}
+          <div class="col form-check">
+            <input
+              class="form-check-input me-1 allergy-checkbox"
+              type="checkbox"
+              name="allergies"
+              id="allergen_{{ allergen.id }}"
+              value="{{ allergen.id }}"
+              {% if allergen in booking.allergies.all %}checked{% endif %}
+              >
+              <label class="form-check-label" for="allergen_{{ allergen.id }}">
+                {{ allergen.name }}
+              </label>
+            </div>
+            {% endfor %}
+          </div>
+
+
           <label for="id_special_requests" class="mt-2">Special Requests:</label>
           <textarea name="special_requests" id="id_special_requests" class="form-control"></textarea>
         </div>
@@ -99,6 +121,22 @@
     </div>
   </div>
 </div>
+
+ <!-- Confirm Update Modal -->
+<div class="modal fade" id="confirmUpdateModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <p>Are you sure you want to make these changes to your reservation?</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button id="confirm-update-btn" type="button" class="btn btn-dark">Yes, save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Delete Confirmation Modal -->
 <div class="modal fade" id="deleteReservationModal" tabindex="-1" aria-hidden="true">

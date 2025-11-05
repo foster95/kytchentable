@@ -3,8 +3,8 @@
 {% url 'home' as home_url %}
 {% url 'philosophy' as philosophy_url %}
 {% url 'menu' as menu_url %}
-{% url 'reserve' as reserve_url% }
-{% url 'reservations' as my_reservations url% }
+{% url 'reserve' as reserve_url %}
+{% url 'my_reservations' as my_reservations_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -63,7 +63,7 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/my_reservations/' %}active{% endif %}" href="{%url 'my_reservations' %}">My Reservations</a>
+                        <a class="nav-link {% if request.path == '/my_reservations/' %}active{% endif %}" href="{% url 'my_reservations' %}">My Reservations</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == '/accounts/logout/' %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>

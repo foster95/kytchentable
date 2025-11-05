@@ -5,6 +5,7 @@ from django.contrib import messages
 from cloudinary.models import CloudinaryField
 from reserve.models import Reservation
 from reserve.models import Reservation
+from menu.models import Allergen
 
 # Create your views here.
 
@@ -14,11 +15,12 @@ Show booking details
 
 @login_required
 def my_account(request):
-    reservations = Reservation.objects.filter(user=request.user)  # ✅ always define
+    reservations = Reservation.objects.filter(user=request.user)
     context = {
         "reservations": reservations,
         "TIME_SLOTS": Reservation.TIME_SLOTS,
         "NO_GUESTS": Reservation.NO_GUESTS,
+        "allergens": Allergen.objects.all(),  
     }
     return render(request, "my_account/account.html", context)
 
@@ -40,8 +42,13 @@ def update_reservation(request):
             booking.reservation_date = request.POST.get("reservation_date")
             booking.time_slot = request.POST.get("time_slot")
             booking.number_of_guests = request.POST.get("number_of_guests")
+            selected_allergens = request.POST.getlist("allergies")
             booking.special_requests = request.POST.get("special_requests")
             booking.save()
+
+            selected_allergies = request.POST.getlist("allergies")
+            booking.allergies.set(selected_allergies)
+
             messages.success(request, "Booking updated successfully.")
         except Exception as e:
             messages.error(request, f"Error updating booking: {e}")
