@@ -27,13 +27,19 @@ document.addEventListener('DOMContentLoaded', function() {
       if (editGuestNo) editGuestNo.value = guests;
       if (editSpecialRequests) editSpecialRequests.value = special;
 
-      console.log("Editing booking:", bookingId);
-      console.log("Time from button:", time);
-      console.log("Guest count from button:", guests);
-      console.log("Time options:", Array.from(editTimeSlot.options).map(o => o.value));
-      console.log("Guest options:", Array.from(editGuestNo.options).map(o => o.value));
-
-      console.log("Editing booking:", bookingId); 
     });
   });
 });
+
+const deleteButtons = document.querySelectorAll(".delete-btn");
+  const deleteForm = document.getElementById("delete-form");
+
+  if (deleteButtons.length && deleteForm) {
+    deleteButtons.forEach(button => {
+      button.addEventListener("click", function() {
+        const bookingId = this.dataset.bookingId;
+        deleteForm.action = `/my_reservations/delete_reservation/${bookingId}/`;
+        console.log("Deleting booking:", bookingId);
+      });
+    });
+  };

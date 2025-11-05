@@ -8,9 +8,9 @@ from reserve.models import Reservation
 
 # Create your views here.
 
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
-from reserve.models import Reservation
+"""
+Show booking details
+"""
 
 @login_required
 def my_account(request):
@@ -21,6 +21,10 @@ def my_account(request):
         "NO_GUESTS": Reservation.NO_GUESTS,
     }
     return render(request, "my_account/account.html", context)
+
+"""
+Allow guest to update booking
+"""
 
 @login_required
 def update_reservation(request):
@@ -42,5 +46,19 @@ def update_reservation(request):
         except Exception as e:
             messages.error(request, f"Error updating booking: {e}")
 
-    return redirect("my_account")
+    return redirect("my_reservations")
 
+"""
+Allow guest to delete reservation
+"""
+
+@login_required
+def delete_reservation(request, booking_id):
+    try:
+        booking = get_object_or_404(Reservation, id=booking_id, user=request.user)
+        booking.delete()
+        messages.success(request, "Reservation deleted successfully.")
+    except Exception as e:
+        messages.error(request, f"Error deleting booking: {e}")
+
+    return redirect("my_reservations")
