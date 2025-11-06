@@ -1,0 +1,283 @@
+/* Google Fonts Imports - Aboreto and Abyssinica SIL */
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Abyssinica+SIL&display=swap');
+
+/* CSS Variables */
+:root {
+    --primary-color: #5a2c59;
+    --secondary-color: #5B664B;
+    --tertiary-color: #F8F7F4;
+    --quaternary-color: #1A1A1A;
+    --accent-color: #CAD2C5;
+    --font-heading: 'Aboreto', cursive;
+    --font-body: 'Abyssinica SIL', serif;
+}
+
+/* General Styling Rules */
+body {
+    font-family: var(--font-body);
+    background-color: var(--tertiary-color);
+    color: var(--quaternary-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--quaternary-color);
+}
+
+/* Override Bootstrap default colors for navbar and footer */
+.navbar,
+.footer {
+    background-color: var(--primary-color) !important;
+}
+
+.navbar-nav .nav-link {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--tertiary-color) !important;
+    padding: 0 !important;          
+    margin: 0 1rem;                 
+    line-height: 1;                 
+    display: flex;
+    align-items: center;            
+    height: 40px;        
+}
+
+/* Override Bootstrap default button styles */
+.btn {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--tertiary-color) !important;
+}
+
+/* Branding Elements */
+#brand a {
+    font-family: var(--font-heading) !important;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+#brand-subtitle {
+    font-family: var(--font-body) !important;
+    font-size: 1rem;
+    text-decoration: italic;
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+#hero-image {
+    position: relative;
+    width: 100vw;
+    height: 25vh; 
+    background-size: cover;
+    background-position: center 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -1.5rem;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding: 0;
+    overflow: hidden;
+    opacity: 0.6;
+}
+
+#hero-subtitle {
+    font-family: var(--font-heading) !important;
+    font-size: 2rem;
+    color: var(--tertiary-color);
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Reservation Button */
+button.btn.btn-dark.reservation-button a {
+    color: var(--tertiary-color);
+    text-decoration: none;
+}
+
+/* Image Gallery */
+.carousel-image {
+    height: 30vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Menu Styling */
+
+.nav-pills {
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    gap: 1rem; 
+}
+
+.nav-pills .nav-link {
+    color: var(--primary-color); 
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.nav-pills .nav-link:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.ala-carte-menu li {
+    list-style-type: none;
+}
+
+.ala-carte-menu ul {
+    padding-left: 0px;
+}
+
+.ala-carte-menu em {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.signature-menu em {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* Sign In/Sign Up/Sign Out styling */
+.login-page a,
+.signup-page a,
+.logout-page a,
+.logout-success-page a {
+    color: var(--primary-color); 
+    text-decoration: none; 
+}
+
+/* Footer Styling */
+.footer p {
+    font-size: 15px;
+}
+
+.footer h3 {
+    font-size: 20px;
+}
+
+.footer-details {
+    color: var(--tertiary-color);
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* Small devices */
+@media screen and (min-width: 481px){
+
+    .navbar-nav .nav-link {
+        font-size: 1.25rem;
+    }
+
+    #brand a {
+        font-size: 3.5rem;
+    }
+
+    #brand-subtitle {
+        font-size: 1.25rem;
+    }
+
+    #hero-image {
+        height: 30vh;
+        background-position: 55%
+    }
+
+    #hero-subtitle {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    .btn {
+        font-size: 1.25rem;
+    }
+
+    .nav-pills .nav-link {
+        font-size: 1.25rem;
+    }
+
+    .menu-overview h3 {
+        font-size: 1.75rem;
+    }
+
+    .signature-menu li,
+    .ala-carte-menu li{
+        font-size: 1.25rem;
+    }
+
+    .footer p {
+        font-size: 1.25rem;
+    }
+
+    .footer h3 {
+        font-size: 1.5rem;
+    }
+
+    .reservation-form .mx-auto {
+        font-size: 1.25rem;
+    }
+
+}
+
+/* Medium devices */
+@media screen and (min-width: 769px){
+
+    #hero-image {
+        height: 40vh;
+    }
+
+    .our-philosophy img {
+        max-height: 45vh;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.10rem;
+    }
+
+    .nav-pills .nav-link {
+        font-size: 1.10rem;
+    }
+
+    .signature-menu li,
+    .ala-carte-menu li{
+        font-size: 1.10rem;
+    }
+
+
+    footer p {
+        font-size: 1rem;
+    }
+}
