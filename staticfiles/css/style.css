@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 #brand-subtitle {
     font-family: var(--font-body) !important;
     font-size: 1rem;
-    text-decoration: italic;
+    font-style: italic;
     color: var(--primary-color);
 }
 
@@ -171,16 +171,17 @@ h3 {
 
 /* Footer Styling */
 .footer p {
-    font-size: 15px;
+    font-size: 1rem;
 }
 
 .footer h3 {
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 
 .footer-details {
     color: var(--tertiary-color);
 }
+
 
 
 /* Media Queries for Responsiveness */
@@ -238,10 +239,6 @@ h3 {
         font-size: 1.25rem;
     }
 
-    .footer h3 {
-        font-size: 1.5rem;
-    }
-
     .reservation-form .mx-auto {
         font-size: 1.25rem;
     }
@@ -252,7 +249,7 @@ h3 {
 @media screen and (min-width: 769px){
 
     #hero-image {
-        height: 40vh;
+        height: 35vh;
     }
 
     .our-philosophy img {
@@ -277,7 +274,7 @@ h3 {
     }
 
 
-    footer p {
+    .footer p {
         font-size: 1rem;
     }
 }
