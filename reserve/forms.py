@@ -31,8 +31,8 @@ class ReservationForm(forms.ModelForm):
                 'type': 'tel',
                 'class': 'form-control',
                 'placeholder': '+44 7123 456789',
-                'pattern': r'^\+?\d{7,15}$', 
-                'title': 'Enter a valid phone number, e.g. +441234567890',
+                'pattern': '^(\\+44\\s?7\\d{3}\\s?\\d{6}|07\\d{3}\\s?\\d{6})$',
+                'title': 'Enter a valid UK phone number, e.g. +44 7123 456789 or 07123 456789',
                 'required': True,
                 }),
             'reservation_date': forms.DateInput(

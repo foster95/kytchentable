@@ -46,7 +46,6 @@ def update_reservation(request):
             booking.number_of_guests = request.POST.get("number_of_guests")
             selected_allergens = request.POST.getlist("allergies")
             booking.special_requests = request.POST.get("special_requests")
-            booking.save()
 
             selected_allergies = request.POST.getlist("allergies")
             booking.allergies.set(selected_allergies)

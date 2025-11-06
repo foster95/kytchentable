@@ -93,14 +93,21 @@ if (deleteButtons.length && deleteForm) {
   });
 }
 
-// Don't allow people to book dates in the past
-
+// Don't allow people to book dates in the past — allow today
 document.addEventListener('DOMContentLoaded', function () {
-  const dateInput = document.getElementById('id_date');
-  if (!dateInput) return;
+  function setMinDate() {
+    const dateInput = document.getElementById('id_date');
+    if (!dateInput) return;
+    const today = new Date().toLocaleDateString('en-CA'); // e.g. 2025-11-06
+    dateInput.setAttribute('min', today);
+  }
 
-  const today = new Date();
-  const minDate = tomorrow.toISOString().split('T')[0];
+  // Run immediately (in case the element already exists)
+  setMinDate();
 
-  dateInput.setAttribute('min', minDate);
+  // Run every time the modal opens
+  const editModal = document.getElementById('editReservationModal');
+  if (editModal) {
+    editModal.addEventListener('shown.bs.modal', setMinDate);
+  }
 });

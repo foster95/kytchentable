@@ -28,7 +28,7 @@
                 data-date="{{ booking.reservation_date|date:'Y-m-d' }}"
                 data-time="{{ booking.time_slot }}"
                 data-guests="{{ booking.number_of_guests }}"
-                data-allergies=",{% for allergy in booking.allergies.all %}{{ allergy.id }}{% if not forloop.last %},{% endif %}{% endfor %}"
+                data-allergies="{% for allergy in booking.allergies.all %}{{ allergy.id }}{% if not forloop.last %},{% endif %}{% endfor %}"
                 data-special-requests="{{ booking.special_requests }}"
                 data-bs-toggle="modal"
                 data-bs-target="#editReservationModal"
@@ -70,7 +70,7 @@
 
         <div class="modal-body">
           <label for="id_date">Date:</label>
-          <input type="date" name="reservation_date" id="id_date" class="form-control" min="{{ today }}">
+          <input type="date" name="reservation_date" id="id_date" class="form-control" min="{{ today|default:'' }}">
 
           <label for="id_time_slot" class="mt-3">Time Slot:</label>
           <select name="time_slot" id="id_time_slot" class="form-select">
@@ -96,7 +96,6 @@
               name="allergies"
               id="allergen_{{ allergen.id }}"
               value="{{ allergen.id }}"
-              {% if allergen in booking.allergies.all %}checked{% endif %}
               >
               <label class="form-check-label" for="allergen_{{ allergen.id }}">
                 {{ allergen.name }}

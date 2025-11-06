@@ -1,3 +1,5 @@
+console.log("✅ edit_reservation.js loaded");
+
 // Edit Reservation Modal
 document.addEventListener('DOMContentLoaded', function() {
   const editButtons = document.querySelectorAll('.edit-btn');
@@ -93,15 +95,22 @@ if (deleteButtons.length && deleteForm) {
   });
 }
 
-// Don't allow people to book dates in the past
-
+// Don't allow people to book dates in the past — allow today
 document.addEventListener('DOMContentLoaded', function () {
-  const dateInput = document.getElementById('id_date');
-  if (!dateInput) return;
+  function setMinDate() {
+    const dateInput = document.getElementById('id_date');
+    if (!dateInput) return;
+    const today = new Date().toLocaleDateString('en-CA'); // e.g. 2025-11-06
+    dateInput.setAttribute('min', today);
+    console.log("📅 Min date set to:", today);
+  }
 
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  const minDate = tomorrow.toISOString().split('T')[0];
+  // 1️⃣ Run immediately (in case the element already exists)
+  setMinDate();
 
-  dateInput.setAttribute('min', minDate);
+  // 2️⃣ Also run every time the modal opens
+  const editModal = document.getElementById('editReservationModal');
+  if (editModal) {
+    editModal.addEventListener('shown.bs.modal', setMinDate);
+  }
 });
