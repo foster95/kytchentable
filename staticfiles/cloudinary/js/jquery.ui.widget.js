@@ -1,0 +1,1 @@
+/Users/alicefoster/code/kytchen_table/.venv/lib/python3.12/site-packages/cloudinary/static/cloudinary/js/jquery.ui.widget.js
