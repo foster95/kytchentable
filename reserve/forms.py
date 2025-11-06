@@ -13,8 +13,27 @@ class ReservationForm(forms.ModelForm):
 
     class Meta:
         model = Reservation
-        fields = ['reservation_date', 'time_slot', 'number_of_guests', 'allergies', 'special_requests']
+        fields = ['guest_name', 'guest_phone', 'guest_email', 'reservation_date', 'time_slot', 'number_of_guests', 'allergies', 'special_requests']
         widgets = {
+            'guest_name': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Full name',
+                    'required': True,
+            }),
+            'guest_email': forms.EmailInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'name@example.com',
+                'required': True,
+            }),
+            'guest_phone': forms.TextInput(attrs={
+                'type': 'tel',
+                'class': 'form-control',
+                'placeholder': '+44 7123 456789',
+                'required': True,
+                'pattern': r'^\+?\d{7,15}$',
+                'title': 'Enter a valid phone number (e.g. +447911123456)',
+            }),
             'reservation_date': forms.DateInput(
                 attrs={
                     'type': 'date',

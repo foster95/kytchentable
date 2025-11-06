@@ -5,7 +5,7 @@ from .models import Reservation
 
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ('user', 'reservation_date', 'time_slot', 'guestNo', 'special_requests', 'seeAllergies')
+    list_display = ('user', 'guest_name', 'guest_email', 'guest_phone', 'reservation_date', 'time_slot', 'guestNo', 'special_requests', 'seeAllergies')
     list_filter = ('reservation_date',)
     search_fields = ('user__username',)
 

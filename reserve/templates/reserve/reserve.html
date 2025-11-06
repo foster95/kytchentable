@@ -18,10 +18,49 @@
       </div>
     {% endif %}
 
-    <form method="post" class="mx-auto" style="max-width: 500px;">
+    <form method="post" action="{% url 'reserve' %}" class="mx-auto" style="max-width: 500px;">
       {% csrf_token %}
 
+      <!-- Guest Details -->
+       <h5 class="mb-3 fw-semibold border-bottom pb-2">Guest Details</h5>
+       <div class="mb-3">
+        <label for="id_guest_name" class="form-label">Full Name</label>
+        {% if form.guest_name.errors %}
+        {{ form.guest_name|add_class:"form-control is-invalid" }}
+        <div class="invalid-feedback">{{ form.guest_name.errors.0 }}</div>
+        {% else %}
+        {{ form.guest_name|add_class:"form-control" }}
+        {% endif %}
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="id_guest_email" class="form-label">Email</label>
+            {% if form.guest_email.errors %}
+            {{ form.guest_email|add_class:"form-control is-invalid" }}
+            <div class="invalid-feedback">{{ form.guest_email.errors.0 }}</div>
+            {% else %}
+            {{ form.guest_email|add_class:"form-control" }}
+            {% endif %}
+        </div>
+        
+        <div class="col-md-6 mb-3">
+            <label for="id_guest_phone" class="form-label">Phone</label>
+            {% if form.guest_phone.errors %}
+            {{ form.guest_phone|add_class:"form-control is-invalid" }}
+            <div class="invalid-feedback">{{ form.guest_phone.errors.0 }}</div>
+            {% else %}
+            {{ form.guest_phone|add_class:"form-control" }}
+            {% endif %}
+        </div>
+    </div>
+
+
+
+
       <!-- Reservation Date -->
+       <h5 class="mb-3 fw-semibold border-bottom pb-2">Reservation Details</h5>
+
       <div class="mb-3">
         <label for="id_reservation_date" class="form-label">Reservation date</label>
         {% if form.reservation_date.errors %}
@@ -62,6 +101,8 @@
       </div>
 
       <!-- Allergies -->
+       <h5 class="mb-3 fw-semibold border-bottom pb-2">Additional Information</h5>
+
       <div class="mb-4 text-center">
         <label class="form-label fw-bold mb-3 d-block">Allergies</label>
         <div class="container" style="max-width: 500px;">

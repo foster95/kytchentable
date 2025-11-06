@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from menu.models import Allergen
 
+
 # Create your models here.
 
 """
@@ -67,6 +68,9 @@ class Reservation(models.Model):
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    guest_name = models.CharField(max_length=100, blank=True, null=True)
+    guest_phone = models.CharField(max_length=20, blank=True, null=True)
+    guest_email = models.EmailField(max_length=254, blank=True, null=True)
     reservation_date = models.DateField()
     time_slot = models.CharField(max_length=10, choices=TIME_SLOTS)
     number_of_guests = models.PositiveIntegerField(choices=NO_GUESTS)

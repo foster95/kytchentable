@@ -15,9 +15,11 @@ def reservation(request):
             reservation = form.save(commit=False)
             reservation.user = request.user  
             reservation.save()
+            form.save_m2m()
             messages.success(request, 'Your reservation has been submitted successfully!')
             return redirect('reserve')
         else:
+            print("❌ Form errors:", form.errors)
             
             return render(request, 'reserve/reserve.html', {
                 'form': form,
