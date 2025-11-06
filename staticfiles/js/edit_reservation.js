@@ -1,1 +1,0 @@
-/Users/alicefoster/code/kytchen_table/static/js/edit_reservation.js
