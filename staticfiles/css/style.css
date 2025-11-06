@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 #brand-subtitle {
     font-family: var(--font-body) !important;
     font-size: 1rem;
-    font-style: italic;
+    text-decoration: italic;
     color: var(--primary-color);
 }
 
@@ -158,6 +158,12 @@ button.btn.btn-dark.reservation-button a {
 
 h3 {
     font-size: 1.5rem;
+}
+
+/* Reservation form styling */
+.reservation-form, form {
+  overflow: visible !important;
+  transform: none !important;
 }
 
 /* Sign In/Sign Up/Sign Out styling */
@@ -276,5 +282,12 @@ h3 {
 
     .footer p {
         font-size: 1rem;
+    }
+}
+
+/* Media Queries for Desktop */
+@media screen and (min-width: 1200px ) {
+    p {
+        font-size: 1.30rem;
     }
 }

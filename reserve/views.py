@@ -20,7 +20,7 @@ def reservation(request):
             return redirect('reserve')
         else:
             print("❌ Form errors:", form.errors)
-            
+            print("Bound:", form.is_bound)
             return render(request, 'reserve/reserve.html', {
                 'form': form,
                 'reservations': reserve

@@ -3,6 +3,7 @@ from .models import Reservation
 from menu.models import Allergen
 from django.utils import timezone
 from datetime import datetime
+import re
 
 class ReservationForm(forms.ModelForm):
     allergies = forms.ModelMultipleChoiceField(
@@ -30,10 +31,10 @@ class ReservationForm(forms.ModelForm):
                 'type': 'tel',
                 'class': 'form-control',
                 'placeholder': '+44 7123 456789',
+                'pattern': r'^\+?\d{7,15}$', 
+                'title': 'Enter a valid phone number, e.g. +441234567890',
                 'required': True,
-                'pattern': r'^\+?\d{7,15}$',
-                'title': 'Enter a valid phone number (e.g. +447911123456)',
-            }),
+                }),
             'reservation_date': forms.DateInput(
                 attrs={
                     'type': 'date',
