@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from menu.models import Allergen
+from django.core.exceptions import ValidationError
+from datetime import datetime
 
 
 # Create your models here.
@@ -83,4 +85,26 @@ class Reservation(models.Model):
 
     def __str__(self):
         return f"Reservation for {self.user} on {self.reservation_date} for {self.number_of_guests} guests"
+    
+    def clean(self):
+        """Prevent saving or editing reservations in the past."""
+        super().clean()
 
+        if self.reservation_date and self.time_slot:
+            try:
+                reservation_time = datetime.strptime(self.time_slot, "%H:%M").time()
+                reservation_datetime = datetime.combine(self.reservation_date, reservation_time)
+                reservation_datetime = timezone.make_aware(
+                    reservation_datetime,
+                    timezone.get_current_timezone()
+                )
+
+                if reservation_datetime < timezone.now():
+                    raise ValidationError("Reservations cannot be set in the past.")
+            except ValueError:
+                raise ValidationError("Invalid time format for reservation.")
+
+    def save(self, *args, **kwargs):
+        """Ensure validation always runs when saving the model."""
+        self.full_clean()
+        super().save(*args, **kwargs)

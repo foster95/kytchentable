@@ -160,12 +160,6 @@ h3 {
     font-size: 1.5rem;
 }
 
-/* Reservation form styling */
-.reservation-form, form {
-  overflow: visible !important;
-  transform: none !important;
-}
-
 /* Sign In/Sign Up/Sign Out styling */
 .login-page a,
 .signup-page a,
@@ -173,6 +167,13 @@ h3 {
 .logout-success-page a {
     color: var(--primary-color); 
     text-decoration: none; 
+}
+
+/* Reservation form */
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+  overflow: visible !important;
 }
 
 /* Footer Styling */

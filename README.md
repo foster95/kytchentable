@@ -365,7 +365,37 @@ Code after the change:
 Reservation
 Reservation time showing as midnight on all bookings
 Whilst tweaking the administrative panel for reservations, I noticed that for some reason all of my bookings were coming up as midnight, though the date was correct. To fix this I 
-updated the reservation model, and split the time and the date so that this would show up correctly. 
+updated the reservation model, and split the time and the date so that this would show up correctly.
+
+Reservation date could change to past date
+I noticed that whilst customers couldn't immediately book a date in the past, this didn't stop the booker or the administrator being able to go in and change the booking seperately to the past. To combat this, I added an additional layer of validation at the model level which disabled customers from changing the date to the past. To do this I added the following code to the reservation model to ensure the data is sent cleanly:
+
+def clean(self):
+        """Prevent saving or editing reservations in the past."""
+        super().clean()
+
+        if self.reservation_date and self.time_slot:
+            try:
+                reservation_time = datetime.strptime(self.time_slot, "%H:%M").time()
+                reservation_datetime = datetime.combine(self.reservation_date, reservation_time)
+                reservation_datetime = timezone.make_aware(
+                    reservation_datetime,
+                    timezone.get_current_timezone()
+                )
+
+                if reservation_datetime < timezone.now():
+                    raise ValidationError("Reservations cannot be set in the past.")
+            except ValueError:
+                raise ValidationError("Invalid time format for reservation.")
+
+    def save(self, *args, **kwargs):
+        """Ensure validation always runs when saving the model."""
+        self.full_clean()
+        super().save(*args, **kwargs)
+
+And added the following code to the modal on the current reservations page:
+
+min="{{ today }}"
 
 
 # Tools & Technologies Used

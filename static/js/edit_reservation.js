@@ -92,3 +92,16 @@ if (deleteButtons.length && deleteForm) {
     });
   });
 }
+
+// Don't allow people to book dates in the past
+
+document.addEventListener('DOMContentLoaded', function () {
+  const dateInput = document.getElementById('id_date');
+  if (!dateInput) return;
+
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const minDate = tomorrow.toISOString().split('T')[0];
+
+  dateInput.setAttribute('min', minDate);
+});

@@ -19,8 +19,7 @@ def reservation(request):
             messages.success(request, 'Your reservation has been submitted successfully!')
             return redirect('reserve')
         else:
-            print("❌ Form errors:", form.errors)
-            print("Bound:", form.is_bound)
+            
             return render(request, 'reserve/reserve.html', {
                 'form': form,
                 'reservations': reserve

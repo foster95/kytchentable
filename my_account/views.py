@@ -6,6 +6,7 @@ from cloudinary.models import CloudinaryField
 from reserve.models import Reservation
 from reserve.models import Reservation
 from menu.models import Allergen
+from datetime import date
 
 # Create your views here.
 
@@ -20,7 +21,8 @@ def my_account(request):
         "reservations": reservations,
         "TIME_SLOTS": Reservation.TIME_SLOTS,
         "NO_GUESTS": Reservation.NO_GUESTS,
-        "allergens": Allergen.objects.all(),  
+        "allergens": Allergen.objects.all(),
+        "today": date.today().isoformat()
     }
     return render(request, "my_account/account.html", context)
 
@@ -48,6 +50,9 @@ def update_reservation(request):
 
             selected_allergies = request.POST.getlist("allergies")
             booking.allergies.set(selected_allergies)
+
+            booking.full_clean()
+            booking.save()
 
             messages.success(request, "Booking updated successfully.")
         except Exception as e:
