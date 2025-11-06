@@ -6,11 +6,10 @@ from .models import Allergen
 
 @admin.register(MenuItem)
 class MenuItemAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category')  
-    list_filter = ('category',)  
-    search_fields = ('name', 'description')  
-    filter_horizontal = ('allergen',)  
-
+    list_display = ('name', 'category', 'tasting_order')
+    list_editable = ('tasting_order',)
+    list_filter = ('category',)
+    ordering = ('category', 'tasting_order', 'name')
 
 @admin.register(Allergen)
 class AllergenAdmin(admin.ModelAdmin):

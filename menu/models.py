@@ -29,6 +29,11 @@ class MenuItem(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     allergen = models.ManyToManyField(Allergen, blank=True)
+    tasting_order = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        help_text="Order for tasting menu (1 = first course)"
+    )
 
     class Meta:
         ordering = ['category', 'name']

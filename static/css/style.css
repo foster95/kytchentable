@@ -93,6 +93,12 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.7);
 }
 
+/* Reservation Button */
+button.btn.btn-dark.reservation-button a {
+    color: var(--tertiary-color);
+    text-decoration: none;
+}
+
 /* Image Gallery */
 .carousel-image {
     height: 30vh;
@@ -176,10 +182,6 @@ h3 {
     color: var(--tertiary-color);
 }
 
-.allergies-list {
-    padding-left: 4rem;
-}
-
 
 /* Media Queries for Responsiveness */
 
@@ -261,7 +263,21 @@ h3 {
         font-size: 2.5rem;
     }
 
+    p {
+        font-size: 1.10rem;
+    }
+
+    .nav-pills .nav-link {
+        font-size: 1.10rem;
+    }
+
+    .signature-menu li,
+    .ala-carte-menu li{
+        font-size: 1.10rem;
+    }
+
+
     footer p {
-        font-size: 1.15rem;
+        font-size: 1rem;
     }
 }

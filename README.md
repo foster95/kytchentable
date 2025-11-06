@@ -266,10 +266,107 @@ Initially I found that despite adding the allergens as a seperate model into the
 
 To fix this I removed the choices=ALLERGEN_CHOICES which instantly removed the duplicate allergens appearing
 
+Tasting Menu ordering by alphabet rather than individual order
+After adding in a tasting menu after researching other Michelin restaurants and seeing this as a common feature, I realised that the tasting menu was ordering by alphabetical order as it was with the A La Carte - whicih wasn't matching the tasting menu order. To fix this I added in a custom ordering field, specifically for the tasting menu but not the A La Carte.
+
+Code before change: 
+
+        class MenuItem(models.Model):
+
+         """
+        Stores information about a menu item.
+        """
+
+            category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+            name = models.CharField(max_length=200)
+            description = models.TextField()
+            allergen = models.ManyToManyField(Allergen, blank=True)
+
+            class Meta:
+                ordering = ['category', 'name']
+
+
+Code after change:
+        class MenuItem(models.Model):
+
+        """
+        Stores information about a menu item.
+        """
+
+            category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+            name = models.CharField(max_length=200)
+            description = models.TextField()
+            allergen = models.ManyToManyField(Allergen, blank=True)
+            tasting_order = models.PositiveIntegerField(
+                null=True,
+                blank=True,
+                help_text="Order for tasting menu (1 = first course)"
+            )
+
+            class Meta:
+                ordering = ['category', 'name']
+
+I also updated the view to ensure that this was reflected on the website: 
+
+Code before change: 
+        def menu(request):
+            menu_items = {
+                'entrees': MenuItem.objects.filter(category='Entree'),
+                'mains': MenuItem.objects.filter(category='Main'),
+                'side': MenuItem.objects.filter(category='Side'),
+                'desserts': MenuItem.objects.filter(category='Dessert'),
+                'tasting': MenuItem.objects.filter(category='Tasting'),
+            }
+            return render(
+                request, 'menu/menu.html', 
+                {'menu_items': menu_items})
+
+Code after change 
+        def menu(request):
+            menu_items = {
+                'entrees': MenuItem.objects.filter(category='Entree'),
+                'mains': MenuItem.objects.filter(category='Main'),
+                'side': MenuItem.objects.filter(category='Side'),
+                'desserts': MenuItem.objects.filter(category='Dessert'),
+                'tasting': MenuItem.objects.filter(category='Tasting').order_by('tasting_order'),
+            }
+            return render(
+                request, 'menu/menu.html', 
+                {'menu_items': menu_items})
+
+
+            def tasting_menu(request): 
+                items = MenuItem.objects.filter(category='Tasting').order_by('tasting_order')
+                return render(request, 'menu/tasting_menu.html', {'items': items})
+
+            def a_la_carte_menu(request): 
+                items = MenuItem.objects.exclude(category='Tasting').order_by('category', 'name')
+                return render(request, 'menu/a_la_carte.html', {'items': items})
+
+And finally I also updated the admin to make it easier for staff and administrative members to update the individual order of the tasting menu without impacting the A La Carte:
+
+Code before the change:
+        @admin.register(MenuItem)
+            class MenuItemAdmin(admin.ModelAdmin):
+                list_display = ('name', 'category')  
+                list_filter = ('category',)  
+                search_fields = ('name', 'description')  
+                filter_horizontal = ('allergen',)  
+
+Code after the change:
+        @admin.register(MenuItem)
+            class MenuItemAdmin(admin.ModelAdmin):
+                list_display = ('name', 'category', 'tasting_order')
+                list_editable = ('tasting_order',)
+                list_filter = ('category',)
+                ordering = ('category', 'tasting_order', 'name')
+
+
 Reservation
 Reservation time showing as midnight on all bookings
 Whilst tweaking the administrative panel for reservations, I noticed that for some reason all of my bookings were coming up as midnight, though the date was correct. To fix this I 
 updated the reservation model, and split the time and the date so that this would show up correctly. 
+
 
 # Tools & Technologies Used
 * Balsamiq for wireframes

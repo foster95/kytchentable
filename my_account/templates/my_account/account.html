@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<div class="container my-5">
+<div class="container my-5 ">
   <h2 class="text-center mb-4">Welcome back, {{ user.first_name|default:user.username }}</h2>
 
   <h3 class="text-center mt-4">Your Upcoming Reservations</h3>
@@ -37,18 +37,14 @@
               </button>
               <button
               type="button"
-                class="btn btn-outline-dark btn-sm mt-2 delete-btn mx-auto"
-                data-booking-id="{{ booking.id }}"
-                data-date="{{ booking.reservation_date|date:'Y-m-d' }}"
-                data-time="{{ booking.time_slot }}"
-                data-guests="{{ booking.number_of_guests }}"
-                data-allergies="{% for allergy in booking.allergies.all %}{{ allergy.id }}{% if not forloop.last %},{% endif %}{% endfor %}"
-                data-special-requests="{{ booking.special_requests }}"
-                data-bs-toggle="modal"
-                data-bs-target="#deleteReservationModal"
-                >
-                Delete Reservation
+              class="btn btn-outline-danger btn-sm mt-2 delete-btn mx-auto"
+              data-booking-id="{{ booking.id }}"
+              data-bs-toggle="modal"
+              data-bs-target="#deleteReservationModal"
+              >
+              Delete Reservation
             </button>
+
             </div>
           </div>
         </div>
@@ -112,7 +108,7 @@
           <!--Clear allergies incase accidentally added-->
           <div class="text-end mt-2">
             <button type="button" class="btn btn-sm btn-outline-secondary" id="clear-allergies-button">
-              Clear All Allergies
+              Clear all Allergies
             </button>
           </div>
 
@@ -139,7 +135,7 @@
       </div>
       <div class="modal-footer justify-content-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button id="confirm-update-btn" type="button" class="btn btn-dark">Yes, save changes</button>
+        <button id="confirm-update-btn" type="button" class="btn btn-dark">Confirm changes</button>
       </div>
     </div>
   </div>
