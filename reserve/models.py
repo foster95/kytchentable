@@ -81,7 +81,7 @@ class Reservation(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
-        ordering = ['-reservation_date', 'time_slot']
+        ordering = ['reservation_date', 'time_slot']
 
     def __str__(self):
         return f"Reservation for {self.user} on {self.reservation_date} for {self.number_of_guests} guests"

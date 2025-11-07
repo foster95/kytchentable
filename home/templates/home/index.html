@@ -5,7 +5,7 @@
 <!-- Hero Section -->
 
 {% if hero %}
-<div id="hero-image" style="background-image: url('{{ hero.image.url }}');">
+<div id="hero-image" style="background-image: url('{{ hero.image.url }}');" class="mt-1">
     <div class="hero-text">
         <p id="hero-subtitle">Welcome to Our Kitchen</p>
     </div>
@@ -39,8 +39,9 @@
     </div>
 
     <!-- Gallery Section -->
-
-    <div class="row mt-2">
+     
+    
+    <div class="row mt-2 mb-3">
         <div class="col text-center">
             <h2>Gallery</h2>
             <p>Explore the ambiance and culinary delights that await you at Kytchen Table.</p>
@@ -55,6 +56,16 @@
                 </div>
                 {% endfor %}
             </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+        
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
         {% endif %}
 

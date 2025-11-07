@@ -16,7 +16,11 @@ Show booking details
 
 @login_required
 def my_account(request):
-    reservations = Reservation.objects.filter(user=request.user)
+    reservations = (
+        Reservation.objects
+        .filter(user=request.user, reservation_date__gte=date.today())
+        .order_by('reservation_date', 'time_slot')
+    )
     context = {
         "reservations": reservations,
         "TIME_SLOTS": Reservation.TIME_SLOTS,

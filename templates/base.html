@@ -33,7 +33,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v={ now|date:'U'}">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -78,6 +78,13 @@
         </div>
     </nav>
 
+    {% if user.is_authenticated %}
+    <div class="text-end m-3">
+        <span id="welcome-indicator">
+            You are logged in as {{user}}</span>
+        </div>
+    {% endif %}
+
     {% if messages %}
     {% for message in messages %}
     <div class="mt-4 w-50 mx-auto alert alert-{{ message.tags }} text-center">
@@ -88,7 +95,7 @@
 
 
 <!-- Page Content -->
-<main class="container mt-4">
+<main class="container">
 {% block content %}
 
 {% endblock content %}
