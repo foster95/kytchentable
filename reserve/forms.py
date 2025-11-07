@@ -3,49 +3,37 @@ from .models import Reservation
 from menu.models import Allergen
 from django.utils import timezone
 from datetime import datetime
-import re
 
 class ReservationForm(forms.ModelForm):
+
+    """
+    Form for guests to create reservations
+    """
+
     allergies = forms.ModelMultipleChoiceField(
-        queryset=Allergen.objects.all(),
-        required=False,
-        widget=forms.CheckboxSelectMultiple()
-    )
+            queryset=Allergen.objects.all(),
+            required=False,
+            widget=forms.CheckboxSelectMultiple()
+            )
 
     class Meta:
         model = Reservation
-        fields = ['guest_name', 'guest_phone', 'guest_email', 'reservation_date', 'time_slot', 'number_of_guests', 'allergies', 'special_requests']
+        fields = [
+            'guest_name', 'guest_phone', 'guest_email', 
+            'reservation_date', 'time_slot', 'number_of_guests',
+            'allergies', 'special_requests'
+            ]
         widgets = {
-            'guest_name': forms.TextInput(
-                attrs={
-                    'class': 'form-control',
-                    'placeholder': 'Full name',
-                    'required': True,
-            }),
-            'guest_email': forms.EmailInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'name@example.com',
-                'required': True,
-            }),
-            'guest_phone': forms.TextInput(attrs={
-                'type': 'tel',
-                'class': 'form-control',
-                'placeholder': '+44 7123 456789',
-                'pattern': '^(\\+44\\s?7\\d{3}\\s?\\d{6}|07\\d{3}\\s?\\d{6})$',
-                'title': 'Enter a valid UK phone number, e.g. +44 7123 456789 or 07123 456789',
-                'required': True,
-                }),
-            'reservation_date': forms.DateInput(
-                attrs={
-                    'type': 'date',
-                    'min': timezone.localdate().strftime('%Y-%m-%d')  # prevents selecting past dates
-                }
-            ),
+            'guest_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'guest_phone': forms.TextInput(attrs={'class': 'form-control'}),
+            'guest_email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'reservation_date': forms.DateInput(attrs={'type': 'date', 'class':'form-control'}),
             'time_slot': forms.Select(choices=Reservation.TIME_SLOTS),
             'number_of_guests': forms.Select(choices=Reservation.NO_GUESTS),
             'allergies': forms.CheckboxSelectMultiple(),
             'special_requests': forms.Textarea(attrs={'rows': 4}),
-        }
+            }
+
 
     def clean(self):
         """

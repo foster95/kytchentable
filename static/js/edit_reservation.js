@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if (clearAllergiesBtn) {
     clearAllergiesBtn.addEventListener('click', function() {
       editAllergyCheckboxes.forEach(cb => cb.checked = false);
-      console.log("All allergies cleared instantly.");
     });
   }
 
@@ -51,15 +50,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const checkbox = document.getElementById(`allergen_${id}`);
         if (checkbox) checkbox.checked = true;
       });
-
-      console.log("Editing booking:", bookingId);
-      console.log("Loaded allergies:", allergies);
     });
   });
 
   // Confirm before submitting edits
   editForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Stop default submit
+    if (!editForm.checkValidity()) {
+      editForm.reportValidity();
+    return;
+    }
 
     if (confirmModal) {
       confirmModal.show(); 
@@ -88,7 +87,6 @@ if (deleteButtons.length && deleteForm) {
     button.addEventListener("click", function() {
       const bookingId = this.dataset.bookingId;
       deleteForm.action = `/my_reservations/delete_reservation/${bookingId}/`;
-      console.log("Deleting booking:", bookingId);
     });
   });
 }

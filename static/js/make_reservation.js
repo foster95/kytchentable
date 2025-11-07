@@ -1,14 +1,42 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Find the reservation date field on the main booking form
+  const form = document.getElementById('reservation-form');
   const dateInput = document.getElementById('id_reservation_date');
-  if (!dateInput) return;
 
-  // Get today's date
-  const today = new Date();
+  // --- Set min date to today's LOCAL date ---
+  if (dateInput) {
+    // Make sure it's a date input
+    if (dateInput.type !== 'date') dateInput.setAttribute('type', 'date');
 
-  // Format as YYYY-MM-DD
-  const minDate = today.toISOString().split('T')[0];
+    const d = new Date();
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    const today = `${yyyy}-${mm}-${dd}`;
 
-  // Set the minimum date to today
-  dateInput.setAttribute('min', minDate);
+    dateInput.min = today;
+
+    // If there's an initial value in the past, bump it up to today
+    if (dateInput.value && dateInput.value < today) {
+      dateInput.value = today;
+    }
+
+    // Guard against manual typing of past dates
+    dateInput.addEventListener('change', function () {
+      if (dateInput.value && dateInput.value < today) {
+        dateInput.value = today;
+        alert('You cannot choose a past date.');
+      }
+    });
+  }
+
+  // --- Simple form validation (optional but handy) ---
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        form.reportValidity();
+      }
+    });
+  }
 });
+

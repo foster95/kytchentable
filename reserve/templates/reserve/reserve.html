@@ -30,7 +30,7 @@
         {{ form.guest_name|add_class:"form-control is-invalid" }}
         <div class="invalid-feedback">{{ form.guest_name.errors.0 }}</div>
         {% else %}
-        {{ form.guest_name|add_class:"form-control" }}
+        {{ form.guest_name|add_class:"form-control"|attr:"required:true"  }}
         {% endif %}
     </div>
     
@@ -41,7 +41,7 @@
             {{ form.guest_email|add_class:"form-control is-invalid" }}
             <div class="invalid-feedback">{{ form.guest_email.errors.0 }}</div>
             {% else %}
-            {{ form.guest_email|add_class:"form-control" }}
+            {{ form.guest_email|add_class:"form-control"|attr:"required:true"  }}
             {% endif %}
         </div>
         
@@ -51,13 +51,10 @@
             {{ form.guest_phone|add_class:"form-control is-invalid" }}
             <div class="invalid-feedback">{{ form.guest_phone.errors.0 }}</div>
             {% else %}
-            {{ form.guest_phone|add_class:"form-control" }}
+            {{ form.guest_phone|add_class:"form-control"|attr:"required:true"  }}
             {% endif %}
         </div>
     </div>
-
-
-
 
       <!-- Reservation Date -->
        <h5 class="mb-3 fw-semibold border-bottom pb-2">Reservation Details</h5>
@@ -153,7 +150,6 @@
 </div>
 
 {% endblock %}
-
 {% block js %}
   <script src="{% static 'js/make_reservation.js' %}"></script>
 {% endblock %}
