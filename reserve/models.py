@@ -69,6 +69,8 @@ class Reservation(models.Model):
         ('22:15', '22:15'),
     ]
 
+    MAXIMUM_TABLES = 15
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     guest_name = models.CharField(max_length=100, blank=True, null=True)
     guest_phone = models.CharField(max_length=20, blank=True, null=True)
@@ -87,7 +89,7 @@ class Reservation(models.Model):
         return f"Reservation for {self.user} on {self.reservation_date} for {self.number_of_guests} guests"
     
     def clean(self):
-        """Prevent saving or editing reservations in the past."""
+        """Prevent saving or editing reservations in the past or overbooking."""
         super().clean()
 
         if self.reservation_date and self.time_slot:
@@ -103,6 +105,18 @@ class Reservation(models.Model):
                     raise ValidationError("Reservations cannot be set in the past.")
             except ValueError:
                 raise ValidationError("Invalid time format for reservation.")
+
+        # ✅ Prevent overbooking more than MAXIMUM_TABLES
+            existing_count = Reservation.objects.filter(
+                reservation_date=self.reservation_date,
+                time_slot=self.time_slot
+            ).exclude(id=self.id).count()
+
+            if existing_count >= self.MAXIMUM_TABLES:
+                raise ValidationError("Sorry, all tables are booked for this time slot.")
+
+
+
 
     def save(self, *args, **kwargs):
         """Ensure validation always runs when saving the model."""
