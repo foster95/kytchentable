@@ -1,5 +1,3 @@
-console.log("✅ edit_reservation.js loaded");
-
 // Edit Reservation Modal
 document.addEventListener('DOMContentLoaded', function() {
   const editButtons = document.querySelectorAll('.edit-btn');
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if (clearAllergiesBtn) {
     clearAllergiesBtn.addEventListener('click', function() {
       editAllergyCheckboxes.forEach(cb => cb.checked = false);
-      console.log("All allergies cleared instantly.");
     });
   }
 
@@ -53,33 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const checkbox = document.getElementById(`allergen_${id}`);
         if (checkbox) checkbox.checked = true;
       });
-
-      console.log("Editing booking:", bookingId);
-      console.log("Loaded allergies:", allergies);
     });
   });
-
-  // Confirm before submitting edits
-  editForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Stop default submit
-
-    if (confirmModal) {
-      confirmModal.show(); 
-    } else {
-      if (confirm("Are you sure you want to update this reservation?")) {
-        editForm.submit();
-      }
-    }
-  });
-
-  // When confirm modal "Yes" is clicked
-  if (confirmUpdateBtn) {
-    confirmUpdateBtn.addEventListener('click', function() {
-      confirmModal.hide();
-      editForm.submit();
-    });
-  }
-});
 
 // Delete Reservation Modal
 const deleteButtons = document.querySelectorAll(".delete-btn");
@@ -90,7 +62,6 @@ if (deleteButtons.length && deleteForm) {
     button.addEventListener("click", function() {
       const bookingId = this.dataset.bookingId;
       deleteForm.action = `/my_reservations/delete_reservation/${bookingId}/`;
-      console.log("Deleting booking:", bookingId);
     });
   });
 }
@@ -102,13 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!dateInput) return;
     const today = new Date().toLocaleDateString('en-CA'); // e.g. 2025-11-06
     dateInput.setAttribute('min', today);
-    console.log("📅 Min date set to:", today);
   }
 
-  // 1️⃣ Run immediately (in case the element already exists)
+  // Run immediately (in case the element already exists)
   setMinDate();
 
-  // 2️⃣ Also run every time the modal opens
+  // Run every time the modal opens
   const editModal = document.getElementById('editReservationModal');
   if (editModal) {
     editModal.addEventListener('shown.bs.modal', setMinDate);

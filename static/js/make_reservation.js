@@ -29,14 +29,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // --- Simple form validation (optional but handy) ---
+  // --- Form validation ---
   if (form) {
     form.addEventListener('submit', function (e) {
       if (!form.checkValidity()) {
         e.preventDefault();
-        form.reportValidity();
+
+        // Force tooltip to appear for validation
+        const firstInvalid = form.querySelector(':invalid');
+        if (firstInvalid) {
+          firstInvalid.focus();
+          firstInvalid.reportValidity();
+        } else {
+          form.reportValidity();
+        }
       }
     });
   }
 });
+
 

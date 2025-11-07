@@ -53,31 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Confirm before submitting edits
-  editForm.addEventListener('submit', function(event) {
-    if (!editForm.checkValidity()) {
-      editForm.reportValidity();
-    return;
-    }
-
-    if (confirmModal) {
-      confirmModal.show(); 
-    } else {
-      if (confirm("Are you sure you want to update this reservation?")) {
-        editForm.submit();
-      }
-    }
-  });
-
-  // When confirm modal "Yes" is clicked
-  if (confirmUpdateBtn) {
-    confirmUpdateBtn.addEventListener('click', function() {
-      confirmModal.hide();
-      editForm.submit();
-    });
-  }
-});
-
 // Delete Reservation Modal
 const deleteButtons = document.querySelectorAll(".delete-btn");
 const deleteForm = document.getElementById("delete-form");
