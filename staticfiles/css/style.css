@@ -4,10 +4,11 @@
 /* CSS Variables */
 :root {
     --primary-color: #5a2c59;
-    --secondary-color: #5B664B;
+    --secondary-color: #5B4952;
     --tertiary-color: #F8F7F4;
     --quaternary-color: #1A1A1A;
     --accent-color: #CAD2C5;
+    --highlight-color-one: #E5E2E0;
     --font-heading: 'Aboreto', cursive;
     --font-body: 'Abyssinica SIL', serif;
 }
@@ -45,6 +46,10 @@ h1, h2, h3, h4, h5, h6 {
     height: 40px;        
 }
 
+.navbar-nav .nav-link:hover {
+    color: var(--secondary-color)!important;
+}
+
 /* Override Bootstrap default button styles */
 .btn {
     background-color: var(--primary-color) !important;
@@ -58,6 +63,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2.5rem;
     color: var(--primary-color);
     text-decoration: none;
+}
+
+#brand a:hover {
+    color: var(--highlight-color-one);
 }
 
 #brand-subtitle {
@@ -115,17 +124,18 @@ button.btn.btn-dark.reservation-button a {
     width: 100%
 }
 
-#heroCarousel .carousel,
-#heroCarousel .carousel-inner,
-#heroCarousel .carousel-item {
-    height: auto;
+#heroCarousel .carousel-image {
+  height: 30vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.5rem;
 }
 
-#heroCarousel .carousel-image {
-    height: center 30vh;
-    background-size: contain;
-    background-postion: center;
-    background-repeat: no-repeat
+/* Hide navigation arrows by default */
+.carousel-control-prev,
+.carousel-control-next {
+  display: none !important;
 }
 
 /* Menu Styling */
@@ -260,10 +270,6 @@ h3 {
         font-size: 1.25rem;
     }
 
-    .reservation-form .mx-auto {
-        font-size: 1.25rem;
-    }
-
 }
 
 /* Medium devices */
@@ -311,6 +317,20 @@ h3 {
     }
 
     #heroCarousel .carousel-image {
-        height: 80vh !important;
+        height: 60vh !important;
+    }
+
+     .carousel-control-prev,
+    .carousel-control-next {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 5%;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        filter: invert(1);
+        opacity: 0.9;
     }
 }

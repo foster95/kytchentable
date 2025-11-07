@@ -4,10 +4,11 @@
 /* CSS Variables */
 :root {
     --primary-color: #5a2c59;
-    --secondary-color: #5B664B;
+    --secondary-color: #5B4952;
     --tertiary-color: #F8F7F4;
     --quaternary-color: #1A1A1A;
     --accent-color: #CAD2C5;
+    --highlight-color-one: #BEB6B8;
     --font-heading: 'Aboreto', cursive;
     --font-body: 'Abyssinica SIL', serif;
 }
@@ -45,12 +46,32 @@ h1, h2, h3, h4, h5, h6 {
     height: 40px;        
 }
 
-/* Override Bootstrap default button styles */
-.btn {
-    background-color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
-    color: var(--tertiary-color) !important;
+.navbar-nav .nav-link:hover {
+    color: var(--highlight-color-one)!important;
 }
+
+.navbar-nav .nav-link.active   {
+    font-weight: 600;
+    font-style: italic;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  color: var(--tertiary-color);
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+  border-radius: 0.375rem; 
+}
+
+.btn:hover {
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-1px); /* optional subtle lift */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* optional soft shadow */
+}
+
 
 /* Branding Elements */
 #brand a {
@@ -58,6 +79,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2.5rem;
     color: var(--primary-color);
     text-decoration: none;
+}
+
+#brand a:hover {
+    color: var(--secondary-color)!important;
 }
 
 #brand-subtitle {
@@ -181,6 +206,7 @@ button.btn.btn-dark.reservation-button a {
 h3 {
     font-size: 1.5rem;
 }
+
 
 /* Sign In/Sign Up/Sign Out styling */
 .login-page a,
