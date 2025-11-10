@@ -45,6 +45,9 @@ def update_reservation(request):
             return redirect("my_account") 
 
         try:
+            booking.guest_name = request.POST.get("guest_name")
+            booking.guest_email = request.POST.get("guest_email")
+            booking.guest_phone = request.POST.get("guest_phone")
             booking.reservation_date = request.POST.get("reservation_date")
             booking.time_slot = request.POST.get("time_slot")
             booking.number_of_guests = request.POST.get("number_of_guests")

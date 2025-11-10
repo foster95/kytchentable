@@ -21,7 +21,7 @@ class TestReservationViews(TestCase):
         self.client.login(username="testuser", password="password123")
 
     def test_reservation_form_renders(self):
-        """Ensures the reservation form page loads correctly"""
+        """Test the reservation form page loads correctly"""
         response = self.client.get(reverse("reserve"))
         self.assertEqual(response.status_code, 200)
         self.assertIsInstance(
@@ -30,10 +30,10 @@ class TestReservationViews(TestCase):
         )
 
     def test_successful_reservation_submission(self):
-        """Ensures a valid form submission creates a reservation"""
+        """Test a valid form submission creates a reservation"""
         self.client.post(reverse("reserve"), {
-            "guest_name": "Jane Smith",
-            "guest_email": "jane@example.com",
+            "guest_name": "Test Name",
+            "guest_email": "test@example.com",
             "guest_phone": "0987654321",
             "reservation_date": date.today().strftime("%Y-%m-%d"),
             "time_slot": "18:00",
@@ -43,6 +43,6 @@ class TestReservationViews(TestCase):
         }, follow=True)
 
         self.assertTrue(
-            Reservation.objects.filter(guest_name="Jane Smith").exists(),
+            Reservation.objects.filter(guest_name="Test Name").exists(),
             msg="Reservation was not successfully created."
         )

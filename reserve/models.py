@@ -115,9 +115,6 @@ class Reservation(models.Model):
             if existing_count >= self.MAXIMUM_TABLES:
                 raise ValidationError("Sorry, all tables are booked for this time slot.")
 
-
-
-
     def save(self, *args, **kwargs):
         """Ensure validation always runs when saving the model."""
         self.full_clean()

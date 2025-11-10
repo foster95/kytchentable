@@ -249,7 +249,7 @@ h3 {
     }
 
     #hero-image {
-        height: 30vh;
+        height: 35vh;
         background-position: center 55%
     }
 
@@ -293,7 +293,7 @@ h3 {
 @media screen and (min-width: 769px){
 
     #hero-image {
-        height: center 35vh;
+        height: 35vh;
     }
 
     .our-philosophy img {
@@ -333,11 +333,16 @@ h3 {
         font-size: 1.30rem;
     }
 
+    #hero-image {
+        height: 40vh;
+        background-position: center 50%;
+    }
+
     #heroCarousel .carousel-image {
         height: 60vh !important;
     }
 
-     .carousel-control-prev,
+    .carousel-control-prev,
     .carousel-control-next {
         display: flex !important;
         align-items: center;
@@ -349,5 +354,9 @@ h3 {
     .carousel-control-next-icon {
         filter: invert(1);
         opacity: 0.9;
+    }
+
+    .footer p {
+        font-size: 1.15rem;
     }
 }

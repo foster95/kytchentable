@@ -6,11 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const confirmModalEl = document.getElementById('confirmUpdateModal');
   const confirmModal = confirmModalEl ? new bootstrap.Modal(confirmModalEl) : null;
-  const confirmUpdateBtn = document.getElementById('confirm-update-btn');
 
   if (!editButtons.length || !editModalEl || !editForm) return;
 
   const bookingIdField = editForm.querySelector('input[name="booking_id"]');
+  const editGuestName  = editForm.querySelector('#id_guest_name');
+  const editGuestEmail = editForm.querySelector('#id_guest_email');
+  const editGuestPhone = editForm.querySelector('#id_guest_phone');
   const editDate = editForm.querySelector('#id_date');
   const editTimeSlot = editForm.querySelector('#id_time_slot');
   const editGuestNo = editForm.querySelector('#id_guests');
@@ -29,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
   editButtons.forEach(button => {
     button.addEventListener('click', function() {
       const bookingId = this.dataset.bookingId;
+      const bookingName  = this.dataset.bookingName  || "";
+      const bookingEmail = this.dataset.bookingEmail || "";
+      const bookingPhone = this.dataset.bookingPhone || "";
       const date = this.dataset.date;
       const time = this.dataset.time;
       const guests = this.dataset.guests;
@@ -36,6 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const allergies = this.dataset.allergies ? this.dataset.allergies.split(',') : [];
 
       if (bookingIdField) bookingIdField.value = bookingId;
+      if (editGuestName)  editGuestName.value  = bookingName;
+      if (editGuestEmail) editGuestEmail.value = bookingEmail;
+      if (editGuestPhone) editGuestPhone.value = bookingPhone;
       if (editDate) editDate.value = date;
       if (editTimeSlot) editTimeSlot.value = time;
       if (editGuestNo) editGuestNo.value = guests;
