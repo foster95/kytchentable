@@ -4,6 +4,7 @@ from menu.models import Allergen
 from django.utils import timezone
 from datetime import datetime
 from django.core.validators import RegexValidator
+from django.http import JsonResponse
 
 
 class ReservationForm(forms.ModelForm):
@@ -21,7 +22,12 @@ class ReservationForm(forms.ModelForm):
                 "Please enter a valid phone number."
             )
         ],
-        widget=forms.TextInput(attrs={'class': 'form-control'})
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'type': 'tel',
+            'pattern': r'^\+?[0-9\s\-\(\)]{7,20}$',
+            'title': 'Please enter a valid phone number.',
+        })
     )
 
     allergies = forms.ModelMultipleChoiceField(

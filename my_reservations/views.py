@@ -5,6 +5,8 @@ from django.contrib import messages
 from reserve.models import Reservation
 from menu.models import Allergen
 from datetime import date
+from django.core.exceptions import ValidationError
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -41,10 +43,6 @@ def update_reservation(request):
         booking_id = request.POST.get("booking_id")
         booking = get_object_or_404(Reservation, id=booking_id, user=request.user)
 
-        if not booking_id:
-            messages.error(request, "No booking selected to update.")
-            return redirect("my_reservations")
-
         try:
             booking.guest_name = request.POST.get("guest_name")
             booking.guest_email = request.POST.get("guest_email")
@@ -52,7 +50,6 @@ def update_reservation(request):
             booking.reservation_date = request.POST.get("reservation_date")
             booking.time_slot = request.POST.get("time_slot")
             booking.number_of_guests = request.POST.get("number_of_guests")
-            selected_allergens = request.POST.getlist("allergies")
             booking.special_requests = request.POST.get("special_requests")
 
             selected_allergies = request.POST.getlist("allergies")
@@ -61,13 +58,25 @@ def update_reservation(request):
             booking.full_clean()
             booking.save()
 
-            messages.success(request, "Booking updated successfully.")
-        except Exception as e:
-            messages.error(request, f"Error updating booking: {e}")
+            return JsonResponse({ "success": True })
 
-    return redirect("my_reservations")
+        except ValidationError as e:
+            return JsonResponse({
+                "success": False,
+                "errors": e.message_dict,
+                "values": {
+                    "guest_name": request.POST.get("guest_name", ""),
+                    "guest_email": request.POST.get("guest_email", ""),
+                    "guest_phone": request.POST.get("guest_phone", ""),
+                    "reservation_date": request.POST.get("reservation_date", ""),
+                    "time_slot": request.POST.get("time_slot", ""),
+                    "number_of_guests": request.POST.get("number_of_guests", ""),
+                    "special_requests": request.POST.get("special_requests", ""),
+                    "allergies": request.POST.getlist("allergies"),
+                }
+            })
 
-
+        
 """
 Allow guest to delete reservation
 """
