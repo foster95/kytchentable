@@ -108,3 +108,24 @@ document.addEventListener("DOMContentLoaded", function () {
     setMinDate();
     modalEl.addEventListener("shown.bs.modal", setMinDate);
 });
+
+// Delete Modal
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const deleteButtons = document.querySelectorAll(".delete-btn");
+    const deleteForm = document.getElementById("delete-form");
+
+    if (deleteButtons.length && deleteForm) {
+        deleteButtons.forEach(btn => {
+            btn.addEventListener("click", function () {
+
+                const bookingId = this.dataset.bookingId;
+
+                // Set the correct URL for deletion
+                deleteForm.action = `/my_reservations/delete_reservation/${bookingId}/`;
+            });
+        });
+    }
+
+});
