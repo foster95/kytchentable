@@ -2,13 +2,14 @@ from django.shortcuts import render
 from .models import HeroImage
 from .models import ImageGallery
 
-# Create your views here. 
+# Create your views here.
 
 """
 Display the home page.
 """
 
-def home(request): 
+
+def home(request):
     hero = HeroImage.objects.first()
     gallery = ImageGallery.objects.all()
     return render(

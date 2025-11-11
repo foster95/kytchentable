@@ -21,7 +21,7 @@ from home.views import home
 from philosophy.views import philosophy
 from menu.views import menu
 from reserve.views import reservation
-from my_account.views import my_account 
+from my_reservations.views import my_reservations 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +31,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('accounts/logout/success/', TemplatesView.as_view(template_name='account/logout_success.html'), name='logout_success'),
     path('reserve/', reservation, name='reserve'),
-    path('my_reservations/', include('my_account.urls')),
+    path('my_reservations/', include('my_reservations.urls')),
 ]

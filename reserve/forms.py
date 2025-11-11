@@ -3,6 +3,8 @@ from .models import Reservation
 from menu.models import Allergen
 from django.utils import timezone
 from datetime import datetime
+from django.core.validators import RegexValidator
+
 
 class ReservationForm(forms.ModelForm):
 
@@ -10,30 +12,42 @@ class ReservationForm(forms.ModelForm):
     Form for guests to create reservations
     """
 
-    allergies = forms.ModelMultipleChoiceField(
-            queryset=Allergen.objects.all(),
-            required=False,
-            widget=forms.CheckboxSelectMultiple()
+    guest_phone = forms.CharField(
+        max_length=20,
+        required=True,
+        validators=[
+            RegexValidator(
+                r'^\+?[0-9\s\-\(\)]{7,20}$',
+                "Please enter a valid phone number."
             )
+        ],
+        widget=forms.TextInput(attrs={'class': 'form-control'})
+    )
+
+    allergies = forms.ModelMultipleChoiceField(
+        queryset=Allergen.objects.all(),
+        required=False,
+        widget=forms.CheckboxSelectMultiple()
+    )
 
     class Meta:
         model = Reservation
         fields = [
-            'guest_name', 'guest_phone', 'guest_email', 
+            'guest_name', 'guest_phone', 'guest_email',
             'reservation_date', 'time_slot', 'number_of_guests',
             'allergies', 'special_requests'
-            ]
+        ]
         widgets = {
             'guest_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'guest_phone': forms.TextInput(attrs={'class': 'form-control'}),
             'guest_email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'reservation_date': forms.DateInput(attrs={'type': 'date', 'class':'form-control'}),
+            'reservation_date': forms.DateInput(
+                attrs={'type': 'date', 'class': 'form-control'}
+            ),
             'time_slot': forms.Select(choices=Reservation.TIME_SLOTS),
             'number_of_guests': forms.Select(choices=Reservation.NO_GUESTS),
             'allergies': forms.CheckboxSelectMultiple(),
             'special_requests': forms.Textarea(attrs={'rows': 4}),
-            }
-
+        }
 
     def clean(self):
         """
@@ -44,15 +58,18 @@ class ReservationForm(forms.ModelForm):
         time_slot = cleaned_data.get('time_slot')
 
         if reservation_date and time_slot:
-            # Combine date and time into a single datetime
             reservation_datetime = datetime.combine(
                 reservation_date,
                 datetime.strptime(time_slot, "%H:%M").time()
             )
-            reservation_datetime = timezone.make_aware(reservation_datetime, timezone.get_current_timezone())
+            reservation_datetime = timezone.make_aware(
+                reservation_datetime,
+                timezone.get_current_timezone()
+            )
 
-            # Compare to current datetime
             if reservation_datetime < timezone.now():
-                raise forms.ValidationError("You cannot make a reservation in the past.")
+                raise forms.ValidationError(
+                    "You cannot make a reservation in the past."
+                )
 
         return cleaned_data

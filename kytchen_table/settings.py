@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'menu',
     'reserve',
     'widget_tweaks',
-    'my_account',
+    'my_reservations',
 ]
 
 MIDDLEWARE = [

@@ -6,7 +6,8 @@ from django.shortcuts import render
 Display philosophy page.
 """
 
-def philosophy(request): 
+
+def philosophy(request):
     return render(
         request,
         'philosophy/philosophy.html',

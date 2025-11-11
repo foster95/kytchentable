@@ -6,4 +6,3 @@ from .models import ImageGallery
 
 admin.site.register(HeroImage)
 admin.site.register(ImageGallery)
-

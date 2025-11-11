@@ -68,10 +68,20 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--tertiary-color);
   color: var(--primary-color);
   border-color: var(--primary-color);
-  transform: translateY(-1px); /* optional subtle lift */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* optional soft shadow */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
+.return-button {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color)!important;
+    border: 2px solid var(--primary-color);
+}
+
+.return-button:hover {
+    background-color: var(--tertiary-color);
+    color: var(--primary-color)!important;
+    border: 2px solid var(--primary-color);
+}
 
 /* Branding Elements */
 #brand a {

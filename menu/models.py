@@ -10,6 +10,7 @@ CATEGORY_CHOICES = [
     ('Tasting', 'Tasting Menu'),
 ]
 
+
 class Allergen(models.Model):
     name = models.CharField(max_length=50)
 
@@ -18,6 +19,7 @@ class Allergen(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class MenuItem(models.Model):
 

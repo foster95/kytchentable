@@ -3,6 +3,7 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
+
 class HeroImage(models.Model):
     """
     Model to store hero images for the home page.
@@ -12,7 +13,8 @@ class HeroImage(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+
 class ImageGallery(models.Model):
     """
     Model to store images for the image gallery.

@@ -33,7 +33,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v={ now|date:'U'}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -41,7 +41,7 @@
     <div class="text-center mt-3"><h1 id="brand"><a href="{{ home_url }}">Kytchen Table</a></h1></div>
     <div class="text-center mb-2"><h2 id="brand-subtitle">A Kyran Becker Restaurant</h2></div>
 
-    <!--- Navbar --->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark text-center mb-2">
         <div class="container-fluid">
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,7 +95,7 @@
 
 
 <!-- Page Content -->
-<main class="container mt-4">
+<main class="container mt-3">
 {% block content %}
 
 {% endblock content %}

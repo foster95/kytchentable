@@ -1,9 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.contrib import messages 
-from cloudinary.models import CloudinaryField
-from reserve.models import Reservation
+from django.contrib import messages
 from reserve.models import Reservation
 from menu.models import Allergen
 from datetime import date
@@ -14,8 +12,9 @@ from datetime import date
 Show booking details
 """
 
+
 @login_required
-def my_account(request):
+def my_reservations(request):
     reservations = (
         Reservation.objects
         .filter(user=request.user, reservation_date__gte=date.today())
@@ -28,21 +27,23 @@ def my_account(request):
         "allergens": Allergen.objects.all(),
         "today": date.today().isoformat()
     }
-    return render(request, "my_account/account.html", context)
+    return render(request, "my_reservations/reservations.html", context)
+
 
 """
 Allow guest to update booking
 """
+
 
 @login_required
 def update_reservation(request):
     if request.method == "POST":
         booking_id = request.POST.get("booking_id")
         booking = get_object_or_404(Reservation, id=booking_id, user=request.user)
-        
+
         if not booking_id:
             messages.error(request, "No booking selected to update.")
-            return redirect("my_account") 
+            return redirect("my_reservations")
 
         try:
             booking.guest_name = request.POST.get("guest_name")
@@ -66,14 +67,18 @@ def update_reservation(request):
 
     return redirect("my_reservations")
 
+
 """
 Allow guest to delete reservation
 """
 
+
 @login_required
 def delete_reservation(request, booking_id):
     try:
-        booking = get_object_or_404(Reservation, id=booking_id, user=request.user)
+        booking = get_object_or_404(
+            Reservation, id=booking_id, user=request.user
+        )
         booking.delete()
         messages.success(request, "Reservation deleted successfully.")
     except Exception as e:
