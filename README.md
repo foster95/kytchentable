@@ -116,7 +116,7 @@ Kytchen Table is a luxury restaurant, modelled after the typical website of a Mi
 ### Kytchen Table Logo
 ![Kytchen Table Logo/Watermark](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-wordmark.png)
 
-### Kytchen Table Branded Fonts
+### Kytchen Table Branded Fonts
 To figure out the best font pairings I used the Our Own Thing font pairing website, which allowed me to look through all of the fonts available through Google Fonts and choose. As a result, the following fonts were chosen:
 
 * [Aboreto Regular](https://fonts.google.com/specimen/Aboreto?preview.text=Kytchen%20Table) is used as the primary font for headings and is also the font used for the logo and for the favicon. The font was chosen as it was a readable font whilst still providing a statement that fitted with the sleek, upmarket feel of the website
@@ -202,7 +202,74 @@ Prior to beginning the actual build of the website, I created an Entity Relation
 
 ![Kytchen Table ERD](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-erd.png)
 
-## Developmental Bugs
+# Features
+## Header
+The header uses the base.html template, and has been designed to be minimalistic in keeping with the rest of the website. The header has the restaurant name which is a hyperlink to the home page and a simple navigation bar. The navigation bar comes from Bootstrap and therefore is responsive to screen sizes, stretching to a full bar only on desktops and wider. At all other times the navigation bar is accessible via the burger icon.
+
+## Footer
+The footer also uses the base.html website, and again has been designed with minimalism in mind. The footer features three columns, one for the website address (meeting the user story requirements), one for the opening and closing times of the restaurant and one for the social media handles of the website. All of the social media links apply the "rel=noopeener" rule and open to a new page as per best practise. All of the links also have aria labels associated with them for screen readers. The footer was also created with Bootstrap and therefore on devices other than desktop, the footer stacks on top of each other. On a desktop the footer stretches out into one row with three columns. 
+
+## Home Page
+The home page utiltises a hero image, a small amount of copy, a reservation button and a carousel of images. The hero image is a small model that uses a Cloudinary field to reduce storage on the site itself. 
+
+        class HeroImage(models.Model):
+            """
+            Model to store hero images for the home page.
+            """
+            title = models.CharField(max_length=200)
+            image = CloudinaryField('image', default='placeholder')
+
+            def __str__(self):
+                return self.title
+
+Likewise, the carousel is also a small model using Cloudinary fields. This means that administrative Superusers can update both the hero image and the carousel of images depending on the seasonl, new dishes etc. 
+
+        class ImageGallery(models.Model):
+            """
+            Model to store images for the image gallery.
+            """
+            title = models.CharField(max_length=200)
+            image = CloudinaryField('image', default='placeholder')
+
+            def __str__(self):
+                return self.title
+
+The reservation button automatically redirects users to the reservation form page and if the user isn't logged in, to the sign in page. 
+
+## Our Philosophy
+Our Philosophy is the simplest app of all of the apps, and doesn't utilise any models. The page is comprised of copy and a series of images. These images have been hardcoded to the website rather than running through models as these photos will not change like the hero and carousel could. The page has been designed with Bootstrap assistance, and uses columns to show the information responsively. On mobiles and tablets the information displays stacked in a column but on desktops the page stretches out to display the information more dynamically, showing information then a photo in alternating rows:
+
+Rooted in the land: 
+        <div class="row align-items-center mb-4">
+            <div class="col-12 col-md-6">
+
+Rhythm of the Season:
+        <div class="row align-items-center mb-4 flex-md-row-reverse">
+            <div class="col-12 col-md-6">
+
+Refined, Not Restricted:
+        <div class="row align-items-center mb-4">
+            <div class="col-12 col-md-6">
+
+## Menu
+
+## Reservation Form 
+
+## View Upcoming Reservations
+
+## Edit Upcoming Reservations Modal
+
+## Delete Upcoming Reservations Modal
+
+## Sign Up
+
+## Sign In
+
+## Log Out
+
+## Error Messages
+
+## Developmental Bugs - Solved
 ### Base.html
 During development I noticed an issue where the logo font size directly impacted the alignment of the navigation bar, sending it slightly out of alignment with the other items in the bar. To fix this issue I updated my personal CSS overriding the Bootstrap styling that was originally in place. 
 
@@ -218,8 +285,8 @@ During development I noticed an issue where the logo font size directly impacted
             height: 40px;        
 }
 
-Menu
-Allergen picker in Django Administration
+### Menu
+#### Allergen picker in Django Administration
 Whilst creating the model for the menu to show on the website, I incorporated the allergens into the model so that side admins could update this information regularly.
 
 Initially I found that despite adding the allergens as a seperate model into the menu panel, the allergens were duplicating and showing as the same set of allergens on every item.
@@ -266,7 +333,7 @@ Initially I found that despite adding the allergens as a seperate model into the
 
 To fix this I removed the choices=ALLERGEN_CHOICES which instantly removed the duplicate allergens appearing
 
-Tasting Menu ordering by alphabet rather than individual order
+#### Tasting Menu ordering by alphabet rather than individual order
 After adding in a tasting menu after researching other Michelin restaurants and seeing this as a common feature, I realised that the tasting menu was ordering by alphabetical order as it was with the A La Carte - whicih wasn't matching the tasting menu order. To fix this I added in a custom ordering field, specifically for the tasting menu but not the A La Carte.
 
 Code before change: 
@@ -287,52 +354,52 @@ Code before change:
 
 
 Code after change:
-        class MenuItem(models.Model):
+            class MenuItem(models.Model):
 
-        """
-        Stores information about a menu item.
-        """
+         """
+            Stores information about a menu item.
+         """
 
-            category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
-            name = models.CharField(max_length=200)
-            description = models.TextField()
-            allergen = models.ManyToManyField(Allergen, blank=True)
-            tasting_order = models.PositiveIntegerField(
-                null=True,
-                blank=True,
-                help_text="Order for tasting menu (1 = first course)"
-            )
+                category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+                name = models.CharField(max_length=200)
+                description = models.TextField()
+                allergen = models.ManyToManyField(Allergen, blank=True)
+                tasting_order = models.PositiveIntegerField(
+                    null=True,
+                    blank=True,
+                    help_text="Order for tasting menu (1 = first course)"
+                )
 
-            class Meta:
-                ordering = ['category', 'name']
+                class Meta:
+                    ordering = ['category', 'name']
 
 I also updated the view to ensure that this was reflected on the website: 
 
 Code before change: 
-        def menu(request):
-            menu_items = {
-                'entrees': MenuItem.objects.filter(category='Entree'),
-                'mains': MenuItem.objects.filter(category='Main'),
-                'side': MenuItem.objects.filter(category='Side'),
-                'desserts': MenuItem.objects.filter(category='Dessert'),
-                'tasting': MenuItem.objects.filter(category='Tasting'),
-            }
-            return render(
-                request, 'menu/menu.html', 
-                {'menu_items': menu_items})
+            def menu(request):
+                menu_items = {
+                    'entrees': MenuItem.objects.filter(category='Entree'),
+                    'mains': MenuItem.objects.filter(category='Main'),
+                    'side': MenuItem.objects.filter(category='Side'),
+                    'desserts': MenuItem.objects.filter(category='Dessert'),
+                    'tasting': MenuItem.objects.filter(category='Tasting'),
+                }
+                return render(
+                    request, 'menu/menu.html', 
+                    {'menu_items': menu_items})
 
 Code after change 
-        def menu(request):
-            menu_items = {
-                'entrees': MenuItem.objects.filter(category='Entree'),
-                'mains': MenuItem.objects.filter(category='Main'),
-                'side': MenuItem.objects.filter(category='Side'),
-                'desserts': MenuItem.objects.filter(category='Dessert'),
-                'tasting': MenuItem.objects.filter(category='Tasting').order_by('tasting_order'),
-            }
-            return render(
-                request, 'menu/menu.html', 
-                {'menu_items': menu_items})
+            def menu(request):
+                menu_items = {
+                    'entrees': MenuItem.objects.filter(category='Entree'),
+                    'mains': MenuItem.objects.filter(category='Main'),
+                    'side': MenuItem.objects.filter(category='Side'),
+                    'desserts': MenuItem.objects.filter(category='Dessert'),
+                    'tasting': MenuItem.objects.filter(category='Tasting').order_by('tasting_order'),
+                }
+                return render(
+                    request, 'menu/menu.html', 
+                    {'menu_items': menu_items})
 
 
             def tasting_menu(request): 
@@ -346,56 +413,59 @@ Code after change
 And finally I also updated the admin to make it easier for staff and administrative members to update the individual order of the tasting menu without impacting the A La Carte:
 
 Code before the change:
-        @admin.register(MenuItem)
-            class MenuItemAdmin(admin.ModelAdmin):
-                list_display = ('name', 'category')  
-                list_filter = ('category',)  
-                search_fields = ('name', 'description')  
-                filter_horizontal = ('allergen',)  
+            @admin.register(MenuItem)
+                class MenuItemAdmin(admin.ModelAdmin):
+                    list_display = ('name', 'category')  
+                    list_filter = ('category',)  
+                    search_fields = ('name', 'description')  
+                    filter_horizontal = ('allergen',)  
 
 Code after the change:
-        @admin.register(MenuItem)
-            class MenuItemAdmin(admin.ModelAdmin):
-                list_display = ('name', 'category', 'tasting_order')
-                list_editable = ('tasting_order',)
-                list_filter = ('category',)
-                ordering = ('category', 'tasting_order', 'name')
+            @admin.register(MenuItem)
+                class MenuItemAdmin(admin.ModelAdmin):
+                    list_display = ('name', 'category', 'tasting_order')
+                    list_editable = ('tasting_order',)
+                    list_filter = ('category',)
+                    ordering = ('category', 'tasting_order', 'name')
 
 
-Reservation
-Reservation time showing as midnight on all bookings
+### Reservation
+#### Reservation time showing as midnight on all bookings
 Whilst tweaking the administrative panel for reservations, I noticed that for some reason all of my bookings were coming up as midnight, though the date was correct. To fix this I 
 updated the reservation model, and split the time and the date so that this would show up correctly.
 
-Reservation date could change to past date
+#### Reservation date could change to past date
 I noticed that whilst customers couldn't immediately book a date in the past, this didn't stop the booker or the administrator being able to go in and change the booking seperately to the past. To combat this, I added an additional layer of validation at the model level which disabled customers from changing the date to the past. To do this I added the following code to the reservation model to ensure the data is sent cleanly:
 
-def clean(self):
-        """Prevent saving or editing reservations in the past."""
-        super().clean()
+            def clean(self):
+            """Prevent saving or editing reservations in the past."""
+            super().clean()
 
-        if self.reservation_date and self.time_slot:
-            try:
-                reservation_time = datetime.strptime(self.time_slot, "%H:%M").time()
-                reservation_datetime = datetime.combine(self.reservation_date, reservation_time)
-                reservation_datetime = timezone.make_aware(
-                    reservation_datetime,
-                    timezone.get_current_timezone()
-                )
+            if self.reservation_date and self.time_slot:
+                try:
+                    reservation_time = datetime.strptime(self.time_slot, "%H:%M").time()
+                    reservation_datetime = datetime.combine(self.reservation_date, reservation_time)
+                    reservation_datetime = timezone.make_aware(
+                        reservation_datetime,
+                        timezone.get_current_timezone()
+                    )
 
-                if reservation_datetime < timezone.now():
-                    raise ValidationError("Reservations cannot be set in the past.")
-            except ValueError:
-                raise ValidationError("Invalid time format for reservation.")
+                    if reservation_datetime < timezone.now():
+                        raise ValidationError("Reservations cannot be set in the past.")
+                except ValueError:
+                    raise ValidationError("Invalid time format for reservation.")
 
-    def save(self, *args, **kwargs):
-        """Ensure validation always runs when saving the model."""
-        self.full_clean()
-        super().save(*args, **kwargs)
+            def save(self, *args, **kwargs):
+                """Ensure validation always runs when saving the model."""
+                self.full_clean()
+                super().save(*args, **kwargs)
 
 And added the following code to the modal on the current reservations page:
 
-min="{{ today }}"
+                min="{{ today }}"
+
+## Developmental Bugs - Unsolved
+### Issue with CSS hiding tooltip on Reservation form 
 
 
 # Tools & Technologies Used
@@ -412,3 +482,4 @@ min="{{ today }}"
 * GitHub Issues
 * GitHub Projects Kanban Board
 * VSCode
+* Chat GPT for debugging assistance 
