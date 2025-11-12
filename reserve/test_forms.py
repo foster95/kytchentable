@@ -102,5 +102,3 @@ class TestReservationForm(TestCase):
             str(reservation_form.errors),
             msg='Phone number validation error not found in form errors.'
         )
-
-        

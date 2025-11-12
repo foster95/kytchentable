@@ -26,7 +26,7 @@ class TestMenuItemModel(TestCase):
         )
 
         with self.assertRaises(ValidationError):
-            item.full_clean() 
+            item.full_clean()
 
     def test_menu_item_allergens_relationship(self):
         """Test that MenuItem can have multiple allergens associated"""
@@ -42,4 +42,3 @@ class TestMenuItemModel(TestCase):
 
         self.assertIn(allergen1, item.allergen.all())
         self.assertIn(allergen2, item.allergen.all())
-
