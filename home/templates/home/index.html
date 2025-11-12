@@ -1,19 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<main>
 
 <!-- Hero Section -->
 
 {% if hero %}
-<div id="hero-image" style="background-image: url('{{ hero.image.url }}');">
+<section id="hero-section">
+<div id="hero-image" style="background-image: url('{{ hero.image.url }}');" role="img" aria-label="A plate of food on a table setting">
     <div class="hero-text">
         <p id="hero-subtitle">Welcome to Our Kitchen</p>
     </div>
 </div>
+</section>
 {% endif %}
 
 <!-- Main Content -->
 
+<section id="main-content">
 <div class="container">
     <div class="row mt-4">
         <div class="col text-center">
@@ -37,10 +41,11 @@
                 </div>
         </div>
     </div>
+    </section>
 
     <!-- Gallery Section -->
      
-    
+    <section id="gallery-section">
     <div class="row mt-2 mb-3">
         <div class="col text-center">
             <h2>Gallery</h2>
@@ -48,7 +53,7 @@
         </div>
 
         {% if gallery %}
-        <div id="heroCarousel" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="4000">
+        <div id="heroCarousel" class="carousel slide mb-4" data-bs-ride="carousel" aria-label="Restaurant gallery carousel" aria-live="polite" data-bs-interval="4000">
             <div class="carousel-inner">
                 {% for slide in gallery %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
@@ -70,6 +75,7 @@
         {% endif %}
     </div>
 </div>
+</section>
+</main>
 
-
-{% endblock content %}  
+{% endblock content %}
