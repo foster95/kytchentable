@@ -78,16 +78,17 @@ class Reservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     guest_name = models.CharField(max_length=100, blank=True, null=True)
     guest_phone = models.CharField(
-    max_length=20,
-    blank=False,
-    null=False,
-    validators=[
-        RegexValidator(
-            r'^\+?[0-9\s\-\(\)]{7,20}$',
-            "Please enter a valid phone number"
+        max_length=20,
+        blank=False,
+        null=False,
+        validators=[
+            RegexValidator(
+                r'^\+?[0-9\s\-\(\)]{7,20}$',
+                "Please enter a valid phone number"
+                ),
+            ],
         )
-    ]
-)
+
     guest_email = models.EmailField(max_length=254, blank=True, null=True)
     reservation_date = models.DateField()
     time_slot = models.CharField(max_length=10, choices=TIME_SLOTS)

@@ -41,7 +41,11 @@ Allow guest to update booking
 def update_reservation(request):
     if request.method == "POST":
         booking_id = request.POST.get("booking_id")
-        booking = get_object_or_404(Reservation, id=booking_id, user=request.user)
+        booking = get_object_or_404(
+            Reservation,
+            id=booking_id,
+            user=request.user
+            )
 
         try:
             booking.guest_name = request.POST.get("guest_name")
@@ -58,7 +62,7 @@ def update_reservation(request):
             booking.full_clean()
             booking.save()
 
-            return JsonResponse({ "success": True })
+            return JsonResponse({"success": True})
 
         except ValidationError as e:
             return JsonResponse({
@@ -68,15 +72,18 @@ def update_reservation(request):
                     "guest_name": request.POST.get("guest_name", ""),
                     "guest_email": request.POST.get("guest_email", ""),
                     "guest_phone": request.POST.get("guest_phone", ""),
-                    "reservation_date": request.POST.get("reservation_date", ""),
+                    "reservation_date": request.POST.get(
+                        "reservation_date", ""),
                     "time_slot": request.POST.get("time_slot", ""),
-                    "number_of_guests": request.POST.get("number_of_guests", ""),
-                    "special_requests": request.POST.get("special_requests", ""),
+                    "number_of_guests": request.POST.get(
+                        "number_of_guests", ""),
+                    "special_requests": request.POST.get(
+                        "special_requests", ""),
                     "allergies": request.POST.getlist("allergies"),
                 }
             })
 
-        
+
 """
 Allow guest to delete reservation
 """

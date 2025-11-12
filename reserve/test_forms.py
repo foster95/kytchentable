@@ -11,7 +11,8 @@ class TestReservationForm(TestCase):
 
     def setUp(self):
         """Create test user and allergen"""
-        self.user = User.objects.create_user(username="testuser", password="password123")
+        self.user = User.objects.create_user(
+            username="testuser", password="password123")
         self.allergen = Allergen.objects.create(name="Test Allergen")
 
     def test_form_is_valid(self):
@@ -44,7 +45,7 @@ class TestReservationForm(TestCase):
 
     def test_form_is_invalid_due_to_overbooking(self):
         """ Tests if overbooking raises a validation error"""
-        
+
         # Fill up all available tables
         for _ in range(Reservation.MAXIMUM_TABLES):
             Reservation.objects.create(
@@ -70,7 +71,9 @@ class TestReservationForm(TestCase):
         })
 
         # Expect form to be invalid (overbooking triggered)
-        self.assertFalse(reservation_form.is_valid(), msg='Form should be invalid due to overbooking.')
+        self.assertFalse(
+            reservation_form.is_valid(),
+            msg='Form should be invalid due to overbooking.')
 
         # Check that the correct message appears
         self.assertIn(
@@ -79,3 +82,25 @@ class TestReservationForm(TestCase):
             msg='Overbooking error message not found in form errors.'
         )
 
+    def test_phone_number_validation(self):
+        """Tests phone number validation in reservation form"""
+        reservation_form = ReservationForm({
+            'guest_name': 'Test',
+            'guest_email': 'test@example.com',
+            'guest_phone': 'invalid-phone',
+            'reservation_date': date.today().strftime("%Y-%m-%d"),
+            'time_slot': '18:00',
+            'number_of_guests': 2,
+            'allergies': [self.allergen.id],
+            'special_requests': ''
+        })
+        self.assertFalse(
+            reservation_form.is_valid(),
+            msg='Form is valid despite invalid phone number')
+        self.assertIn(
+            'Enter a valid phone number.',
+            str(reservation_form.errors),
+            msg='Phone number validation error not found in form errors.'
+        )
+
+        

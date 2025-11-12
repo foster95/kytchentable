@@ -4,6 +4,7 @@ from django.contrib import messages
 from .forms import ReservationForm
 from .models import Reservation
 
+
 @login_required
 def reservation(request):
     reserve = Reservation.objects.all()
@@ -13,13 +14,14 @@ def reservation(request):
 
         if form.is_valid():
             reservation = form.save(commit=False)
-            reservation.user = request.user  
+            reservation.user = request.user
             reservation.save()
             form.save_m2m()
-            messages.success(request, 'Your reservation has been submitted successfully!')
+            messages.success(
+                request, 'Your reservation has been submitted successfully!')
             return redirect('reserve')
         else:
-            
+
             return render(request, 'reserve/reserve.html', {
                 'form': form,
                 'reservations': reserve

@@ -10,8 +10,8 @@ class TestMyReservationsPage(TestCase):
     """ Tests for my reservations page """
     def setUp(self):
         """ Create test user and reservations """
-        self.user =
-        User.objects.create_user(username="testuser", password="password123")
+        self.user = User.objects.create_user(
+            username="testuser", password="password123")
         self.client.login(username="testuser", password="password123")
 
     def test_my_account_page_shows_upcoming_reservations(self):
