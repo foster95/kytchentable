@@ -243,14 +243,17 @@ The reservation button automatically redirects users to the reservation form pag
 Our Philosophy is the simplest app of all of the apps, and doesn't utilise any models. The page is comprised of copy and a series of images. These images have been hardcoded to the website rather than running through models as these photos will not change like the hero and carousel could. The page has been designed with Bootstrap assistance, and uses columns to show the information responsively. On mobiles and tablets the information displays stacked in a column but on desktops the page stretches out to display the information more dynamically, showing information then a photo in alternating rows:
 
 Rooted in the land: 
+
         <div class="row align-items-center mb-4">
             <div class="col-12 col-md-6">
 
 Rhythm of the Season:
+
         <div class="row align-items-center mb-4 flex-md-row-reverse">
             <div class="col-12 col-md-6">
 
 Refined, Not Restricted:
+
         <div class="row align-items-center mb-4">
             <div class="col-12 col-md-6">
 
@@ -581,7 +584,7 @@ During development I noticed an issue where the logo font size directly impacted
             display: flex;
             align-items: center;            
             height: 40px;        
-}
+            }
 
 ### Menu
 #### Allergen picker in Django Administration

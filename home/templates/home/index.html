@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main>
 
 <!-- Hero Section -->
 
@@ -16,36 +15,38 @@
 {% endif %}
 
 <!-- Main Content -->
-
 <section id="main-content">
-<div class="container">
-    <div class="row mt-4">
-        <div class="col text-center">
-            <h2>Come Home to the Table</h2>
-            <div class="text-center"><p>At Kytchen Table, we believe the kitchen table is the heart of every 
-                home, a place where everyone is truly welcome to gather, share, and belong. 
-                We invite you to experience our deep connection to the land and the local community.</p>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col text-center">
+                <h2>Come Home to the Table</h2>
+                <div class="text-center">
+                    <p>At Kytchen Table, we believe the kitchen table is the heart of every 
+                        home, a place where everyone is truly welcome to gather, share, and belong. 
+                        We invite you to experience our deep connection to the land and the local community.</p>
 
-                <p>Our menu is a celebration of honest, nourishing flavours, built entirely on farm-to-table
-                ingredients sourced from our trusted local partners. Taste the difference that true 
-                seasonality makes in every comforting dish, crafted with care and a deep commitment 
-                to sustainable, ethical farming.</p>        
+                    <p>Our menu is a celebration of honest, nourishing flavours, built entirely on farm-to-table
+                        ingredients sourced from our trusted local partners. Taste the difference that true 
+                        seasonality makes in every comforting dish, crafted with care and a deep commitment 
+                        to sustainable, ethical farming.</p>        
 
-                <p>Here at Kytchen Table, we view our space as a venue for unpretentious excellence and
-                distinguished hosting. The cuisine is restorative, the atmosphere is one of sophisticated 
-                ease, and every shared meal cultivates a deeply settled feeling of belonging.</p>
+                    <p>Here at Kytchen Table, we view our space as a venue for unpretentious excellence and
+                        distinguished hosting. The cuisine is restorative, the atmosphere is one of sophisticated 
+                        ease, and every shared meal cultivates a deeply settled feeling of belonging.</p>
 
-                <p><em>Welcome to our table. Welcome home.</em></p>
+                    <p><em>Welcome to our table. Welcome home.</em></p>
 
-                <p><a href="{% url 'reserve' %}" class="btn btn-dark reservation-button">Reserve a Table</a></p>
-                </div>
-        </div>
-    </div>
-    </section>
+                    <p><a href="{% url 'reserve' %}" class="btn btn-dark reservation-button">Reserve a Table</a></p>
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+</section>
 
-    <!-- Gallery Section -->
+
+<!-- Gallery Section -->
      
-    <section id="gallery-section">
+<section id="gallery-section">
     <div class="row mt-2 mb-3">
         <div class="col text-center">
             <h2>Gallery</h2>
@@ -74,8 +75,6 @@
         </div>
         {% endif %}
     </div>
-</div>
 </section>
-</main>
 
 {% endblock content %}
