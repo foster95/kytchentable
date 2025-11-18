@@ -111,10 +111,13 @@ I used Balsamiq to create mobile and desktop wireframes for Kytchen Table:
 Kytchen Table is a luxury restaurant, modelled after the typical website of a Michelin starred restaurant, which I looked into prior to beginning the project as a form of research. The website therefore, should mirror this as a luxury, sleek website which is not litered with images, and has a consistent colour palette across the website which is mirrored in the logo design and tied together with a cohesive set of fonts. 
 
 ### Kytchen Table Colour Palette
+#### Original Palette
 ![Ktychen Table Colour Palette](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-colour-palette.png)
 
+#### Refined Palette upon website build
+
 ### Kytchen Table Logo
-![Kytchen Table Logo/Watermark](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-wordmark.png)
+![Kytchen Table Wordmark](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-wordmark.png)
 
 ### Kytchen Table Branded Fonts
 To figure out the best font pairings I used the Our Own Thing font pairing website, which allowed me to look through all of the fonts available through Google Fonts and choose. As a result, the following fonts were chosen:
@@ -252,22 +255,317 @@ Refined, Not Restricted:
             <div class="col-12 col-md-6">
 
 ## Menu
+The Menu app is compromised of two models - one for the menu item itself and one for the allergens in each item. The menu has been split across two different options - an Ala Carte and a Tasting Menu which have been created as categories within the model. Along with this, the admin panel has been coded to ensure that the menu items can be displayed and edited along with their title, description and category filter. The allergies have been set so that the Superadmin can create the menus in the back administrative system and these can then be applied to each individual item. Each item can be edited, removed and deleted by the Superadmin but not by a general user. Equally, allergens can also be added, deleted and ammended. 
+
+The menus have been styled using Bootstraps pills system, to give users the opportunity to flick between the full Tasting Menu and the A La Carte. Within the A La Carte pills users are given the further option to choose between Starts, Mains, Sides and Deserts breaking down the information in a clear, readable fashion and avoiding information overload. Users can also see the allergens for each food, as this has been pulled through from the model and admin panel and these are organised by alphabetical order, along with the titles of each dish. As the Tasting Menu operates on a different ordering system and cannot be alphabetised, the Superadmin can number each item on a 1-7 numbering system which categorises the dishes to show accordingly. 
+
+            CATEGORY_CHOICES = [
+                ('Entree', 'Entree'),
+                ('Main', 'Main Course'),
+                 ('Side', 'Side Dish'),
+                ('Dessert', 'Dessert'),
+                ('Tasting', 'Tasting Menu'),
+            ]
+
+
+            class Allergen(models.Model):
+                name = models.CharField(max_length=50)
+
+                class Meta:
+                    ordering = ['name']
+
+                def __str__(self):
+                    return self.name
+
+
+            class MenuItem(models.Model):
+
+                """
+                Stores information about a menu item.
+                """
+
+                category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+                name = models.CharField(max_length=200)
+                description = models.TextField()
+                allergen = models.ManyToManyField(Allergen, blank=True)
+                tasting_order = models.PositiveIntegerField(
+                    null=True,
+                    blank=True,
+                    help_text="Order for tasting menu (1 = first course)"
+                )
+
+                class Meta:
+                    ordering = ['category', 'name']
+
+                def __str__(self):
+                    return self.name
 
 ## Reservation Form 
+The reservation form can only be accessed by registered users and upon a user clicking on "Make a Reservation" they are redirected to the account sign in page. Upon signing into their account, the full form is then shown. The form is built off one main model which includes time slots for the booking, and requires users to provide a guest name, a guest phone number, a guest email and their reservation details - the date they wish to make the reservation for and the timeslot they wish to book. Registered users are then given the option to complete the optional 'Allergies' section and 'Special Requests' sections. Upon confirming their reservation, the registered user is shown a green alert stating "Your reservation has been submitted succesfully!" informing the user that the reservation form has been sent to the website admin. To avoid overbooking, the model also includes a maximum figure so that once 15 tables have been booked in each slot, a registered user cannot book anymore in that slot.
 
-## View Upcoming Reservations
+Regarding CRUD functionality, this ensures that the website meets the Create requirements. 
+
+To ensure that the validation is watertight, the model and form include validation. Unfortunately this seems to have unearthed a minor bug where the HTML tooltip does not show - details of this can be found below in the unsolved bugs section. 
+
+            class Reservation(models.Model):
+
+                # Options for number of guests from 1 to 7
+                NO_GUESTS = [(i, str(i)) for i in range(1, 7)]
+
+                TIME_SLOTS = [
+                    ('10:00', '10:00'),
+                    ('10:15', '10:15'),
+                    ('10:30', '10:30'),
+                    ('10:45', '10:45'),
+                    ('11:00', '11:00'),
+                    ('11:15', '11:15'),
+                    ('11:30', '11:30'),
+                    ('11:45', '11:45'),
+                    ('12:00', '12:00'),
+                    ('12:15', '12:15'),
+                    ('12:30', '12:30'),
+                    ('12:45', '12:45'),
+                    ('13:00', '13:00'),
+                    ('13:15', '13:15'),
+                    ('13:30', '13:30'),
+                    ('13:45', '13:45'),
+                    ('14:00', '14:00'),
+                    ('14:15', '14:15'),
+                    ('14:30', '14:30'),
+                    ('14:45', '14:45'),
+                    ('15:00', '15:00'),
+                    ('15:15', '15:15'),
+                    ('15:30', '15:30'),
+                    ('15:45', '15:45'),
+                    ('16:00', '16:00'),
+                    ('16:15', '16:15'),
+                    ('16:30', '16:30'),
+                    ('16:45', '16:45'),
+                    ('17:00', '17:00'),
+                    ('17:15', '17:15'),
+                    ('17:30', '17:30'),
+                    ('17:45', '17:45'),
+                    ('18:00', '18:00'),
+                    ('18:15', '18:15'),
+                    ('18:30', '18:30'),
+                    ('18:45', '18:45'),
+                    ('19:00', '19:00'),
+                    ('19:15', '19:15'),
+                    ('19:30', '19:30'),
+                    ('19:45', '19:45'),
+                    ('20:00', '20:00'),
+                    ('20:15', '20:15'),
+                    ('20:30', '20:30'),
+                    ('20:45', '20:45'),
+                    ('21:00', '21:00'),
+                    ('21:00', '21:00'),
+                    ('21:30', '21:00'),
+                    ('21:45', '21:45'),
+                    ('22:00', '22:00'),
+                    ('22:15', '22:15'),
+                ]
+
+                MAXIMUM_TABLES = 15
+
+                user = models.ForeignKey(User, on_delete=models.CASCADE)
+                guest_name = models.CharField(max_length=100)
+                guest_phone = models.CharField(
+                    max_length=20,
+                    validators=[
+                        RegexValidator(
+                            r'^\+?[0-9\s\-\(\)]{7,20}$',
+                            "Please enter a valid phone number"
+                            ),
+                        ],
+                    )
+
+                guest_email = models.EmailField(max_length=254,)
+                reservation_date = models.DateField()
+                time_slot = models.CharField(max_length=10, choices=TIME_SLOTS)
+                number_of_guests = models.PositiveIntegerField(choices=NO_GUESTS)
+                allergies = models.ManyToManyField(Allergen, blank=True)
+                special_requests = models.TextField(blank=True, null=True)
+                created_at = models.DateTimeField(default=timezone.now)
+
+                class Meta:
+                    ordering = ['reservation_date', 'time_slot']
+
+                def __str__(self):
+                    return (
+                        f"Reservation for {self.user} on"
+                        f"{self.reservation_date} for {self.number_of_guests} guests"
+                    )
+
+                def clean(self):
+                     """Prevent saving or editing reservations
+                        in the past or overbooking."""
+                        super().clean()
+
+                    if self.reservation_date and self.time_slot:
+                        try:
+                            reservation_time = datetime.strptime(
+                                self.time_slot, "%H:%M").time()
+                            reservation_datetime = datetime.combine(
+                                self.reservation_date, reservation_time)
+                            reservation_datetime = timezone.make_aware(
+                                reservation_datetime,
+                                timezone.get_current_timezone()
+                            )
+
+                            if reservation_datetime < timezone.now():
+                                raise ValidationError(
+                                    "Reservations cannot be set in the past.")
+                        except ValueError:
+                            raise ValidationError("Invalid time format for reservation.")
+
+                    # Prevent overbooking more than MAXIMUM_TABLES
+                        existing_count = Reservation.objects.filter(
+                            reservation_date=self.reservation_date,
+                            time_slot=self.time_slot
+                        ).exclude(id=self.id).count()
+
+                        if existing_count >= self.MAXIMUM_TABLES:
+                            raise ValidationError(
+                                "Sorry, all tables are booked for this time slot.")
+
+                def save(self, *args, **kwargs):
+                     """Ensure validation always runs when saving the model."""
+                    self.full_clean()
+                    super().save(*args, **kwargs)
+
+## View My Reservations
+The 'View My Reservations' page has gone through a fair few iterations and for the purposes of the MVP this is the simplest version of the page. A future version of the page would turn this from simply displaying future bookings to a full account page, including a profile picture and more details about the user including birthdays so that the restaurant can reach out and offer birthday discounts etc and a section for the user to update their details, and password, as well as display past bookings up to a certain point. For the purposes of this project however, I decided to simply keep the page as a 'My Reservations' page, showing a registered user their upcoming reservations by date. 
+
+If a user wishes to make any ammendments to their booking they can either 'Edit Reservation' or 'Delete Reservation', providing the registered user CRUD functionality. Depending on what the user wants to do, this will launch a modal (details of these features can be found below). If any amendments are made to the reservation, all changes also show in the admin panel in real time, and the Superadmin can make changes to the reservation which are reflected in the users reservations details.  
 
 ## Edit Upcoming Reservations Modal
+The edit reservation modal uses Javascript and HTML to trigger. If a registered user chooses to Edit their reservation, the modal will pull up all the details of the booking, which the JavaScript script prepopulates with all of the information from the reservation request. If the user updates any of the details within the reservation this is updated on the Django Administrative panel. Equally, if the Superadmin updates something in the admin panel, this will show in the updated modal information. This serves as part of CRUD functionality - Read and Update
+
+            <div class="modal fade" id="editReservationModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <form id="edit-reservation-form" method="post" action="{% url 'update_reservation' %}">
+                            {% csrf_token %}
+
+                            <input type="hidden" name="booking_id" id="booking_id">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title">Edit Reservation</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <div id="modal-errors" class="mb-3"></div>
+
+                                <label>Name</label>
+                                <input type="text" class="form-control mb-3" id="id_guest_name" name="guest_name" required>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" id="id_guest_email" name="guest_email" required>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label>Phone</label>
+                                    <input type="tel" 
+                                        class="form-control"
+                                        id="id_guest_phone"
+                                        name="guest_phone"
+                                        required
+                                        pattern="^\+?[0-9\s\-\(\)]{7,20}$"
+                                        title="Please enter a valid phone number.">
+                                </div>
+                            </div>
+
+                            <label>Date</label>
+                            <input type="date" class="form-control mb-3" id="id_date" name="reservation_date" required>
+
+                            <label>Time Slot</label>
+                            <select class="form-select mb-3" id="id_time_slot" name="time_slot">
+                                {% for time, label in TIME_SLOTS %}
+                                    <option value="{{ time }}">{{ label }}</option>
+                                {% endfor %}
+                            </select>
+
+                            <label>Guests</label>
+                            <select class="form-select mb-3" id="id_guests" name="number_of_guests">
+                                {% for count, label in NO_GUESTS %}
+                                    <option value="{{ count }}">{{ label }}</option>
+                                {% endfor %}
+                            </select>
+
+                            <label class="mt-3 d-block">Allergies</label>
+                            <div class="row row-cols-2" id="id_allergens">
+                                {% for allergen in allergens %}
+                                <div class="col form-check">
+                                    <input type="checkbox"
+                                        class="form-check-input allergy-checkbox"
+                                        name="allergies"
+                                        id="allergen_{{ allergen.id }}"
+                                        value="{{ allergen.id }}">
+                                    <label class="form-check-label" for="allergen_{{ allergen.id }}">{{ allergen.name }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="text-end mt-2">
+                            <button type="button" id="clear-allergies-button" class="btn btn-sm btn-outline-secondary">
+                                Clear all
+                            </button>
+                        </div>
+
+                        <label class="mt-3">Special Requests</label>
+                            <textarea class="form-control" id="id_special_requests" name="special_requests"></textarea>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-dark">Save changes</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
 
 ## Delete Upcoming Reservations Modal
+The delete reservation modal is even simpler, launching a modal which asks the user to confirm a second time that they absolutely want to delete the reservation. Upon the reservation being deleted, the reservation is removed from the Django Administrative panel and no longer appears in the registered user's upcoming reservations. This serves the second half of CRUD functionality - delete. 
+
+            <!-- DELETE MODAL -->
+                <div class="modal fade" id="deleteReservationModal" tabindex="-1">
+                    <div class="modal-dialog">
+                         <div class="modal-content">
+                            <form id="delete-form" method="post">
+                                {% csrf_token %}
+                                <div class="modal-body text-center">
+                                    <p>Are you sure you want to delete this reservation?</p>
+                                </div>
+                                <div class="modal-footer justify-content-center">
+                                    <button type="submit" class="btn btn-danger">Yes, delete</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
 ## Sign Up
+Kytchen Table uses standard Allauth authentication though the sign up page itself has been stylised to match the rest of the website's aesthetic. The form uses standard CSRF protection and once signed up the user is redirected back to the homepage.
 
 ## Sign In
+Allauth authentication is also used on the login page, and once the user has logged in they are also redirected to the home page. To show the user that they have logged in, a green Bootstrap alert appears at the top of the website stating the user has logged in, however this disappears when the user reloads the page. To ensure that the user knows that they are logged in the entire time, there is a small login indicator that sits underneath the navigation bar which states "You are signed in as (username)". 
 
-## Log Out
+## Sign Out
+If the user wishes to log out of the website, they can click the Sign Out button in the navigation bar. Upon clicking this, they will be taken to a page that will ask the user to reconfirm that they would like to sign out to avoid accidentally signing out of the account without further confirmation. If the user clicks this, they will be taken to a succesful sign out page, where the user will be told they have signed out and a green Bootstrap alert will also indicate the user has been logged out. 
 
-## Error Messages
+
+# Future Features
+A future version of this website would include functionality on the reservation form to warn and bar users from being able to make a booking when the restaurant is closed. Additionally, the future version of this website would build out the 'My Reservations' page further, turning it into a 'My Account' page where users could provide a profile picture, their birthday, their allergy preferences, and provide reviews. 
 
 ## Developmental Bugs - Solved
 ### Base.html
@@ -376,6 +674,7 @@ Code after change:
 I also updated the view to ensure that this was reflected on the website: 
 
 Code before change: 
+
             def menu(request):
                 menu_items = {
                     'entrees': MenuItem.objects.filter(category='Entree'),
@@ -388,7 +687,8 @@ Code before change:
                     request, 'menu/menu.html', 
                     {'menu_items': menu_items})
 
-Code after change 
+Code after change:
+
             def menu(request):
                 menu_items = {
                     'entrees': MenuItem.objects.filter(category='Entree'),
@@ -413,6 +713,7 @@ Code after change
 And finally I also updated the admin to make it easier for staff and administrative members to update the individual order of the tasting menu without impacting the A La Carte:
 
 Code before the change:
+
             @admin.register(MenuItem)
                 class MenuItemAdmin(admin.ModelAdmin):
                     list_display = ('name', 'category')  
@@ -421,6 +722,7 @@ Code before the change:
                     filter_horizontal = ('allergen',)  
 
 Code after the change:
+
             @admin.register(MenuItem)
                 class MenuItemAdmin(admin.ModelAdmin):
                     list_display = ('name', 'category', 'tasting_order')
