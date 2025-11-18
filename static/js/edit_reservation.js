@@ -1,6 +1,9 @@
-// ===========================
-// EDIT RESERVATION (AJAX)
-// ===========================
+/* jshint esversion: 6 */
+/* global bootstrap */
+
+// 
+// edit reservation using AJAX
+//
 document.addEventListener("DOMContentLoaded", function () {
 
     const editButtons = document.querySelectorAll(".edit-btn");
@@ -21,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const allergyBoxes = modalEl.querySelectorAll(".allergy-checkbox");
     const clearBtn = modalEl.querySelector("#clear-allergies-button");
 
-    // -------------------------------------------------
-    // PREFILL WHEN "EDIT" IS CLICKED
-    // -------------------------------------------------
+    // 
+    // Pre-populate fields on edit button click
+    // 
     editButtons.forEach(btn => {
         btn.addEventListener("click", function () {
 
@@ -40,9 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Allergies
             allergyBoxes.forEach(cb => cb.checked = false);
 
-            const allergies = this.dataset.allergies
-                ? this.dataset.allergies.split(",")
-                : [];
+            const allergies = this.dataset.allergies ? this.dataset.allergies.split(",") : [];
 
             allergies.forEach(id => {
                 const box = modalEl.querySelector(`#allergen_${id}`);
@@ -51,18 +52,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // -------------------------------------------------
-    // CLEAR ALLERGIES
-    // -------------------------------------------------
+    // 
+    // Clear all allergy checkboxes
+    // 
     if (clearBtn) {
         clearBtn.addEventListener("click", () => {
             allergyBoxes.forEach(cb => (cb.checked = false));
         });
     }
 
-    // -------------------------------------------------
-    // AJAX SAVE
-    // -------------------------------------------------
+    // 
+    // AJAX save on form submit
+    // 
     editForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -94,12 +95,12 @@ document.addEventListener("DOMContentLoaded", function () {
                         );
                     });
                 });
-            })
+            });
     });
 
-    // -------------------------------------------------
-    // PREVENT PAST DATES
-    // -------------------------------------------------
+    // 
+    // Prevent past dates from being selected
+    //
     const setMinDate = () => {
         const today = new Date().toLocaleDateString("en-CA");
         dateField.setAttribute("min", today);
@@ -110,7 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Delete Modal
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const deleteButtons = document.querySelectorAll(".delete-btn");

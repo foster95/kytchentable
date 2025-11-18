@@ -1,3 +1,6 @@
+/* jshint esversion: 6 */
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('reservation-form');
   const dateInput = document.getElementById('id_reservation_date');

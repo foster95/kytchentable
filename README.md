@@ -20,7 +20,20 @@ Welcome to our table. Welcome home.
     * [User Stories](#user-stories)
     * [GitHub Issues](#github-issues)
     * [GitHub Projects](#github-projects)
-4. [Database Design](#database-design)    
+4. [Database Design](#database-design)
+5. [Features](#features)
+6. [Future Features](#future-features)
+7. [Testing](#testing)
+    * [HTML Validation](#html-validation)
+    * [CSS Validation](#css-validation)
+    * [Accessibility Testing](#accessibility-testing)
+    * [Lighthouse Testing](#lighthouse-testing)
+    * [JShint Validation](#jshint-validation)
+    * [PEP8 Validation](#pep8-validation)
+    * [Device Testing](#device-testing)
+    * [Automated Testing](#automated-testing)
+    * [Manual Testing](#manual-testing)
+
 
 [Tools & Technologies Used](#tools--technologies-used)
 
@@ -115,9 +128,10 @@ Kytchen Table is a luxury restaurant, modelled after the typical website of a Mi
 ![Ktychen Table Colour Palette](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-colour-palette.png)
 
 #### Refined Palette upon website build
+![Kytchen Table Revised Palette]()
 
 ### Kytchen Table Logo
-![Kytchen Table Wordmark](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-wordmark.png)
+![Kytchen Table Wordmark](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-watermark.png)
 
 ### Kytchen Table Branded Fonts
 To figure out the best font pairings I used the Our Own Thing font pairing website, which allowed me to look through all of the fonts available through Google Fonts and choose. As a result, the following fonts were chosen:
@@ -566,7 +580,6 @@ Allauth authentication is also used on the login page, and once the user has log
 ## Sign Out
 If the user wishes to log out of the website, they can click the Sign Out button in the navigation bar. Upon clicking this, they will be taken to a page that will ask the user to reconfirm that they would like to sign out to avoid accidentally signing out of the account without further confirmation. If the user clicks this, they will be taken to a succesful sign out page, where the user will be told they have signed out and a green Bootstrap alert will also indicate the user has been logged out. 
 
-
 # Future Features
 A future version of this website would include functionality on the reservation form to warn and bar users from being able to make a booking when the restaurant is closed. Additionally, the future version of this website would build out the 'My Reservations' page further, turning it into a 'My Account' page where users could provide a profile picture, their birthday, their allergy preferences, and provide reviews. 
 
@@ -771,6 +784,32 @@ And added the following code to the modal on the current reservations page:
 
 ## Developmental Bugs - Unsolved
 ### Issue with CSS hiding tooltip on Reservation form 
+
+# Testing
+## HTML Validation
+Using Nu HTML checker, I checked the validity of my HTML by direct input due to the project being deployed through Heroku. This returned with zero errors or warnings
+
+## CSS Validation
+I used the W3C CSS validator to check the validity of my CSS throughout the project. This returned with zero errors or warnings.
+
+## Accessibility Testing
+## Lighthouse Testing
+## JShint Validation
+I used JShint to validate the JS that I wrote for the project. Initially I ran into 46 warnings about the use of const and the undefined variable of Bootstrap, however to stop this from showing up I added the following at the top of my code:
+
+            /* jshint esversion: 6 */
+            /* global bootstrap */
+
+Upon adding this all of the warnings went away and the mention of Bootstrap as an unused variable also disappeared. 
+
+JShint Validation for edit_reservation.js
+
+JShint Validation for make_reservation.js
+
+## PEP8 Validation
+## Device Testing
+## Automated Testing
+## Manual Testing
 
 
 # Tools & Technologies Used
