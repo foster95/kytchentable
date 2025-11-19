@@ -797,28 +797,29 @@ I used the W3C CSS validator to check the validity of my CSS throughout the proj
 ![CSS Validation](https://github.com/foster95/kytchentable/blob/main/static/images/readme/css-validation.png)
 
 ## Accessibility Testing
+To check that the website was considered accessible, I used WAVE's accessibility checker. This checker raised one issue of contrast errors with the text used on top of the hero image not considered contrasting enough. Whilst I considered changing this to make it more contrasting, changing it made the statement much bolder on the page which made it stand out and ruin the overall sleek subtley of the message on top of the hero image. With that in mind I decided to not change the text colour to improve contrast as I felt that it would have more of a negative impact than a positive impact, and was ultimately minor in terms of the information it provided to a user. WAVE also alerted me that there was a redundant link as I had linked the website title, as well as having a "home" button. Again I decided to leave this as it was, to ensure there was no ambiguity for users when it came to returning to the home page. 
 
 ## Lighthouse Testing
 Device | Website Section | Lighthouse Result | Notes
 --- | --- | --- | ---
-Mobile | Home Page | ![Lighthouse Testing Mobile - Home](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-home.png) |
-Mobile | Our Philosophy | ![Lighthouse Testing Mobile - Our Philosophy](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-philosophy.png) |
+Mobile | Home Page | ![Lighthouse Testing Mobile - Home](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-home.png) | Some minor issues with performance and best practise due to the use of Cloudinary in hero image
+Mobile | Our Philosophy | ![Lighthouse Testing Mobile - Our Philosophy](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-philosophy.png) | Some minor issues with performance due to the presence of images on the page 
 Mobile | Menu | ![Lighthouse Testing Mobile - Menu](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-menu.png) |
 Mobile | Dine With Us | ![Lighthouse Testing Mobile - Make Reservation](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-make-reservation.png) |
 Mobile | My Reservations | ![Lighthouse Testing Mobile - My Reservations](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-my-reservations.png) |
 Mobile | Sign In | ![Lighthouse Testing Mobile - Sign In](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-sign-in.png) |
-Mobile | Sign Up | [Lighthouse Testing Mobile - Sign Up](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-sign-up.png) |
+Mobile | Sign Up | ![Lighthouse Testing Mobile - Sign Up](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-sign-up.png) |
 Mobile | Sign Out | ![Lighthouse Testing Mobile - Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-sign-out.png) |
 Mobile | Succesful Sign Out | ![Lighthouse Testing Mobile - Succesful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-succesful-sign-out.png) |
-Desktop | Home Page | ![Lighthouse Testing Desktop - Home](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-home.png) |
+Desktop | Home Page | ![Lighthouse Testing Desktop - Home](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-home.png) | Some minor issues with performance and best practise due to the use of Cloudinary in hero image
 Desktop | Our Philosophy | ![Lighthouse Testing Desktop - Our Philosophy](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-philosophy.png) |
-Desktop | Menu | [Lighthouse Testing Desktop - Menu](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-menu.png) |
+Desktop | Menu | ![Lighthouse Testing Desktop - Menu](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-menu.png) |
 Desktop | Dine With Us | ![Lighthouse Testing Desktop - Make Reservation](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-make-reservation.png) |
-Desktop | My Reservations | [Lighthouse Testing Desktop - My Reservations](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-my-reservations.png) |
-Desktop | Sign In | [Lighthouse Testing Desktop - Sign In](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-sign-in.png) |
-Desktop | Sign Up | [Lighthouse Testing Desktop - Sign Up](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-sign-up.png) |
-Desktop | Sign Out | [Lighthouse Testing Desktop - Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-sign-out.png) |
-Desktop | Succesful Sign Out | [Lighthouse Testing Desktop - Successful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-succesful-sign-out.png) |
+Desktop | My Reservations | ![Lighthouse Testing Desktop - My Reservations](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-my-reservations.png) |
+Desktop | Sign In | ![Lighthouse Testing Desktop - Sign In](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-sign-in.png) |
+Desktop | Sign Up | ![Lighthouse Testing Desktop - Sign Up](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-sign-up.png) |
+Desktop | Sign Out | ![Lighthouse Testing Desktop - Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-sign-out.png) |
+Desktop | Succesful Sign Out | ![Lighthouse Testing Desktop - Successful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-succesful-sign-out.png) |
 
 ## JShint Validation
 I used JShint to validate the JS that I wrote for the project. Initially I ran into 46 warnings about the use of const and the undefined variable of Bootstrap, however to stop this from showing up I added the following at the top of my code:
@@ -844,14 +845,14 @@ Home | urls.py | ![PEP8 - Home - urls.py](https://github.com/foster95/kytchentab
 Home | views.py | ![PEP8 - Home - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-home-views.png)
 Menu | admin.py | ![PEP8 - Menu - admin.py]()
 Menu | apps.py | ![PEP8 - Menu - apps.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-apps.png)
-Menu | models.py | ![PEP8 - Menu - models.py]
+Menu | models.py | ![PEP8 - Menu - models.py]()
 Menu | test_views.py | ![PEP8 - Menu - test_views.py]()
 Menu | urls.py |
 Menu | views.py | ![PEP8 - Menu - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-views.png)
 My_Reservations | apps.py | 
 My_Reservations | models.py | ![PEP8 - My_Reservations - models.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservations-models.png)
 My_Reservations | test_views.py | ![PEP8 - My_Reservations - test_views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservations-test-views.png)
-My_Reservations | urls.py ![PEP8 - My_Reservations - urls.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservations-url.png)
+My_Reservations | urls.py | ![PEP8 - My_Reservations - urls.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservations-url.png)
 My_Reservations | views.py | ![PEP8 - My_Reservations - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservation-views.png)
 Philosopy | apps.py | ![PEP8 - Philosophy - apps.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-philosophy-apps.png)
 Philosophy | urls.py | ![PEP8 - Philosophy - urls.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-philosophy-url.png)
@@ -860,7 +861,7 @@ Reserve | admin.py | ![PEP8 - Reserve - admin.py](https://github.com/foster95/ky
 Reserve | apps.py | ![PEP8 - Reserve - apps.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-apps.png)
 Reserve | forms.py | ![PEP8 - Reserve - forms.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-forms.png)
 Reserve | test_forms.py | ![PEP8 - Reserve - test_forms.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-test-forms.png)
-Reserve | test_views.py | [!PEP8 - Reserve - test_views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-test-views.png)
+Reserve | test_views.py | ![PEP8 - Reserve - test_views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-test-views.png)
 Reserve | urls.py | ![PEP8 - Reserve - urls.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-urls.png)
 Reserve | views.py |![PEP8 - Reserve - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-view.png)
 

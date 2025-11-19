@@ -10,8 +10,11 @@ def menu(request):
         'mains': MenuItem.objects.filter(category='Main'),
         'side': MenuItem.objects.filter(category='Side'),
         'desserts': MenuItem.objects.filter(category='Dessert'),
-        'tasting': MenuItem.objects.filter
-        (category='Tasting').order_by('tasting_order'),
+        'tasting': (
+            MenuItem.objects    
+            .filter(category='Tasting')
+            .order_by('tasting_order'),
+        ),
     }
     return render(
         request, 'menu/menu.html',

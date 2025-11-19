@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import philosophy
+from .views import menu
 
 urlpatterns = [
-    path('', philosophy, name='philosophy'),
+    path('', menu, name='menu'),
 ]
