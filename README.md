@@ -121,14 +121,14 @@ I used Balsamiq to create mobile and desktop wireframes for Kytchen Table:
 ![Desktop Wireframes Four](https://github.com/foster95/kytchentable/blob/main/static/images/readme/desktop-wireframes-set-four.png)
 
 ## Surface
-Kytchen Table is a luxury restaurant, modelled after the typical website of a Michelin starred restaurant, which I looked into prior to beginning the project as a form of research. The website therefore, should mirror this as a luxury, sleek website which is not litered with images, and has a consistent colour palette across the website which is mirrored in the logo design and tied together with a cohesive set of fonts. 
+Kytchen Table is a luxury restaurant, modelled after the typical website of a Michelin starred restaurant, which I looked into prior to beginning the project as a form of research. The website therefore, should mirror this as a luxury, sleek website which is not litered with images, and has a consistent colour palette across the website which is mirrored in the logo design and tied together with a cohesive set of fonts. Additionally I considered using some earthy greens within the palette as that referred back to the harmony the restaurant has with the land, however on development I found the green clashed and looked wrong when paired with the purples so I further revised the palette, closing in on shades of various purple for accents instead of the original planned green. 
 
 ### Kytchen Table Colour Palette
 #### Original Palette
 ![Ktychen Table Colour Palette](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-colour-palette.png)
 
 #### Refined Palette upon website build
-![Kytchen Table Revised Palette]()
+![Kytchen Table Revised Palette](https://github.com/foster95/kytchentable/blob/main/static/images/readme/revised-colour-palette.png)
 
 ### Kytchen Table Logo
 ![Kytchen Table Wordmark](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-watermark.png)
@@ -256,17 +256,17 @@ The reservation button automatically redirects users to the reservation form pag
 ## Our Philosophy
 Our Philosophy is the simplest app of all of the apps, and doesn't utilise any models. The page is comprised of copy and a series of images. These images have been hardcoded to the website rather than running through models as these photos will not change like the hero and carousel could. The page has been designed with Bootstrap assistance, and uses columns to show the information responsively. On mobiles and tablets the information displays stacked in a column but on desktops the page stretches out to display the information more dynamically, showing information then a photo in alternating rows:
 
-Rooted in the land: 
+### Rooted in the land: 
 
         <div class="row align-items-center mb-4">
             <div class="col-12 col-md-6">
 
-Rhythm of the Season:
+### Rhythm of the Season:
 
         <div class="row align-items-center mb-4 flex-md-row-reverse">
             <div class="col-12 col-md-6">
 
-Refined, Not Restricted:
+### Refined, Not Restricted:
 
         <div class="row align-items-center mb-4">
             <div class="col-12 col-md-6">
@@ -799,6 +799,26 @@ I used the W3C CSS validator to check the validity of my CSS throughout the proj
 ## Accessibility Testing
 
 ## Lighthouse Testing
+Device | Website Section | Lighthouse Result | Notes
+--- | --- | --- | ---
+Mobile | Home Page | |
+Mobile | Our Philosophy | |
+Mobile | Menu | |
+Mobile | Dine With Us | |
+Mobile | My Reservations | |
+Mobile | Sign In | |
+Mobile | Sign Up | |
+Mobile | Sign Out | |
+Mobile | Succesful Sign Out | |
+Desktop | Home Page | |
+Desktop | Our Philosophy | |
+Desktop | Menu | |
+Desktop | Dine With Us | |
+Desktop | My Reservations | |
+Desktop | Sign In | |
+Desktop | Sign Up | |
+Desktop | Sign Out | |
+Desktop | Succesful Sign Out | |
 
 ## JShint Validation
 I used JShint to validate the JS that I wrote for the project. Initially I ran into 46 warnings about the use of const and the undefined variable of Bootstrap, however to stop this from showing up I added the following at the top of my code:
@@ -808,13 +828,21 @@ I used JShint to validate the JS that I wrote for the project. Initially I ran i
 
 Upon adding this all of the warnings went away and the mention of Bootstrap as an unused variable also disappeared. 
 
-JShint Validation for edit_reservation.js
+### JShint Validation for edit_reservation.js
 ![JShint Validation for edit_reservation.js](https://github.com/foster95/kytchentable/blob/main/static/images/readme/jshint-validation-edit-reservation.png)
 
-JShint Validation for make_reservation.js
+### JShint Validation for make_reservation.js
 ![JShint Validation for make_reservation.js](https://github.com/foster95/kytchentable/blob/main/static/images/readme/jshint-validation-make-reservation.png)
 
 ## PEP8 Validation
+App | File | PEP8 Response
+--- | --- | ---
+Home | | 
+Philosopy | |
+Menu | | 
+Reserve | | 
+My_Reservations | |
+
 ## Device Testing
 ## Automated Testing
 ## Manual Testing
