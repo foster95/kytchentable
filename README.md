@@ -789,11 +789,17 @@ And added the following code to the modal on the current reservations page:
 ## HTML Validation
 Using Nu HTML checker, I checked the validity of my HTML by direct input due to the project being deployed through Heroku. This returned with zero errors or warnings
 
+![HTML Validation](https://github.com/foster95/kytchentable/blob/main/static/images/readme/html-validation.png)
+
 ## CSS Validation
 I used the W3C CSS validator to check the validity of my CSS throughout the project. This returned with zero errors or warnings.
 
+![CSS Validation](https://github.com/foster95/kytchentable/blob/main/static/images/readme/css-validation.png)
+
 ## Accessibility Testing
+
 ## Lighthouse Testing
+
 ## JShint Validation
 I used JShint to validate the JS that I wrote for the project. Initially I ran into 46 warnings about the use of const and the undefined variable of Bootstrap, however to stop this from showing up I added the following at the top of my code:
 
@@ -803,8 +809,10 @@ I used JShint to validate the JS that I wrote for the project. Initially I ran i
 Upon adding this all of the warnings went away and the mention of Bootstrap as an unused variable also disappeared. 
 
 JShint Validation for edit_reservation.js
+![JShint Validation for edit_reservation.js](https://github.com/foster95/kytchentable/blob/main/static/images/readme/jshint-validation-edit-reservation.png)
 
 JShint Validation for make_reservation.js
+![JShint Validation for make_reservation.js](https://github.com/foster95/kytchentable/blob/main/static/images/readme/jshint-validation-make-reservation.png)
 
 ## PEP8 Validation
 ## Device Testing
