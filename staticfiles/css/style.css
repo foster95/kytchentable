@@ -192,12 +192,52 @@ h3 {
 }
 
 /* Sign In/Sign Up/Sign Out styling */
+.login-page form,
+.signup-page form {
+    max-width: 450px;
+    margin: 0 auto;               
+    text-align: left;           
+}
+
+.signup-page h2,
+.login-page h1,
+.form-title {
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.signup-page p,
+.login-page p {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
 .login-page a,
 .signup-page a,
 .logout-page a,
 .logout-success-page a {
     color: var(--primary-color); 
     text-decoration: none; 
+}
+
+.signup-page input,
+.login-page input {
+    width: 100%;
+    height: 50px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--quaternary-color);
+    font-size: 1.1rem;
+}
+
+.signup-page button,
+.login-page button {
+    width: 100%;
+    border-radius: 6px;
+    padding: 12px;
+    font-weight: bold;
 }
 
 

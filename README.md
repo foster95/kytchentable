@@ -801,24 +801,24 @@ I used the W3C CSS validator to check the validity of my CSS throughout the proj
 ## Lighthouse Testing
 Device | Website Section | Lighthouse Result | Notes
 --- | --- | --- | ---
-Mobile | Home Page | |
-Mobile | Our Philosophy | |
-Mobile | Menu | |
-Mobile | Dine With Us | |
-Mobile | My Reservations | |
-Mobile | Sign In | |
-Mobile | Sign Up | |
-Mobile | Sign Out | |
-Mobile | Succesful Sign Out | |
-Desktop | Home Page | |
-Desktop | Our Philosophy | |
-Desktop | Menu | |
-Desktop | Dine With Us | |
-Desktop | My Reservations | |
-Desktop | Sign In | |
-Desktop | Sign Up | |
-Desktop | Sign Out | |
-Desktop | Succesful Sign Out | |
+Mobile | Home Page | ![Lighthouse Testing Mobile - Home](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-home.png) |
+Mobile | Our Philosophy | ![Lighthouse Testing Mobile - Our Philosophy](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-philosophy.png) |
+Mobile | Menu | ![Lighthouse Testing Mobile - Menu](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-menu.png) |
+Mobile | Dine With Us | ![Lighthouse Testing Mobile - Make Reservation](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-make-reservation.png) |
+Mobile | My Reservations | ![Lighthouse Testing Mobile - My Reservations](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-my-reservations.png) |
+Mobile | Sign In | ![Lighthouse Testing Mobile - Sign In](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-sign-in.png) |
+Mobile | Sign Up | [Lighthouse Testing Mobile - Sign Up](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-sign-up.png) |
+Mobile | Sign Out | ![Lighthouse Testing Mobile - Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-sign-out.png) |
+Mobile | Succesful Sign Out | ![Lighthouse Testing Mobile - Succesful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-succesful-sign-out.png) |
+Desktop | Home Page | ![Lighthouse Testing Desktop - Home](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-home.png) |
+Desktop | Our Philosophy | ![Lighthouse Testing Desktop - Our Philosophy](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-philosophy.png) |
+Desktop | Menu | [Lighthouse Testing Desktop - Menu](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-menu.png) |
+Desktop | Dine With Us | ![Lighthouse Testing Desktop - Make Reservation](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-make-reservation.png) |
+Desktop | My Reservations | [Lighthouse Testing Desktop - My Reservations](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-my-reservations.png) |
+Desktop | Sign In | [Lighthouse Testing Desktop - Sign In](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-sign-in.png) |
+Desktop | Sign Up | [Lighthouse Testing Desktop - Sign Up](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-sign-up.png) |
+Desktop | Sign Out | [Lighthouse Testing Desktop - Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-sign-out.png) |
+Desktop | Succesful Sign Out | [Lighthouse Testing Desktop - Successful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-succesful-sign-out.png) |
 
 ## JShint Validation
 I used JShint to validate the JS that I wrote for the project. Initially I ran into 46 warnings about the use of const and the undefined variable of Bootstrap, however to stop this from showing up I added the following at the top of my code:
@@ -837,16 +837,36 @@ Upon adding this all of the warnings went away and the mention of Bootstrap as a
 ## PEP8 Validation
 App | File | PEP8 Response
 --- | --- | ---
-Home | | 
-Philosopy | |
-Menu | | 
-Reserve | | 
-My_Reservations | |
+Home | admin.py |
+Home | apps.py | 
+Home | models.py | 
+Home | urls.py | 
+Home | views.py | 
+Philosopy | apps.py |
+Philosophy | urls.py
+Philosophy | views.py |
+Menus | admin.py |
+Menus | apps.py |
+Menus | models.py |
+Menus | test_views.py |
+Menus | urls.py |
+Menus | views.py
+Reserve | admin.py |
+Reserve | apps.py |
+Reserve | forms.py |
+Reserve | test_forms.py |
+Reserve | test_views.py |
+Reserve | urls.py
+Reserve | views.py 
+My_Reservations | apps.py |
+My_Reservations | models.py |
+My_Reservations | test_views.py |
+My_Reservations | urls.py
+My_Reservations | views.py
 
 ## Device Testing
 ## Automated Testing
 ## Manual Testing
-
 
 # Tools & Technologies Used
 * Balsamiq for wireframes
