@@ -837,32 +837,32 @@ Upon adding this all of the warnings went away and the mention of Bootstrap as a
 ## PEP8 Validation
 App | File | PEP8 Response
 --- | --- | ---
-Home | admin.py |
-Home | apps.py | 
-Home | models.py | 
-Home | urls.py | 
-Home | views.py | 
-Philosopy | apps.py |
-Philosophy | urls.py
-Philosophy | views.py |
-Menus | admin.py |
-Menus | apps.py |
-Menus | models.py |
-Menus | test_views.py |
-Menus | urls.py |
-Menus | views.py
-Reserve | admin.py |
-Reserve | apps.py |
-Reserve | forms.py |
-Reserve | test_forms.py |
-Reserve | test_views.py |
-Reserve | urls.py
-Reserve | views.py 
-My_Reservations | apps.py |
-My_Reservations | models.py |
-My_Reservations | test_views.py |
-My_Reservations | urls.py
-My_Reservations | views.py
+Home | admin.py | ![PEP8 - Home - admin.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-home-admin.png)
+Home | apps.py | ![PEP8 - Home - apps.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-home-apps.png)
+Home | models.py | ![PEP8 - Home - models.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-home-models.png)
+Home | urls.py | ![PEP8 - Home - urls.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-home-urls.png)
+Home | views.py | ![PEP8 - Home - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-home-views.png)
+Menu | admin.py | ![PEP8 - Menu - admin.py]()
+Menu | apps.py | ![PEP8 - Menu - apps.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-apps.png)
+Menu | models.py | ![PEP8 - Menu - models.py]
+Menu | test_views.py | ![PEP8 - Menu - test_views.py]()
+Menu | urls.py |
+Menu | views.py | ![PEP8 - Menu - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-views.png)
+My_Reservations | apps.py | 
+My_Reservations | models.py | ![PEP8 - My_Reservations - models.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservations-models.png)
+My_Reservations | test_views.py | ![PEP8 - My_Reservations - test_views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservations-test-views.png)
+My_Reservations | urls.py ![PEP8 - My_Reservations - urls.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservations-url.png)
+My_Reservations | views.py | ![PEP8 - My_Reservations - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservation-views.png)
+Philosopy | apps.py | ![PEP8 - Philosophy - apps.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-philosophy-apps.png)
+Philosophy | urls.py | ![PEP8 - Philosophy - urls.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-philosophy-url.png)
+Philosophy | views.py | ![PEP8 - Philosophy - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-philosophy-views.png)
+Reserve | admin.py | ![PEP8 - Reserve - admin.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-admin.png)
+Reserve | apps.py | ![PEP8 - Reserve - apps.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-apps.png)
+Reserve | forms.py | ![PEP8 - Reserve - forms.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-forms.png)
+Reserve | test_forms.py | ![PEP8 - Reserve - test_forms.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-test-forms.png)
+Reserve | test_views.py | [!PEP8 - Reserve - test_views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-test-views.png)
+Reserve | urls.py | ![PEP8 - Reserve - urls.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-urls.png)
+Reserve | views.py |![PEP8 - Reserve - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-view.png)
 
 ## Device Testing
 ## Automated Testing
