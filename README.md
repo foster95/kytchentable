@@ -799,7 +799,10 @@ I used the W3C CSS validator to check the validity of my CSS throughout the proj
 ## Accessibility Testing
 To check that the website was considered accessible, I used WAVE's accessibility checker. This checker raised one issue of contrast errors with the text used on top of the hero image not considered contrasting enough. Whilst I considered changing this to make it more contrasting, changing it made the statement much bolder on the page which made it stand out and ruin the overall sleek subtley of the message on top of the hero image. With that in mind I decided to not change the text colour to improve contrast as I felt that it would have more of a negative impact than a positive impact, and was ultimately minor in terms of the information it provided to a user. WAVE also alerted me that there was a redundant link as I had linked the website title, as well as having a "home" button. Again I decided to leave this as it was, to ensure there was no ambiguity for users when it came to returning to the home page. 
 
+![WAVE Testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/wave-validation.png)
+
 ## Lighthouse Testing
+
 Device | Website Section | Lighthouse Result | Notes
 --- | --- | --- | ---
 Mobile | Home Page | ![Lighthouse Testing Mobile - Home](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-home.png) | Some minor issues with performance and best practise due to the use of Cloudinary in hero image
@@ -845,11 +848,11 @@ Home | urls.py | ![PEP8 - Home - urls.py](https://github.com/foster95/kytchentab
 Home | views.py | ![PEP8 - Home - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-home-views.png)
 Menu | admin.py | ![PEP8 - Menu - admin.py]()
 Menu | apps.py | ![PEP8 - Menu - apps.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-apps.png)
-Menu | models.py | ![PEP8 - Menu - models.py]()
-Menu | test_views.py | ![PEP8 - Menu - test_views.py]()
-Menu | urls.py |
+Menu | models.py | ![PEP8 - Menu - models.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-models.png)
+Menu | test_views.py | ![PEP8 - Menu - test_views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-test-views.png)
+Menu | urls.py | ![PEP8 - Menu - urls.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-urls.png)
 Menu | views.py | ![PEP8 - Menu - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-views.png)
-My_Reservations | apps.py | 
+My_Reservations | apps.py | ![PEP8 - My_Reservations - apps.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservations-apps.png)
 My_Reservations | models.py | ![PEP8 - My_Reservations - models.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservations-models.png)
 My_Reservations | test_views.py | ![PEP8 - My_Reservations - test_views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservations-test-views.png)
 My_Reservations | urls.py | ![PEP8 - My_Reservations - urls.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-my-reservations-url.png)

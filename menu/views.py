@@ -13,7 +13,7 @@ def menu(request):
         'tasting': (
             MenuItem.objects    
             .filter(category='Tasting')
-            .order_by('tasting_order'),
+            .order_by('tasting_order')
         ),
     }
     return render(
