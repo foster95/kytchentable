@@ -846,7 +846,7 @@ Home | apps.py | ![PEP8 - Home - apps.py](https://github.com/foster95/kytchentab
 Home | models.py | ![PEP8 - Home - models.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-home-models.png)
 Home | urls.py | ![PEP8 - Home - urls.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-home-urls.png)
 Home | views.py | ![PEP8 - Home - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-home-views.png)
-Menu | admin.py | ![PEP8 - Menu - admin.py]()
+Menu | admin.py | ![PEP8 - Menu - admin.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-admin.png)
 Menu | apps.py | ![PEP8 - Menu - apps.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-apps.png)
 Menu | models.py | ![PEP8 - Menu - models.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-models.png)
 Menu | test_views.py | ![PEP8 - Menu - test_views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-menu-test-views.png)
@@ -871,6 +871,18 @@ Reserve | views.py |![PEP8 - Reserve - views.py](https://github.com/foster95/kyt
 ## Device Testing
 ## Automated Testing
 ## Manual Testing
+Home
+Test | Action | Expected Result | Actual Result
+--- | --- | --- | ---
+Homepage loads | User opens Kytchen Table | User opens Kytchen Table and is automatically taken to the main homepage | User opens Kytchen Table and is automatically taken to the main homepage 
+Logomark | User clicks on logomark to be taken to homepage | User can click on "Kytchen Table" and site will reload to home page | User can click on "Kytchen Table" and site reloads to home page
+Navigation Bar | Navigation bar is responsive | Navigation bar shows responsively as a drop down on mobiles and tablets and as a full navigation bar on desktops | Navigation bar shows responsively as a drop down on mobiles and tablets and a full navigation bar on desktops
+Navigation Bar Links | User can use Navigation Bar to navigate around site | User should be able to click through to "Our Philosophy", "Menu", "Dine with Us" (they will be redirected to the login if they are not logged in), "My Reservations" (if logged in) and "Sign In"/"Sign Out". Upon hovering over the link, the text should change in colour. Any active links should be italicised. | User is able to click through to "Our Philosophy", "Menu", "Dine with Us" (they are  redirected to the login if they are not logged in), "My Reservations" (if logged in) and "Sign In"/"Sign Out". Upon hovering over the link, the text changes in colour. Any active links are be italicised. 
+Hero Image | Hero image shows | Hero image should show at the top of the page with the words "Welcome to our Table" on top of this. The hero image should be responsive depending on the device used. | The hero image shows at the top of the page with the words "Welcome to our Table" on top of it. The hero image is responsive depending on the device used.
+"Reserve a Table" Button | "Reserve a Table" button works | "Reserve a Table" button should take user to the reservation form if they are signed in or redirect them to sign in if they are not currently signed in. The button should change colour and invert when hovered over. | The "Reserve a Table" button takes user to reservation form if they are signed in or redirects them to sign in if they are not currently signed in. The button changes colour and inverts when hovered over. 
+Image Gallery Carousel | Image Gallery shows a carousel of images | Image gallery shows carousel of images that automatically start when the page is loaded. When accessing the page as a desktop, arrows should be seen allowing the user to manually click through the photos. The photos can be updated through the Superadmin panel | Image gallery shows carousel of images that automatically starts when the page is loaded. When accessing the page as a desktop, arrows can be seen allowing the user to manually click through the photos. The photos can be updated through the Superadmin panel. 
+
+
 
 # Tools & Technologies Used
 * Balsamiq for wireframes
@@ -887,3 +899,8 @@ Reserve | views.py |![PEP8 - Reserve - views.py](https://github.com/foster95/kyt
 * GitHub Projects Kanban Board
 * VSCode
 * Chat GPT for debugging assistance 
+* CI PEP8 Linter
+* JShint
+* Heroku
+* Google Lighthouse
+* WAVE Accessibility Checker
