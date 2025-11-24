@@ -1,5 +1,9 @@
 # Kytchen Table
 
+The project was developed using Django, Bootstrap, PostgreSQL, Allauth authentication, and Agile methodology. It is inspired by modern farm-to-table Michelin-style restaurants.
+
+## Concept and Inspiration
+
 Kytchen Table: Come Home to the Table
 
 Welcome to Kytchen Table, your newest farm to table restaurant, serving food from the heart, and sourced and supported by local famers and suppliers and run by Head Chef Kyran Becker. Kytchen Table's wesite is designed with users at its heart, allowing them to see the menu with ease, as well as signing up to the restaurant to allow them to make and amend bookings and join their mailing list to recieve up to date information about the restaurants seasonal menu changes. The website also has backend functionality, allowing Super Admins to add, modify and make changes to menu options on the live site, as well as control and amend bookings. 
@@ -801,7 +805,7 @@ To check that the website was considered accessible, I used WAVE's accessibility
 
 ![WAVE Testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/wave-validation.png)
 
-## Lighthouse Testing
+## Lighthouse Testing
 
 Device | Website Section | Lighthouse Result | Notes
 --- | --- | --- | ---
@@ -872,7 +876,7 @@ Reserve | views.py |![PEP8 - Reserve - views.py](https://github.com/foster95/kyt
 ## Automated Testing
 ## Manual Testing
 
-Base
+### Base
 Test | Action | Expected Result | Actual Result
 --- | --- | --- | ---
 Navigation Bar | Navigation bar is responsive | Navigation bar shows responsively as a drop down on mobiles and tablets and as a full navigation bar on desktops | Navigation bar shows responsively as a drop down on mobiles and tablets and a full navigation bar on desktops
@@ -899,7 +903,7 @@ Images | Images are responsive | Images stack responsively depending on which de
 ### Menu 
 Test | Action | Expected Result | Actual Result
 --- | --- | --- | ---
-Tasting and Signature Menus | Menu loads on launch | On launching the website both menus load, however the A La Carte menu remains hidden by Bootstrap pills until activated by the user. The user should instantly be able to see the signature tasting menu
+Tasting and Signature Menus | Menu loads on launch | On launching the website both menus load, however the A La Carte menu remains hidden by Bootstrap pills until activated by the user. The user should instantly be able to see the signature tasting menu | On launching the website both menus load, however the A La Carte menu remains hidden by Bootstrap pills until activated by the user. The user can instantly be able to see the signature tasting menu 
 Tasting Menu Order | Menu loads in correct order  | The Tasting Menu is ordered individually rather than following the alphabetising of the A La Carte. The order of the menu can be decided by the SuperAdmin and updates. | The Tasting Menu is ordered individually rather than following the alphabetising of the A La Carte. The order of the menu can be decided by the SuperAdmin and on reload updates to follow the order set in the Admin panel
 Allergies | Allergies shown | Allergies should be shown underneath the menu item description and should be alphabetised. The allergies for each dish can be updated by the SuperAdmin in the Admin panel. | Allergies are shown underneath the menu item descroption and are alphabetised. The allergies for each dish can be updated by the SuperAdmin in the Admin panel and show on load. 
 Bootstrap Pills | Pills launch content when clicked | User loads A La Carte menu when they click the "A La Carte" pill. User loads the starters of the A La Carte Menu when they click "Starters". User loads the mains of the A La Carte Menu when they click "Mains". User loads the Sides of the A La Carte Menu when they click "Sides". User loads the Desserts of the A La Carte Menu when they click "Desserts" | User loads A La Carte menu when they click the "A La Carte" pill. User loads the starters of the A La Carte Menu when they click "Starters". User loads the mains of the A La Carte Menu when they click "Mains". User loads the Sides of the A La Carte Menu when they click "Sides". User loads the Desserts of the A La Carte Menu when they click "Desserts"
@@ -912,13 +916,51 @@ Log in Required | Reservation form requires a user to be signed in to view | A u
 Reservation form loads | Reservation form loads | Provided a user is logged in they can see the reservation form on load. |  Provided a user is logged in they can see the reservation form on load.
 Validation | Form Validation is working | If a user tries to submit a reservation form without providing the following fields: name, email, phone, reservation date, reservation time, guest number, they are immediately prompted to go back and fill the missing fields and the form cannot be submitted. | If a user tries to submit a reservation form without providing the following fields: name, email, phone, reservation date, reservation time, guest number, they are immediately prompted to go back and fill the missing fields and the form cannot be submitted. NOTE - Due to a bug that was unsolved at the time of submission, the expected HTML tooltip is not showing when the information is not provided. The validation works however, as a user cannot submit the form without providing valid information in the fields. 
 Validation | Email validation is working | If a user tries to submit a reservation without a @ in the email field, they are prompted to go back and fill in the form | If a user tries to submit a reservation without a @ in the email field, they are prompted to go back and fill in the form. NOTE - Due to a bug that was unsolved at the time of submission, the expected HTML tooltip is not showing when the information is not provided correctly. The validation works however, as a user cannot submit the form without providing valid information in the email field. 
-Validation | Phone validation is working | If a user tries to submit a reservation with letters or symbols rather than numbers then they are prompted to go back and fill in the form. NOTE - Due to a bug that was unsolved at the time of submission, the expected HTML tooltip is not showing when the information is not provided correctly. The validation works however, as a user cannot submit the form without providing valid information in the phone field. 
+Validation | Phone validation is working | If a user tries to submit a reservation with letters or symbols rather than numbers then they are prompted to go back and fill in the form. | If a user tries to submit a reservation with letters or symbols rather than numbers then they are prompted to go back and fill in the form. NOTE - Due to a bug that was unsolved at the time of submission, the expected HTML tooltip is not showing when the information is not provided correctly. The validation works however, as a user cannot submit the form without providing valid information in the phone field.
 Booking for past date | User cannot book a past date | The user is barred from booking a past date and previous dates are disabled for clicking. | The user is barred from booking a past date and previous dates are disabled for clicking. NOTE - There is a discrepency with Safari when accessed via a mobile phone which means that past dates can be clicked on. This appears to be a general issue with Safari on mobile and at the time of submission I was unable to figure a work around for it. However when trying to submit a reservation form through mobile Safari, the user is still unable to submit the form with a past date and a tooltip shows specifically on mobile Safari browsers saying "you cannot choose a past date".
 Allergies tickbox | User can provide allergies | Allergies can be checked and unchecked to be provided at the time of form submission. There is no limit as to how many allergies can be added and as this is not a required field, forms can also be submitted without providing any allergies | Allergies can be checked and unchecked to be provided at the time of form submission. There is no limit as to how many allergies can be added and as this is not a required field, forms can also be submitted without providing any allergies
 Special request | User can provide Special requests | Special requests can be provided in a text box form at the bottom of the reservation form which allows the user to send a short message to the restaurant ie if a guest is going for a birthday, or if they have an accessibility requirement that needs to be met. The special requests form is an optional form and therefore the form can be submitted wihout providing any special requests. | Special requests can be provided in a text box form at the bottom of the reservation form which allows the user to send a short message to the restaurant ie if a guest is going for a birthday, or if they have an accessibility requirement that needs to be met. The special requests form is an optional form and therefore the form can be submitted wihout providing any special requests. 
 Succesful Form Submission | Bootstrap Alert | When a form is succesfully recieved, a small Bootstrap alert should show at the top of the scren saying "Your reservation has been submitted successfully!". When the user reloads the alert disappears. | When a form is succesfully recieved, a small Bootstrap alert should show at the top of the scren saying "Your reservation has been submitted successfully!". When the user reloads the alert disappears.
 Succesful Form Submission | Django Admin panel | When a form is succesfully recieved, it can be seen through the Django Admin panel. The admin panel is ordered by date, with the upcoming reservation at the top of the list. The admin panel shows the following information: user, Guest Name, Guest Email, Guest Phone, Reservation Date, Time Slot, Guest No., Special Requests, Allergies| When a form is succesfully recieved, it can be seen through the Django Admin panel. The admin panel is ordered by date, with the upcoming reservation at the top of the list. The admin panel shows the following information: user, Guest Name, Guest Email, Guest Phone, Reservation Date, Time Slot, Guest No., Special Requests, Allergies
 
+### My Reservations
+Test | Action | Expected Result | Actual Result
+--- | --- | --- | ---
+Upcoming reservations | Upcoming reservations displayed | Registered users hould see a full list of all their upcoming reservations, ordered by date from closest to furthest away. The user should see the date of the reservation, the timeslot for the reservation and the number of guests for the reservation along with two buttons - "Edit Reservation" and "Delete Reservation" | The user can see a full list of their upcoming reservations, ordered by date from closest to furthest away. The user can see the date of the reservation, the timeslot of the reservation and the number of guests for the reservation as well as two buttons - "Edit Reservation" and "Delete Reservation"
+Buttons | Buttons colour change | The colours of the buttons should invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to | The colours of the button invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to
+Modal | Edit Reservation modal launches | Upon clicking the "Edit Reservation" button, the modal should launch. The modal should show all of the booking details which the user can then update | Upon clicking the "Edit Reservation" button, the modal launches. The modal shows all of the booking details which can be updated by the user
+Modal | Edit Reservation details | Once the reservation modal has launched, the user should be able to update any of the information in the modal and this should reflect on the booking admin page, and on the details on the My Reservation page. The modal should have the same validation as the original booking form, only allowing users to submit updated information if the name, email, phone number, reservation date and time slot are filled in. If any of these are not filled in, the user should be prompted to fill these in before the booking can be updated | Once the reservation modal has launched, the user can update any of the information in the modal and this is reflected on the booking admin page, and the details on the My Reservation page. The modal has the same validation as the original booking form, meaning users can only submit updated information when the name, emial, phone number, reservation date and time slots are filled in. If these fields are not completed, the user is prompted to fill these in before the booking can be updated. NOTE - the HTML tooltip does appear to show in the modal update, even though it does not appear on the original booking form. 
+Modal | Delete Reservation modal launches | Upon clicking the "Delete Reservation" button, the user should be asked to confirm a second time that they would like to delete their reservation | Upon clicking the "Delete Reservation" button, the user is asked to confirm a second time that they would like to delete their reservation
+Modal | Delete Reservation removes data | Upon being asked for secondary confirmation that the user wishes to delete the booking, the booking should be removed from the users My Reservations page, and the admin panel | Upon being asked for secondary confirmation that the user wishes to delete the booking, the booking is removed from the users My Reservations page and is removed from the admin panel. 
+
+### Sign Up
+Test | Action | Expected Result | Actual Result
+--- | --- | --- | ---
+Sign Up | AllAuth form | AllAuth form loads, asking user to provide a mandatory username and password and an optional email. If the user tries to submit the form without providing this information, they should be prompted to fill in the required fields | AllAuth form loads, asking the user to provide a mandatory username and password, with an optional email. If the user tries to submit a form without providing the required fields, they are prompted to fill in the required fields
+Button | Button colours change | The colours of the buttons should invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to | The colours of the button invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to 
+Button | AllAuth form is succesful | Upon the user providing all the required information, the user can hit sign up and the account is created and the page reloads to the home page |  Upon the user providing all the required information, the user can hit sign up and the account is created and the page reloads to the home page
+Sign In link | Sign In link redirects | If the user clicks on the hyperlinked "log in here" they should be redirected to the sign in page | If the user clicks on the hyperlinked "log in here" they are redirected to the sign in page. 
+
+### Sign In
+Test | Action | Expected Result | Actual Result
+--- | --- | --- | ---
+Sign In | AllAuth form | AllAuth form loads, asking user to provide mandatory username and password. If the user tries to log in without providing this information they should be prompted to fill in the required fields | AllAuth form loads, asking user to provide mandatory username and password. If the user tries to log in without providing this information, they are prompted to fill in the required fields.
+Button | Button colours change | The colours of the buttons should invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to | The colours of the button invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to 
+Sign in succesful | User is logged in with correct credentials | Provided the correct credentials are provided, the user shoud be logged in and taken back to the home page. If the login credentials are incorrect, the user should be informed that the information provided is incorrect and should not be logged in.  | Providing the correct credentials are provided, the user is logged in and taken back to the home page. If the login credentials are incorrect, the user is informed that the information provided is incorrect and is not logged in
+Sign Up link | Sign Up link redirects | If the user clicks on the hyperlinked "sign up here" they should be redirected to the sign up page | If the user clicks on the hyperlinked "sign up here" they are redirected to the sign up page. 
+
+### Sign Out
+Test | Action | Expected Result | Actual Result
+--- | --- | --- | ---
+Button | Button colours change | The colours of the buttons should invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to | The colours of the button invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to 
+Button | Sign out button works | Sign out button should succesfully sign out the user, redirecting them to a succesful sign out page | Sign out button succesfully signs out user and redirects them to a succesful sign out page
+Succesful Sign Out | Succesful Sign Out page loads | Upon clicking the "Sign Out" button, the user should be taken to a page confirming succesful sign out along with a "return home" button and a link to redirect the user back to the sign in page | Upon clicking the "Sign Out" button, the user is taken to a page confirming succesful sign out along with a "return home" button and a link to redirect the user back to the sign in page
+Sign Back In link | Sign Back in redirects to correct page | The Sign Back in link should redirect back to the login page | The Sign Back In Link redirects back to the login page
+
+
+## Testing Against User Stories
+User Story | Category (MoSCoW) | Met?
+--- | --- | --- | ---
 
 # Tools & Technologies Used
 * Balsamiq for wireframes
@@ -940,3 +982,6 @@ Succesful Form Submission | Django Admin panel | When a form is succesfully reci
 * Heroku
 * Google Lighthouse
 * WAVE Accessibility Checker
+
+# Credits and Acknowledgements
+# A Final Note from the Developer
