@@ -37,6 +37,7 @@ Welcome to our table. Welcome home.
     * [Device Testing](#device-testing)
     * [Automated Testing](#automated-testing)
     * [Manual Testing](#manual-testing)
+    * [Testing Against User Stories](#testing-against-user-stories)
 
 
 [Tools & Technologies Used](#tools--technologies-used)
