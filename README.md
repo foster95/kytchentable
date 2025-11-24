@@ -185,8 +185,7 @@ With this in mind the stories were then grouped in the issues board before being
 * As a Site Admin I can book tables in the booking slots so that I can book tables on behalf of guests
 * As a Site Admin I can see all of the bookings currently made so that I can be informed about how many covers are required at the restaurant at any given day and make any changes to bookings if needed
 * As a User I can register for an account with Kytchen Table so that I can log into the user portal
-* As a Site Admin I can delete any account so that I can control access to the user panel
-* As a User I can delete my account so that *I no longer have an account with Kytchen Table
+* As a Site Admin I can delete any account so that I can control who has a registered account
 * As a User I can book a table in a slot so that I can reserve my table at the restaurant
 * As a User I can amend an upcoming booking so that I can change the details provided to the restaurant
 * As a User I can log out of the user portal so that I can know that I am no longer in my account
@@ -198,6 +197,7 @@ With this in mind the stories were then grouped in the issues board before being
 * As a User I can see a home page which provides an overview of the restaurant so that I can know more about the restaurant
 * As a User I can see the contact details of the restaurant so that I know where to go and what number to call
 * As a user I can find out about the ethos of the restaurant so that I can decide if it is my sort of place to visit
+* As a User I can delete my account so that *I no longer have an account with Kytchen Table
 
 ### Could Have
 * As a user I can sign up to the restaurants mailing list so that I can recieve up to date information about changing menus at the restuarant
@@ -791,6 +791,25 @@ And added the following code to the modal on the current reservations page:
 ### Issue with CSS hiding tooltip on Reservation form 
 
 # Testing
+Multiple testing methods were carried out to ensure the quality, functionality, and responsiveness of the Kytchen Table website. These included automated validation tools, device and browser testing, Lighthouse analysis, accessibility checks, and user-story-based manual testing. All core functionality works as expected, with only minor issues documented in Unsolved Bugs.
+
+Testing was carried out using a mix of automated tools and manual user-story-based methods.
+
+Testing Method | Tools Used | Purpose | Result 
+--- | --- | --- | ---
+HTML Validation | Nu HTML Checker | Check HTML structure | Passed – 0 errors 
+CSS Validation | W3C CSS Validator | Validate custom CSS | Passed – 0 errors 
+JavaScript Validation | JSHint | Validate ES6 syntax | Passed after config 
+Python Validation | CI PEP8 Linter | Check PEP8 compliance | Passed across apps 
+Accessibility | WAVE | WCAG & ARIA validation | Minor contrast issue 
+Performance | Google Lighthouse | Measure performance & best practices | Good overall 
+Browser Testing | Chrome, Safari, Firefox, Edge | Cross-browser consistency | Passed 
+Manual Testing | Developer testing | To test that all website features were working manually | Passed
+Device Testing | iOS, Android, Tablets, Laptops | Responsiveness testing | Passed 
+
+| User Story Testing | Manual testing table | Verify all features against stories | Good overall |
+
+
 ## HTML Validation
 Using Nu HTML checker, I checked the validity of my HTML by direct input due to the project being deployed through Heroku. This returned with zero errors or warnings
 
@@ -958,10 +977,38 @@ Button | Sign out button works | Sign out button should succesfully sign out the
 Succesful Sign Out | Succesful Sign Out page loads | Upon clicking the "Sign Out" button, the user should be taken to a page confirming succesful sign out along with a "return home" button and a link to redirect the user back to the sign in page | Upon clicking the "Sign Out" button, the user is taken to a page confirming succesful sign out along with a "return home" button and a link to redirect the user back to the sign in page
 Sign Back In link | Sign Back in redirects to correct page | The Sign Back in link should redirect back to the login page | The Sign Back In Link redirects back to the login page
 
-
 ## Testing Against User Stories
 User Story | Category (MoSCoW) | Met?
---- | --- | --- | ---
+--- | --- | --- 
+As a Site Admin I can create and amend menu items so that I can add or remove food options as new dishes are created in the restaurant | Must Have | Met
+As a Site Admin I can create times and days of the week slots the restaurant is open so that I can monitor booking availability throughout the week | Must Have | Met - But created through model not through admin panel
+As a Site Admin I can book tables in the booking slots so that I can book tables on behalf of guests | Must Have | Met
+As a Site Admin I can see all of the bookings currently made so that I can be informed about how many covers are required at the restaurant at any given day and make any changes to bookings if needed | Must Have | Met
+As a Site Admin I can delete any account so that I can control access to the user panel | Must Have | Met
+As a User I can book a table in a slot so that I can reserve my table at the restaurant | Must Have | Met
+As a User I can amend an upcoming booking so that I can change the details provided to the restaurant | Must Have | Met
+As a User I can log out of the user portal so that I can know that I am no longer in my account | Must Have | Met
+As a user I can view the menu so that I can decide what I would like to have | Must Have | Met
+As a Site Admin I can be blocked from any more bookings that slots available per time slot so that I do not overbook any tables | Should Have | Met
+As a User I can see the availability of tables at any given day and time slot so that I can decide what day and time to book a table | Should Have | Not Met - Future Feature
+As a User I can see a home page which provides an overview of the restaurant so that I can know more about the restaurant | Should Have | Met
+As a User I can see the contact details of the restaurant so that I know where to go and what number to call | Should Have | Met
+As a user I can find out about the ethos of the restaurant so that I can decide if it is my sort of place to visit | Should Have | Met
+As a User I can see the contact details of the restaurant so that I know where to go and what number to call | Should Have | Met
+As a User I can delete my account so that *I no longer have an account with Kytchen Table | Should Have | Not Met
+As a user I can sign up to the restaurants mailing list so that I can recieve up to date information about changing menus at the restuarant | Could Have | Not Met - Future Feature
+As a User I can see a 404 error page so that I can know I've gone to the wrong page | Could Have | Not Met - Future Feature
+As a User I can filter the menu by allergen so that I can easily see what items contain food I am allergic to | Won't Have | Not Met
+
+### Overall Testing Conclusion
+
+All essential functionalities of the Kytchen Table website work as intended and meet the requirements of the user stories. Testing confirmed:
+* Full CRUD functionality works for reservations
+* Sign-up, login, and logout processes function correctly
+* Responsiveness is maintained across all devices and browsers
+* Accessibility standards are mostly met, with only minor colour contrast concerns
+
+The project is stable, functional, and ready for deployment. Any remaining issues are documented in Unsolved Bugs and planned for future development.
 
 # Tools & Technologies Used
 * Balsamiq for wireframes
