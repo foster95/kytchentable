@@ -806,8 +806,7 @@ Performance | Google Lighthouse | Measure performance & best practices | Good ov
 Browser Testing | Chrome, Safari, Firefox, Edge | Cross-browser consistency | Passed 
 Manual Testing | Developer testing | To test that all website features were working manually | Passed
 Device Testing | iOS, Android, Tablets, Laptops | Responsiveness testing | Passed 
-
-| User Story Testing | Manual testing table | Verify all features against stories | Good overall |
+User Story Testing | Manual testing table | Verify all features against stories | Good overall 
 
 
 ## HTML Validation
