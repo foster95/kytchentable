@@ -2,9 +2,9 @@
 
 The project was developed using Django, Bootstrap, PostgreSQL, Allauth authentication, and Agile methodology. It is inspired by modern farm-to-table Michelin-style restaurants.
 
-## Concept and Inspiration
+To see the full deployed project please click [here](https://kytchen-table-56648feabc6b.herokuapp.com/)
 
-Kytchen Table: Come Home to the Table
+*Kytchen Table: Come Home to the Table*
 
 Welcome to Kytchen Table, your newest farm to table restaurant, serving food from the heart, and sourced and supported by local famers and suppliers and run by Head Chef Kyran Becker. Kytchen Table's wesite is designed with users at its heart, allowing them to see the menu with ease, as well as signing up to the restaurant to allow them to make and amend bookings and join their mailing list to recieve up to date information about the restaurants seasonal menu changes. The website also has backend functionality, allowing Super Admins to add, modify and make changes to menu options on the live site, as well as control and amend bookings. 
 
@@ -38,9 +38,11 @@ Welcome to our table. Welcome home.
     * [Automated Testing](#automated-testing)
     * [Manual Testing](#manual-testing)
     * [Testing Against User Stories](#testing-against-user-stories)
-
-
-[Tools & Technologies Used](#tools--technologies-used)
+8. [Deployment](#deployment)
+9. [Forking and Cloning](#forking-and-cloning)
+10. [Tools & Technologies Used](#tools--technologies-used)
+11. [Credits and Acknowledgements](#credits-and-acknowledgements)
+12. [A Final Note from the Developer](#a-final-note-from-the-developer)
 
 # UX
 ## Five Planes of UX Design
@@ -789,11 +791,26 @@ And added the following code to the modal on the current reservations page:
 
 ## Developmental Bugs - Unsolved
 ### Issue with CSS hiding tooltip on Reservation form 
+During development I discovered an issue where form validation works correctly — users are prevented from submitting forms with invalid or missing data — however, the HTML validation tooltips (e.g. “Please fill out this field”) do not appear. This behaviour has been confirmed only in Google Chrome. When testing in Mozilla Firefox and Safari, the validation messages appear as expected. From this I have concluded that this issue is browser-specific rather than a fault in the form logic.
+
+To try and resolve this issue I attempted the following options:
+* Ensured Django renders the correct HTML5 field type using:
+
+            self.fields['reservation_date'].input_type = 'date'
+* Removed any possibility of novalidate being present in the <form> tag.
+* Checked for CSS that may be suppressing native validation UI.
+* Confirmed that validation does work — only the tooltip display is affected.
+
+Despite the above, the  validation message still does not appear in Chrome, even though users cannot submit the form and are prompted by a blue highlight bar where they need to fill in information. 
+
+Further investigation through various full-stack development forums and developer discussions indicated that Chrome is known to occasionally hide these HTML validation tooltips, particularly with date fields and Bootstrap-styled forms. This appears to be a widespread, Chrome-specific behaviour, with multiple developers reporting the same issue and no consistently successful workaround.
 
 # Testing
 Multiple testing methods were carried out to ensure the quality, functionality, and responsiveness of the Kytchen Table website. These included automated validation tools, device and browser testing, Lighthouse analysis, accessibility checks, and user-story-based manual testing. All core functionality works as expected, with only minor issues documented in Unsolved Bugs.
 
 Testing was carried out using a mix of automated tools and manual user-story-based methods.
+
+## Testing Overview
 
 Testing Method | Tools Used | Purpose | Result 
 --- | --- | --- | ---
@@ -807,7 +824,6 @@ Browser Testing | Chrome, Safari, Firefox, Edge | Cross-browser consistency | Pa
 Manual Testing | Developer testing | To test that all website features were working manually | Passed
 Device Testing | iOS, Android, Tablets, Laptops | Responsiveness testing | Passed 
 User Story Testing | Manual testing table | Verify all features against stories | Good overall 
-
 
 ## HTML Validation
 Using Nu HTML checker, I checked the validity of my HTML by direct input due to the project being deployed through Heroku. This returned with zero errors or warnings
@@ -892,9 +908,17 @@ Reserve | urls.py | ![PEP8 - Reserve - urls.py](https://github.com/foster95/kytc
 Reserve | views.py |![PEP8 - Reserve - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-view.png)
 
 ## Device Testing
-## Automated Testing
-## Manual Testing
 
+## Automated Testing
+I have conducted a series of automated tests on my application.
+
+I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+
+To conduct these tests I used Django's built in unit testing framework. To run these tests I can the python3 manage.py test command into the terminal.
+
+![Django Automated Testing]()
+
+## Manual Testing
 ### Base
 Test | Action | Expected Result | Actual Result
 --- | --- | --- | ---
@@ -1008,6 +1032,72 @@ All essential functionalities of the Kytchen Table website work as intended and 
 * Accessibility standards are mostly met, with only minor colour contrast concerns
 
 The project is stable, functional, and ready for deployment. Any remaining issues are documented in Unsolved Bugs and planned for future development.
+
+## Deployment
+The live deployed application can be found on Heroku
+
+This project uses Heroku, a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+Deployment steps are as follows, after account setup:
+
+* Select New in the top-right corner of your Heroku Dashboard, and select Create new app from the dropdown menu.
+* Your app name must be unique, and then choose a region closest to you (EU or USA), then finally, click Create App.
+* From the new app Settings, click Reveal Config Vars, and set your environment variables to match your private env.py file.
+
+Key	| Value
+--- | ---
+CLOUDINARY_URL | user-inserts-own-cloudinary-url
+DATABASE_URL | user-inserts-own-postgres-database-url
+DISABLE_COLLECTSTATIC | 1 (this is temporary, and can be removed for the final deployment)
+SECRET_KEY | any-random-secret-key
+
+Heroku needs some additional files in order to deploy properly.
+
+requirements.txt
+Procfile
+You can install this project's requirements.txt (where applicable) using:
+
+pip3 install -r requirements.txt
+If you have your own packages that have been installed, then the requirements file needs updated using:
+
+pip3 freeze --local > requirements.txt
+The Procfile can be created with the following command:
+
+echo web: gunicorn app_name.wsgi > Procfile
+replace app_name with the name of your primary Django app name; the folder where settings.py is located
+For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
+
+Either (recommended):
+
+Select Automatic Deployment from the Heroku app.
+
+Or:
+
+In the Terminal/CLI, connect to Heroku using this command: heroku login -i
+Set the remote for Heroku: heroku git:remote -a app_name (replace app_name with your app name)
+After performing the standard Git add, commit, and push to GitHub, you can now type:
+git push heroku main
+The project should now be connected and deployed to Heroku
+After deployment, I applied database migrations on Heroku using heroku run python manage.py migrate.
+
+## Forking and Cloning
+### Forking
+Fork Repository
+Follow the below steps to fork the repository:
+
+Go to the GitHub repository
+Click on Fork button in upper right hand corner
+
+### Cloning
+Follow the below steps to clone the repository:
+
+Go to the GitHub repository
+Locate the Code button above the list of files and click it
+Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
+Open Git Bash
+Change the current working directory to the one where you want the cloned directory
+Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+Press Enter to create your local clone.
 
 # Tools & Technologies Used
 * Balsamiq for wireframes

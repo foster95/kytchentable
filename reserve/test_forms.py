@@ -98,7 +98,7 @@ class TestReservationForm(TestCase):
             reservation_form.is_valid(),
             msg='Form is valid despite invalid phone number')
         self.assertIn(
-            'Enter a valid phone number.',
+            'Please enter a valid phone number.',
             str(reservation_form.errors),
             msg='Phone number validation error not found in form errors.'
         )
