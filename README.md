@@ -8,7 +8,7 @@ To see the full deployed project please click [here](https://kytchen-table-56648
 
 *Kytchen Table: Come Home to the Table*
 
-Welcome to Kytchen Table, your newest farm to table restaurant, serving food from the heart, and sourced and supported by local famers and suppliers and run by Head Chef Kyran Becker. Kytchen Table's wesite is designed with users at its heart, allowing them to see the menu with ease, as well as signing up to the restaurant to allow them to make and amend bookings and join their mailing list to recieve up to date information about the restaurants seasonal menu changes. The website also has backend functionality, allowing Super Admins to add, modify and make changes to menu options on the live site, as well as control and amend bookings. 
+Welcome to Kytchen Table, your newest farm to table restaurant, serving food from the heart, and sourced and supported by local famers and suppliers and run by Head Chef Kyran Becker. Kytchen Table's website is designed with users at its heart, allowing them to see the menu with ease, as well as signing up to the restaurant to allow them to make and amend bookings and join their mailing list to receive up to date information about the restaurants seasonal menu changes. The website also has backend functionality, allowing Super Admins to add, modify and make changes to menu options on the live site, as well as control and amend bookings. 
 
 The target audience for Kytchen Table is middle class and wealthy food lovers, who are keen on knowing the stories of their food and the journey the ingredients took to reach their plate. It is directly inspired by restaurants such as Simon Rogan's Henrock and Raymond Blanc's Le Manoir aux Quat’Saisons.
 
@@ -30,6 +30,7 @@ Welcome to our table. Welcome home.
 5. [Features](#features)
 6. [Future Features](#future-features)
 7. [Testing](#testing)
+    * [Testing Overview](#testing-overview)
     * [HTML Validation](#html-validation)
     * [CSS Validation](#css-validation)
     * [Accessibility Testing](#accessibility-testing)
@@ -37,9 +38,11 @@ Welcome to our table. Welcome home.
     * [JShint Validation](#jshint-validation)
     * [PEP8 Validation](#pep8-validation)
     * [Device Testing](#device-testing)
+    * [Browser Testing](#browser-testing)
     * [Automated Testing](#automated-testing)
     * [Manual Testing](#manual-testing)
     * [Testing Against User Stories](#testing-against-user-stories)
+    * [Overall Testing Conclusion](#overall-testing-conclusion)
 8. [Deployment](#deployment)
 9. [Forking and Cloning](#forking-and-cloning)
 10. [Tools & Technologies Used](#tools--technologies-used)
@@ -107,7 +110,7 @@ User | Wishes to view menu | Home -> Menu
 User | Wishes to see restaurant philosophy | Home -> Our Philosophy
 User | Needs to register for an account | Home -> Login -> Sign Up -> Provide Sign Up Reservations -> Submit
 User | Wants to see confirmed reservations | Home -> Login -> User provides login information -> My Reservations
-User | Wants to ammend reservation | Home -> Login -> User provides login information -> My Reservations -> Amend
+User | Wants to amend reservation | Home -> Login -> User provides login information -> My Reservations -> Amend
 User | Wants to cancel reservation | Home -> Login -> User provides login information -> My Reservations -> Cancel
 Site Managers | Want to see current bookings | Home -> Login
 Site Managers | Want to update menu | Home -> Login
@@ -130,7 +133,7 @@ I used Balsamiq to create mobile and desktop wireframes for Kytchen Table:
 ![Desktop Wireframes Four](https://github.com/foster95/kytchentable/blob/main/static/images/readme/desktop-wireframes-set-four.png)
 
 ## Surface
-Kytchen Table is a luxury restaurant, modelled after the typical website of a Michelin starred restaurant, which I looked into prior to beginning the project as a form of research. The website therefore, should mirror this as a luxury, sleek website which is not litered with images, and has a consistent colour palette across the website which is mirrored in the logo design and tied together with a cohesive set of fonts. Additionally I considered using some earthy greens within the palette as that referred back to the harmony the restaurant has with the land, however on development I found the green clashed and looked wrong when paired with the purples so I further revised the palette, closing in on shades of various purple for accents instead of the original planned green. 
+Kytchen Table is a luxury restaurant, modelled after the typical website of a Michelin starred restaurant, which I looked into prior to beginning the project as a form of research. The website therefore, should mirror this as a luxury, sleek website which is not littered with images, and has a consistent colour palette across the website which is mirrored in the logo design and tied together with a cohesive set of fonts. Additionally I considered using some earthy greens within the palette as that referred back to the harmony the restaurant has with the land, however on development I found the green clashed and looked wrong when paired with the purples so I further revised the palette, closing in on shades of various purple for accents instead of the original planned green. 
 
 ### Kytchen Table Colour Palette
 #### Original Palette
@@ -151,7 +154,7 @@ To figure out the best font pairings I used the Our Own Thing font pairing websi
 
 # Development using Agile Methodology
 ## User Stories
-Using the Agile Methodology, I first created a series of user stories to help break down the requirements of the website. These user stories were all writen in the following formation: As a *Role* I can *Capability* so that *Recieve Benefit*.
+Using the Agile Methodology, I first created a series of user stories to help break down the requirements of the website. These user stories were all writen in the following formation: As a *Role* I can *Capability* so that *Receive Benefit*.
 
 * As a Site Admin I can create and amend menu items so that I can add or remove food options as new dishes are created in the restaurant
 * As a Site Admin I can create times and days of the week slots the restaurant is open so that I can monitor booking availability throughout the week
@@ -169,7 +172,7 @@ Using the Agile Methodology, I first created a series of user stories to help br
 * As a User I can see the contact details of the restaurant so that I know where to go and what number to call
 * As a User I can find out about the ethos of the restaurant so that I can decide if it is my sort of place to visit
 * As a User I can view the menu so that I can decide what I would like to have
-* As a User I can sign up to the restaurants mailing list so that I can recieve up to date information about changing menus at the restuarant
+* As a User I can sign up to the restaurants mailing list so that I can receive up to date information about changing menus at the restuarant
 * As a User I can see a 404 error page so that I can know I've gone to the wrong page
 * As a User  I can filter the menu by allergen so that I can easily see what items contain food I am allergic to
 
@@ -204,7 +207,7 @@ With this in mind the stories were then grouped in the issues board before being
 * As a User I can delete my account so that *I no longer have an account with Kytchen Table
 
 ### Could Have
-* As a user I can sign up to the restaurants mailing list so that I can recieve up to date information about changing menus at the restuarant
+* As a user I can sign up to the restaurants mailing list so that I can receive up to date information about changing menus at the restuarant
 * As a User I can see a 404 error page so that I can know I've gone to the wrong page
 
 ### Won't Have
@@ -281,7 +284,7 @@ Our Philosophy is the simplest app of all of the apps, and doesn't utilise any m
             <div class="col-12 col-md-6">
 
 ## Menu
-The Menu app is compromised of two models - one for the menu item itself and one for the allergens in each item. The menu has been split across two different options - an Ala Carte and a Tasting Menu which have been created as categories within the model. Along with this, the admin panel has been coded to ensure that the menu items can be displayed and edited along with their title, description and category filter. The allergies have been set so that the Superadmin can create the menus in the back administrative system and these can then be applied to each individual item. Each item can be edited, removed and deleted by the Superadmin but not by a general user. Equally, allergens can also be added, deleted and ammended. 
+The Menu app is compromised of two models - one for the menu item itself and one for the allergens in each item. The menu has been split across two different options - an Ala Carte and a Tasting Menu which have been created as categories within the model. Along with this, the admin panel has been coded to ensure that the menu items can be displayed and edited along with their title, description and category filter. The allergies have been set so that the Superadmin can create the menus in the back administrative system and these can then be applied to each individual item. Each item can be edited, removed and deleted by the Superadmin but not by a general user. Equally, allergens can also be added, deleted and amended. 
 
 The menus have been styled using Bootstraps pills system, to give users the opportunity to flick between the full Tasting Menu and the A La Carte. Within the A La Carte pills users are given the further option to choose between Starts, Mains, Sides and Deserts breaking down the information in a clear, readable fashion and avoiding information overload. Users can also see the allergens for each food, as this has been pulled through from the model and admin panel and these are organised by alphabetical order, along with the titles of each dish. As the Tasting Menu operates on a different ordering system and cannot be alphabetised, the Superadmin can number each item on a 1-7 numbering system which categorises the dishes to show accordingly. 
 
@@ -327,7 +330,7 @@ The menus have been styled using Bootstraps pills system, to give users the oppo
                     return self.name
 
 ## Reservation Form 
-The reservation form can only be accessed by registered users and upon a user clicking on "Make a Reservation" they are redirected to the account sign in page. Upon signing into their account, the full form is then shown. The form is built off one main model which includes time slots for the booking, and requires users to provide a guest name, a guest phone number, a guest email and their reservation details - the date they wish to make the reservation for and the timeslot they wish to book. Registered users are then given the option to complete the optional 'Allergies' section and 'Special Requests' sections. Upon confirming their reservation, the registered user is shown a green alert stating "Your reservation has been submitted succesfully!" informing the user that the reservation form has been sent to the website admin. To avoid overbooking, the model also includes a maximum figure so that once 15 tables have been booked in each slot, a registered user cannot book anymore in that slot.
+The reservation form can only be accessed by registered users and upon a user clicking on "Make a Reservation" they are redirected to the account sign in page. Upon signing into their account, the full form is then shown. The form is built off one main model which includes time slots for the booking, and requires users to provide a guest name, a guest phone number, a guest email and their reservation details - the date they wish to make the reservation for and the timeslot they wish to book. Registered users are then given the option to complete the optional 'Allergies' section and 'Special Requests' sections. Upon confirming their reservation, the registered user is shown a green alert stating "Your reservation has been submitted successfully!" informing the user that the reservation form has been sent to the website admin. To avoid overbooking, the model also includes a maximum figure so that once 15 tables have been booked in each slot, a registered user cannot book anymore in that slot.
 
 Regarding CRUD functionality, this ensures that the website meets the Create requirements. 
 
@@ -462,7 +465,7 @@ To ensure that the validation is watertight, the model and form include validati
 ## View My Reservations
 The 'View My Reservations' page has gone through a fair few iterations and for the purposes of the MVP this is the simplest version of the page. A future version of the page would turn this from simply displaying future bookings to a full account page, including a profile picture and more details about the user including birthdays so that the restaurant can reach out and offer birthday discounts etc and a section for the user to update their details, and password, as well as display past bookings up to a certain point. For the purposes of this project however, I decided to simply keep the page as a 'My Reservations' page, showing a registered user their upcoming reservations by date. 
 
-If a user wishes to make any ammendments to their booking they can either 'Edit Reservation' or 'Delete Reservation', providing the registered user CRUD functionality. Depending on what the user wants to do, this will launch a modal (details of these features can be found below). If any amendments are made to the reservation, all changes also show in the admin panel in real time, and the Superadmin can make changes to the reservation which are reflected in the users reservations details.  
+If a user wishes to make any amendments to their booking they can either 'Edit Reservation' or 'Delete Reservation', providing the registered user CRUD functionality. Depending on what the user wants to do, this will launch a modal (details of these features can be found below). If any amendments are made to the reservation, all changes also show in the admin panel in real time, and the Superadmin can make changes to the reservation which are reflected in the users reservations details.  
 
 ## Edit Upcoming Reservations Modal
 The edit reservation modal uses Javascript and HTML to trigger. If a registered user chooses to Edit their reservation, the modal will pull up all the details of the booking, which the JavaScript script prepopulates with all of the information from the reservation request. If the user updates any of the details within the reservation this is updated on the Django Administrative panel. Equally, if the Superadmin updates something in the admin panel, this will show in the updated modal information. This serves as part of CRUD functionality - Read and Update
@@ -587,10 +590,10 @@ Kytchen Table uses standard Allauth authentication though the sign up page itsel
 Allauth authentication is also used on the login page, and once the user has logged in they are also redirected to the home page. To show the user that they have logged in, a green Bootstrap alert appears at the top of the website stating the user has logged in, however this disappears when the user reloads the page. To ensure that the user knows that they are logged in the entire time, there is a small login indicator that sits underneath the navigation bar which states "You are signed in as (username)". 
 
 ## Sign Out
-If the user wishes to log out of the website, they can click the Sign Out button in the navigation bar. Upon clicking this, they will be taken to a page that will ask the user to reconfirm that they would like to sign out to avoid accidentally signing out of the account without further confirmation. If the user clicks this, they will be taken to a succesful sign out page, where the user will be told they have signed out and a green Bootstrap alert will also indicate the user has been logged out. 
+If the user wishes to log out of the website, they can click the Sign Out button in the navigation bar. Upon clicking this, they will be taken to a page that will ask the user to reconfirm that they would like to sign out to avoid accidentally signing out of the account without further confirmation. If the user clicks this, they will be taken to a Successful Sign Out page, where the user will be told they have signed out and a green Bootstrap alert will also indicate the user has been logged out. 
 
 # Future Features
-A future version of this website would include functionality on the reservation form to warn and bar users from being able to make a booking when the restaurant is closed. Additionally, the future version of this website would build out the 'My Reservations' page further, turning it into a 'My Account' page where users could provide a profile picture, their birthday, their allergy preferences, and provide reviews. 
+While the current version meets the MVP criteria, several features have been identified for future expansion to enhance user experience and increase functionality including functionality on the reservation form to warn and bar users from being able to make a booking when the restaurant is closed. Additionally, the future version of this website would build out the 'My Reservations' page further, turning it into a 'My Account' page where users could provide a profile picture, their birthday, their allergy preferences, and provide reviews. 
 
 ## Developmental Bugs - Solved
 ### Base.html
@@ -799,6 +802,7 @@ To try and resolve this issue I attempted the following options:
 * Ensured Django renders the correct HTML5 field type using:
 
             self.fields['reservation_date'].input_type = 'date'
+
 * Removed any possibility of novalidate being present in the form tag.
 * Checked for CSS that may be suppressing native validation UI.
 * Confirmed that validation does work — only the tooltip display is affected.
@@ -806,6 +810,8 @@ To try and resolve this issue I attempted the following options:
 Despite the above, the  validation message still does not appear in Chrome, even though users cannot submit the form and are prompted by a blue highlight bar where they need to fill in information. 
 
 Further investigation through various full-stack development forums and developer discussions indicated that Chrome is known to occasionally hide these HTML validation tooltips, particularly with date fields and Bootstrap-styled forms. This appears to be a widespread, Chrome-specific behaviour, with multiple developers reporting the same issue and no consistently successful workaround.
+
+As this issue did not affect form submission or overall functionality, it was deemed acceptable for MVP scope and documented here for transparency.
 
 # Testing
 Multiple testing methods were carried out to ensure the quality, functionality, and responsiveness of the Kytchen Table website. These included automated validation tools, device and browser testing, Lighthouse analysis, accessibility checks, and user-story-based manual testing. All core functionality works as expected, with only minor issues documented in Unsolved Bugs.
@@ -823,6 +829,7 @@ Python Validation | CI PEP8 Linter | Check PEP8 compliance | Passed across apps
 Accessibility | WAVE | WCAG & ARIA validation | Minor contrast issue 
 Performance | Google Lighthouse | Measure performance & best practices | Good overall 
 Browser Testing | Chrome, Safari, Firefox, Edge | Cross-browser consistency | Passed 
+Device Testing | iPhone, Android, Tablet, Desktop | Cross-device consistency | Passed
 Manual Testing | Developer testing | To test that all website features were working manually | Passed
 Device Testing | iOS, Android, Tablets, Laptops | Responsiveness testing | Passed 
 User Story Testing | Manual testing table | Verify all features against stories | Good overall 
@@ -854,7 +861,7 @@ Mobile | My Reservations | ![Lighthouse Testing Mobile - My Reservations](https:
 Mobile | Sign In | ![Lighthouse Testing Mobile - Sign In](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-sign-in.png) |
 Mobile | Sign Up | ![Lighthouse Testing Mobile - Sign Up](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-sign-up.png) |
 Mobile | Sign Out | ![Lighthouse Testing Mobile - Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-sign-out.png) |
-Mobile | Succesful Sign Out | ![Lighthouse Testing Mobile - Succesful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-succesful-sign-out.png) |
+Mobile | Successful Sign Out | ![Lighthouse Testing Mobile - Successful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-mobile-succesful-sign-out.png) |
 Desktop | Home Page | ![Lighthouse Testing Desktop - Home](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-home.png) | Some minor issues with performance and best practise due to the use of Cloudinary in hero image
 Desktop | Our Philosophy | ![Lighthouse Testing Desktop - Our Philosophy](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-philosophy.png) |
 Desktop | Menu | ![Lighthouse Testing Desktop - Menu](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-menu.png) |
@@ -863,7 +870,7 @@ Desktop | My Reservations | ![Lighthouse Testing Desktop - My Reservations](http
 Desktop | Sign In | ![Lighthouse Testing Desktop - Sign In](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-sign-in.png) |
 Desktop | Sign Up | ![Lighthouse Testing Desktop - Sign Up](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-sign-up.png) |
 Desktop | Sign Out | ![Lighthouse Testing Desktop - Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-sign-out.png) |
-Desktop | Succesful Sign Out | ![Lighthouse Testing Desktop - Successful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-succesful-sign-out.png) |
+Desktop | Successful Sign Out | ![Lighthouse Testing Desktop - Successful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/lighthouse-desktop-succesful-sign-out.png) |
 
 ## JShint Validation
 I used JShint to validate the JS that I wrote for the project. Initially I ran into 46 warnings about the use of const and the undefined variable of Bootstrap, however to stop this from showing up I added the following at the top of my code:
@@ -924,7 +931,7 @@ iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Del
 iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Sign In | ![iPhone Sign In testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-sign-in.png) | No issues
 iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Sign Up | ![iPhone Sign Up testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-sign-up.png) | No issues
 iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Sign Out | ![iPhone Sign Out testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-sign-out.png) | No issues
-iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Succesful Sign Out | ![iPhone Succesful Sign Out testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-succesful-sign-out.png) | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Successful Sign Out | ![iPhone Successful Sign Out testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-succesful-sign-out.png) | No issues
 Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Home | ![Android Home testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-home.png) | No issues
 Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Our Philosophy | ![Android Our Philosophy testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-philosophy.png) | No issues
 Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Menu | ![Android Menu testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-menu.png)| No issues
@@ -935,7 +942,7 @@ Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Gal
 Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Sign In | ![Android Sign In testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-sign-in.png) | No issues
 Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Sign Up | ![Android Sign Up testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-sign-up.png) | No issues
 Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Sign Out | ![Android Sign Out testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-sign-out.png) | No issues
-Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Succesful Sign Out | ![Android Succesful Sign Out testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-succesful-sign-out.png) | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Successful Sign Out | ![Android Successful Sign Out testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-succesful-sign-out.png) | No issues
 Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Home | ![Tablet Home testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-home.png) | No issues
 Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Our Philosophy | ![Tablet Philosophy testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-philosophy.png) | No issues
 Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Menu | ![Tablet Menu testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-menu.png) | No issues
@@ -946,7 +953,7 @@ Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Delete Reservation | ![Tablet De
 Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Sign In | ![Tablet Sign In testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-sign-in.png) | No issues
 Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Sign Up | ![Tablet Sign Up](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-sign-up.png) | No issues
 Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Sign Out | ![Tablet Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-sign-out.png) | No issues
-Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Succesful Sign Out | ![Tablet Succesful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-succesful-sign-out.png) | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Successful Sign Out | ![Tablet Successful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-succesful-sign-out.png) | No issues
 Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Home | ![Desktop Home testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-home.png) | No issues
 Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Our Philosophy | ![Desktop Our Philosophy testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-philosophy.png) | No issues
 Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Menu | ![Desktop Menu testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-menu.png) | No issues
@@ -957,11 +964,7 @@ Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Delete Reserva
 Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Sign In | ![Desktop Sign In testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-sign-in.png) | No issues
 Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Sign Up | ![Desktop Sign Up testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-sign-up.png) | No issues
 Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Sign Out | ![Desktop Sign Out testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-sign-out.png) | No issues
-Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Succesful Sign Out | ![Desktop Succesful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-succesful-sign-out.png) | No issues
-
-
-
-
+Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Successful Sign Out | ![Desktop Successful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-succesful-sign-out.png) | No issues
 
 ## Browser Testing
 I used BrowserStack to test the website under various different browser conditions - for some reason I was not able to log in to the user area under any of the browser models, so I was unable to the reservation form and the My Reservations area of the website
@@ -1013,7 +1016,7 @@ Test | Action | Expected Result | Actual Result
 --- | --- | --- | ---
 Tasting and Signature Menus | Menu loads on launch | On launching the website both menus load, however the A La Carte menu remains hidden by Bootstrap pills until activated by the user. The user should instantly be able to see the signature tasting menu | On launching the website both menus load, however the A La Carte menu remains hidden by Bootstrap pills until activated by the user. The user can instantly be able to see the signature tasting menu 
 Tasting Menu Order | Menu loads in correct order  | The Tasting Menu is ordered individually rather than following the alphabetising of the A La Carte. The order of the menu can be decided by the SuperAdmin and updates. | The Tasting Menu is ordered individually rather than following the alphabetising of the A La Carte. The order of the menu can be decided by the SuperAdmin and on reload updates to follow the order set in the Admin panel
-Allergies | Allergies shown | Allergies should be shown underneath the menu item description and should be alphabetised. The allergies for each dish can be updated by the SuperAdmin in the Admin panel. | Allergies are shown underneath the menu item descroption and are alphabetised. The allergies for each dish can be updated by the SuperAdmin in the Admin panel and show on load. 
+Allergies | Allergies shown | Allergies should be shown underneath the menu item description and should be alphabetised. The allergies for each dish can be updated by the SuperAdmin in the Admin panel. | Allergies are shown underneath the menu item description and are alphabetised. The allergies for each dish can be updated by the SuperAdmin in the Admin panel and show on load. 
 Bootstrap Pills | Pills launch content when clicked | User loads A La Carte menu when they click the "A La Carte" pill. User loads the starters of the A La Carte Menu when they click "Starters". User loads the mains of the A La Carte Menu when they click "Mains". User loads the Sides of the A La Carte Menu when they click "Sides". User loads the Desserts of the A La Carte Menu when they click "Desserts" | User loads A La Carte menu when they click the "A La Carte" pill. User loads the starters of the A La Carte Menu when they click "Starters". User loads the mains of the A La Carte Menu when they click "Mains". User loads the Sides of the A La Carte Menu when they click "Sides". User loads the Desserts of the A La Carte Menu when they click "Desserts"
 Bootstrap Pills | Pills color inverts when active | The colour of the pill that is active inverts when the pill is active and showing the correct content. When a user hovers over an inactive pill, the colour inverts to show the user where they can click. | The colour of the pill that is active inverts when the pill is active and showing the correct content. When a user hovers over an inactive pill, the colour inverts to show the user where they can click. 
 
@@ -1028,8 +1031,8 @@ Validation | Phone validation is working | If a user tries to submit a reservati
 Booking for past date | User cannot book a past date | The user is barred from booking a past date and previous dates are disabled for clicking. | The user is barred from booking a past date and previous dates are disabled for clicking. NOTE - There is a discrepency with Safari when accessed via a mobile phone which means that past dates can be clicked on. This appears to be a general issue with Safari on mobile and at the time of submission I was unable to figure a work around for it. However when trying to submit a reservation form through mobile Safari, the user is still unable to submit the form with a past date and a tooltip shows specifically on mobile Safari browsers saying "you cannot choose a past date".
 Allergies tickbox | User can provide allergies | Allergies can be checked and unchecked to be provided at the time of form submission. There is no limit as to how many allergies can be added and as this is not a required field, forms can also be submitted without providing any allergies | Allergies can be checked and unchecked to be provided at the time of form submission. There is no limit as to how many allergies can be added and as this is not a required field, forms can also be submitted without providing any allergies
 Special request | User can provide Special requests | Special requests can be provided in a text box form at the bottom of the reservation form which allows the user to send a short message to the restaurant ie if a guest is going for a birthday, or if they have an accessibility requirement that needs to be met. The special requests form is an optional form and therefore the form can be submitted wihout providing any special requests. | Special requests can be provided in a text box form at the bottom of the reservation form which allows the user to send a short message to the restaurant ie if a guest is going for a birthday, or if they have an accessibility requirement that needs to be met. The special requests form is an optional form and therefore the form can be submitted wihout providing any special requests. 
-Succesful Form Submission | Bootstrap Alert | When a form is succesfully recieved, a small Bootstrap alert should show at the top of the scren saying "Your reservation has been submitted successfully!". When the user reloads the alert disappears. | When a form is succesfully recieved, a small Bootstrap alert should show at the top of the scren saying "Your reservation has been submitted successfully!". When the user reloads the alert disappears.
-Succesful Form Submission | Django Admin panel | When a form is succesfully recieved, it can be seen through the Django Admin panel. The admin panel is ordered by date, with the upcoming reservation at the top of the list. The admin panel shows the following information: user, Guest Name, Guest Email, Guest Phone, Reservation Date, Time Slot, Guest No., Special Requests, Allergies| When a form is succesfully recieved, it can be seen through the Django Admin panel. The admin panel is ordered by date, with the upcoming reservation at the top of the list. The admin panel shows the following information: user, Guest Name, Guest Email, Guest Phone, Reservation Date, Time Slot, Guest No., Special Requests, Allergies
+Successful Form Submission | Bootstrap Alert | When a form is successfully received, a small Bootstrap alert should show at the top of the scren saying "Your reservation has been submitted successfully!". When the user reloads the alert disappears. | When a form is successfully received, a small Bootstrap alert should show at the top of the scren saying "Your reservation has been submitted successfully!". When the user reloads the alert disappears.
+Successful Form Submission | Django Admin panel | When a form is successfully received, it can be seen through the Django Admin panel. The admin panel is ordered by date, with the upcoming reservation at the top of the list. The admin panel shows the following information: user, Guest Name, Guest Email, Guest Phone, Reservation Date, Time Slot, Guest No., Special Requests, Allergies| When a form is successfully received, it can be seen through the Django Admin panel. The admin panel is ordered by date, with the upcoming reservation at the top of the list. The admin panel shows the following information: user, Guest Name, Guest Email, Guest Phone, Reservation Date, Time Slot, Guest No., Special Requests, Allergies
 
 ### My Reservations
 Test | Action | Expected Result | Actual Result
@@ -1046,7 +1049,7 @@ Test | Action | Expected Result | Actual Result
 --- | --- | --- | ---
 Sign Up | AllAuth form | AllAuth form loads, asking user to provide a mandatory username and password and an optional email. If the user tries to submit the form without providing this information, they should be prompted to fill in the required fields | AllAuth form loads, asking the user to provide a mandatory username and password, with an optional email. If the user tries to submit a form without providing the required fields, they are prompted to fill in the required fields
 Button | Button colours change | The colours of the buttons should invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to | The colours of the button invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to 
-Button | AllAuth form is succesful | Upon the user providing all the required information, the user can hit sign up and the account is created and the page reloads to the home page |  Upon the user providing all the required information, the user can hit sign up and the account is created and the page reloads to the home page
+Button | AllAuth form is successful | Upon the user providing all the required information, the user can hit sign up and the account is created and the page reloads to the home page |  Upon the user providing all the required information, the user can hit sign up and the account is created and the page reloads to the home page
 Sign In link | Sign In link redirects | If the user clicks on the hyperlinked "log in here" they should be redirected to the sign in page | If the user clicks on the hyperlinked "log in here" they are redirected to the sign in page. 
 
 ### Sign In
@@ -1054,15 +1057,15 @@ Test | Action | Expected Result | Actual Result
 --- | --- | --- | ---
 Sign In | AllAuth form | AllAuth form loads, asking user to provide mandatory username and password. If the user tries to log in without providing this information they should be prompted to fill in the required fields | AllAuth form loads, asking user to provide mandatory username and password. If the user tries to log in without providing this information, they are prompted to fill in the required fields.
 Button | Button colours change | The colours of the buttons should invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to | The colours of the button invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to 
-Sign in succesful | User is logged in with correct credentials | Provided the correct credentials are provided, the user shoud be logged in and taken back to the home page. If the login credentials are incorrect, the user should be informed that the information provided is incorrect and should not be logged in.  | Providing the correct credentials are provided, the user is logged in and taken back to the home page. If the login credentials are incorrect, the user is informed that the information provided is incorrect and is not logged in
+Sign in successful | User is logged in with correct credentials | Provided the correct credentials are provided, the user shoud be logged in and taken back to the home page. If the login credentials are incorrect, the user should be informed that the information provided is incorrect and should not be logged in.  | Providing the correct credentials are provided, the user is logged in and taken back to the home page. If the login credentials are incorrect, the user is informed that the information provided is incorrect and is not logged in
 Sign Up link | Sign Up link redirects | If the user clicks on the hyperlinked "sign up here" they should be redirected to the sign up page | If the user clicks on the hyperlinked "sign up here" they are redirected to the sign up page. 
 
 ### Sign Out
 Test | Action | Expected Result | Actual Result
 --- | --- | --- | ---
 Button | Button colours change | The colours of the buttons should invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to | The colours of the button invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to 
-Button | Sign out button works | Sign out button should succesfully sign out the user, redirecting them to a succesful sign out page | Sign out button succesfully signs out user and redirects them to a succesful sign out page
-Succesful Sign Out | Succesful Sign Out page loads | Upon clicking the "Sign Out" button, the user should be taken to a page confirming succesful sign out along with a "return home" button and a link to redirect the user back to the sign in page | Upon clicking the "Sign Out" button, the user is taken to a page confirming succesful sign out along with a "return home" button and a link to redirect the user back to the sign in page
+Button | Sign out button works | Sign out button should successfully sign out the user, redirecting them to the Successful Sign Out page | Sign out button successfully signs out user and redirects them to the Successful Sign Out page
+Successful Sign Out | Successful Sign Out page loads | Upon clicking the "Sign Out" button, the user should be taken to a page confirming successful sign out along with a "return home" button and a link to redirect the user back to the sign in page | Upon clicking the "Sign Out" button, the user is taken to a Successful Sign Out page along with a "return home" button and a link to redirect the user back to the sign in page
 Sign Back In link | Sign Back in redirects to correct page | The Sign Back in link should redirect back to the login page | The Sign Back In Link redirects back to the login page
 
 ## Testing Against User Stories
@@ -1082,9 +1085,8 @@ As a User I can see the availability of tables at any given day and time slot so
 As a User I can see a home page which provides an overview of the restaurant so that I can know more about the restaurant | Should Have | Met
 As a User I can see the contact details of the restaurant so that I know where to go and what number to call | Should Have | Met
 As a user I can find out about the ethos of the restaurant so that I can decide if it is my sort of place to visit | Should Have | Met
-As a User I can see the contact details of the restaurant so that I know where to go and what number to call | Should Have | Met
 As a User I can delete my account so that *I no longer have an account with Kytchen Table | Should Have | Not Met
-As a user I can sign up to the restaurants mailing list so that I can recieve up to date information about changing menus at the restuarant | Could Have | Not Met - Future Feature
+As a user I can sign up to the restaurants mailing list so that I can receive up to date information about changing menus at the restuarant | Could Have | Not Met - Future Feature
 As a User I can see a 404 error page so that I can know I've gone to the wrong page | Could Have | Not Met - Future Feature
 As a User I can filter the menu by allergen so that I can easily see what items contain food I am allergic to | Won't Have | Not Met
 
@@ -1166,7 +1168,6 @@ Press Enter to create your local clone.
 
 # Tools & Technologies Used
 * Balsamiq for wireframes
-* Mermaid for ERD's
 * Canva & Photoshop for favicon, logo and watermark creation
 * Gemini AI as a prompt to create content for menus
 * Google Fonts for web fonts
@@ -1174,10 +1175,11 @@ Press Enter to create your local clone.
 * Coolors for colour palette generation
 * Our Own Thing's Font Pairing website for typography
 * Mermaid to create an ERD for Kytchen Table
+* Pexels for images that appeared across the website
 * GitHub
 * GitHub Issues
 * GitHub Projects Kanban Board
-* VSCode
+* VSCode - along with Django
 * Chat GPT for debugging assistance 
 * CI PEP8 Linter
 * JShint
@@ -1188,4 +1190,19 @@ Press Enter to create your local clone.
 * Blisk for device testing
 
 # Credits and Acknowledgements
+Kytchen Table was heavily inspired by a restaurant I visited for my 30th birthday which is Simon Rogan's Henrock. It was a place that I was instantly inspired by with their ethos of sustainable farming and farm to table cooking which I find fascinating. That said, every menu item that appears on the website was created by me with some assistance from Gemini AI in putting the final menu together. Kyran Becker is a character I created as is the restaurant "Kytchen Table". To my knowledge there is no restaurant currently operating that has this restaurant name or the menu included on the website.
+
+Some code was taken from the Code Institute I Think Therefore I Blog, particularly with the settings app. 
+
 # A Final Note from the Developer
+It feels almost silly to say, but as with every Code Institute project, the next one is always a steep learning curve which challenges and forces me to question my ability not just as a coder, but also as a creative. I really struggled when it came to deciding what I actually wanted to do for this final "big dog" full stack project, but the minute I got my inspiration I was off like a greyhound on a track. I found this genuinely puzzling, challenging, perplexing and at times really quite isolating as I tried to figure out how to build the website I wanted to create in what felt like so little time. I am pleased to say that I am truly proud of this final project that I have pulled together, despite all of the challenges along the way. There are still many features I would love to add — including a full user account page, a seasonal opening-hours system, and allergen filtering — but I am proud of how this MVP version reliably meets the core needs of both users and restaurant staff.
+
+I continue to be endlessly appreciative of my mentor Spencer Barribal, who I can only hope and pray that by the time I got my results back from this project will have finally managed to complete on his house and will be off sunning himself on a beach somewhere. His was a voice of reason but also of hilarity, and I so endlessly enjoyed every single one of our calls, even if we did have to remind each other to stay on track!
+
+I will never not be grateful to the love and support of my partner Jon who has taken on so much this year to ensure that I have the space and ability to put the time and effort into coding and to building my projects in a way that I am satisfied with, and I thank my lucky stars every day that a year from now we get to legally share the brain cell for the rest of our lives. I am also grateful to our little furry baby, Deedee, who was always there demanding pets and strokes when I was in a coding black hole. And of course, I could not have done this course at all without the love and support (both emotional and financial) of my parents, who have never known how to say no to me a day in their lives, but who love to remind me that there is a brain under all that fluff!
+
+With just one more project to go in my Code Institute journey, I would like to finally thank Code Institute, for putting together this program which has helped me grasp a new interest in life. 
+
+All trademarked and/or copyrighted content are the property of their respective owners.
+
+Developed by Alice Foster, 2025.
