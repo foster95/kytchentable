@@ -2,6 +2,8 @@
 
 The project was developed using Django, Bootstrap, PostgreSQL, Allauth authentication, and Agile methodology. It is inspired by modern farm-to-table Michelin-style restaurants.
 
+![Kytchen Table Mock Ups](https://github.com/foster95/kytchentable/blob/main/static/images/readme/kytchen-table-mocks.png)
+
 To see the full deployed project please click [here](https://kytchen-table-56648feabc6b.herokuapp.com/)
 
 *Kytchen Table: Come Home to the Table*
@@ -797,7 +799,7 @@ To try and resolve this issue I attempted the following options:
 * Ensured Django renders the correct HTML5 field type using:
 
             self.fields['reservation_date'].input_type = 'date'
-* Removed any possibility of novalidate being present in the <form> tag.
+* Removed any possibility of novalidate being present in the form tag.
 * Checked for CSS that may be suppressing native validation UI.
 * Confirmed that validation does work — only the tooltip display is affected.
 
@@ -908,6 +910,69 @@ Reserve | urls.py | ![PEP8 - Reserve - urls.py](https://github.com/foster95/kytc
 Reserve | views.py |![PEP8 - Reserve - views.py](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ci-linter-reserve-view.png)
 
 ## Device Testing
+I used Blisk to conduct device testing across multiple devices
+
+Type of Device | Devices Tested | Page | Screenshot | Notes
+--- | --- | --- | --- | --- 
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Home | | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Our Philosophy | | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Menu | | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Reserve | | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | My Reservations | | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Edit Reservation | | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Delete Reservation | | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Sign In | | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Sign Up | | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Sign Out | | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Succesful Sign Out | | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Home | | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Our Philosophy | | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Menu | | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Reserve | | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | My Reservations | | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Edit Reservation | | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Delete Reservation | | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Sign In | | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Sign Up | | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Sign Out | | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Succesful Sign Out | | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Home | | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Our Philosophy | | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Menu | | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Reserve | | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | My Reservations | | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Edit Reservation | | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Delete Reservation | | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Sign In | | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Sign Up | | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Sign Out | | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Succesful Sign Out | | No issues
+Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Home | | No issues
+Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Our Philosophy | | No issues
+Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Menu | | No issues
+Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Reserve | | No issues
+Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | My Reservations | | No issues
+Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Edit Reservation | | No issues
+Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Delete Reservation | | No issues
+Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Sign In | | No issues
+Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Sign Up | | No issues
+Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Sign Out | | No issues
+Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Succesful Sign Out | | No issues
+
+
+
+
+
+## Browser Testing
+I used BrowserStack to test the website under various different browser conditions - for some reason I was not able to log in to the user area under any of the browser models, so I was unable to the reservation form and the My Reservations area of the website
+
+Browser | Notes
+--- | ---
+Edge 142 | No issues
+Firefox 144 | No issues
+Google 142 | No issues
+Opera 122 | No issues
+Safari 5.1 | No issues
 
 ## Automated Testing
 I have conducted a series of automated tests on my application.
@@ -916,7 +981,7 @@ I fully acknowledge and understand that, in a real-world scenario, an extensive 
 
 To conduct these tests I used Django's built in unit testing framework. To run these tests I can the python3 manage.py test command into the terminal.
 
-![Django Automated Testing]()
+![Django Automated Testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/automated-testing-result.png)
 
 ## Manual Testing
 ### Base
@@ -1119,6 +1184,8 @@ Press Enter to create your local clone.
 * Heroku
 * Google Lighthouse
 * WAVE Accessibility Checker
+* BrowserStack for browser testing
+* Blisk for device testing
 
 # Credits and Acknowledgements
 # A Final Note from the Developer
