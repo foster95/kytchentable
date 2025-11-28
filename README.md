@@ -8,7 +8,7 @@ To see the full deployed project please click [here](https://kytchen-table-56648
 
 *Kytchen Table: Come Home to the Table*
 
-Welcome to Kytchen Table, your newest farm to table restaurant, serving food from the heart, and sourced and supported by local famers and suppliers and run by Head Chef Kyran Becker. Kytchen Table's website is designed with users at its heart, allowing them to see the menu with ease, as well as signing up to the restaurant to allow them to make and amend bookings and join their mailing list to receive up to date information about the restaurants seasonal menu changes. The website also has backend functionality, allowing Super Admins to add, modify and make changes to menu options on the live site, as well as control and amend bookings. 
+Welcome to Kytchen Table, your newest farm to table restaurant, serving food from the heart, and sourced and supported by local farmers and suppliers and run by Head Chef Kyran Becker. Kytchen Table's website is designed with users at its heart, allowing them to see the menu with ease, as well as signing up to the restaurant to allow them to make and amend bookings and join their mailing list to receive up to date information about the restaurants seasonal menu changes. The website also has backend functionality, allowing Super Admins to add, modify and make changes to menu options on the live site, as well as control and amend bookings. 
 
 The target audience for Kytchen Table is middle class and wealthy food lovers, who are keen on knowing the stories of their food and the journey the ingredients took to reach their plate. It is directly inspired by restaurants such as Simon Rogan's Henrock and Raymond Blanc's Le Manoir aux Quat’Saisons.
 
@@ -56,7 +56,7 @@ To build out Kytchen Table, I used the theory of the 5 planes of UX, going throu
 ## Strategy
 ### Purpose
 * To provide the restaurant management team with a website that can monitor and manage restaurant reservations and menus
-* To provide potential customers with a holistic and intuitve website which allows the user to find out about the website, including the menu available at the time of year, and make a reservation, as well as give them the tools to amend the booking if required.
+* To provide potential customers with a holistic and intuitive website which allows the user to find out about the website, including the menu available at the time of year, and make a reservation, as well as give them the tools to amend the booking if required.
 
 ### Primary User Needs
 * Restaurant management need to be able to see an overview of the reservations by day
@@ -68,7 +68,7 @@ To build out Kytchen Table, I used the theory of the 5 planes of UX, going throu
 ### Business Goals
 * To provide a website that provides an upscale, sleek experience, mirroring the experience they will be recieving at the restaurant.
 * The website should include a management portal for restaurant managers to be able to add, remove or amend all menus, as well as update allergens. 
-* The website mangement portal should also make life as easy for staff as possible, with an immediate overview as to not just bookings by day but the available tables by day and time slot as well
+* The website management portal should also make life as easy for staff as possible, with an immediate overview as to not just bookings by day but the available tables by day and time slot as well
 
 ## Scope
 ### Functional Specifications
@@ -82,7 +82,7 @@ To build out Kytchen Table, I used the theory of the 5 planes of UX, going throu
 * Management teams will be able to add or delete any user - but will have to complete additional validation to delete the user
 * Management teams will be able to see all of the upcoming reservations by date and time slot
 * Management teams will be able to amend any and all upcoming reservations, and cancel the reservation if required
-* Mangement will be able to amend the information seen by the users, including menus and allergens
+* Management will be able to amend the information seen by the users, including menus and allergens
 
 ### Content Requirements
 * A favicon must be visible on desktop use
@@ -163,7 +163,7 @@ Using the Agile Methodology, I first created a series of user stories to help br
 * As a Site Admin I can be blocked from any more bookings that slots available per time slot so that I do not overbook any tables
 * As a Site Admin I can delete any account so that I can control access to the user panel
 * As a User I can register for an account with Kytchen Table so that I can log into the user portal
-* As a User I can delete my account so that *I no longer have an account with Kytchen Table
+* As a User I can delete my account so that I no longer have an account with Kytchen Table
 * As a User I can see the availability of tables at any given day and time slot so that I can decide what day and time to book a table
 * As a User I can book a table in a slot so that I can reserve my table at the restaurant
 * As a User I can amend an upcoming booking so that I can change the details provided to the restaurant
@@ -172,7 +172,7 @@ Using the Agile Methodology, I first created a series of user stories to help br
 * As a User I can see the contact details of the restaurant so that I know where to go and what number to call
 * As a User I can find out about the ethos of the restaurant so that I can decide if it is my sort of place to visit
 * As a User I can view the menu so that I can decide what I would like to have
-* As a User I can sign up to the restaurants mailing list so that I can receive up to date information about changing menus at the restuarant
+* As a User I can sign up to the restaurants mailing list so that I can receive up to date information about changing menus at the restaurant
 * As a User I can see a 404 error page so that I can know I've gone to the wrong page
 * As a User  I can filter the menu by allergen so that I can easily see what items contain food I am allergic to
 
@@ -207,7 +207,7 @@ With this in mind the stories were then grouped in the issues board before being
 * As a User I can delete my account so that *I no longer have an account with Kytchen Table
 
 ### Could Have
-* As a user I can sign up to the restaurants mailing list so that I can receive up to date information about changing menus at the restuarant
+* As a user I can sign up to the restaurants mailing list so that I can receive up to date information about changing menus at the restaurant
 * As a User I can see a 404 error page so that I can know I've gone to the wrong page
 
 ### Won't Have
@@ -240,7 +240,7 @@ Prior to beginning the actual build of the website, I created an Entity Relation
 
 # Features
 ## Header
-The header uses the base.html template, and has been designed to be minimalistic in keeping with the rest of the website. The header has the restaurant name which is a hyperlink to the home page and a simple navigation bar. The navigation bar comes from Bootstrap and therefore is responsive to screen sizes, stretching to a full bar only on desktops and wider. At all other times the navigation bar is accessible via the burger icon.
+The header extends the base.html template and follows a minimalistic design that matches the rest of the website. The header has the restaurant name which is a hyperlink to the home page and a simple navigation bar. The navigation bar comes from Bootstrap and therefore is responsive to screen sizes, stretching to a full bar only on desktops and wider. At all other times the navigation bar is accessible via the burger icon.
 
 ## Footer
 The footer also uses the base.html website, and again has been designed with minimalism in mind. The footer features three columns, one for the website address (meeting the user story requirements), one for the opening and closing times of the restaurant and one for the social media handles of the website. All of the social media links apply the "rel=noopeener" rule and open to a new page as per best practise. All of the links also have aria labels associated with them for screen readers. The footer was also created with Bootstrap and therefore on devices other than desktop, the footer stacks on top of each other. On a desktop the footer stretches out into one row with three columns. 
@@ -669,7 +669,7 @@ To fix this I removed the choices=ALLERGEN_CHOICES which instantly removed the d
 #### Tasting Menu ordering by alphabet rather than individual order
 After adding in a tasting menu after researching other Michelin restaurants and seeing this as a common feature, I realised that the tasting menu was ordering by alphabetical order as it was with the A La Carte - whicih wasn't matching the tasting menu order. To fix this I added in a custom ordering field, specifically for the tasting menu but not the A La Carte.
 
-Code before change: 
+Before (original code):
 
         class MenuItem(models.Model):
 
@@ -686,7 +686,7 @@ Code before change:
                 ordering = ['category', 'name']
 
 
-Code after change:
+After (updated with fix):
             class MenuItem(models.Model):
 
          """
@@ -708,7 +708,7 @@ Code after change:
 
 I also updated the view to ensure that this was reflected on the website: 
 
-Code before change: 
+Before (original code):
 
             def menu(request):
                 menu_items = {
@@ -722,7 +722,7 @@ Code before change:
                     request, 'menu/menu.html', 
                     {'menu_items': menu_items})
 
-Code after change:
+After (updated with fix):
 
             def menu(request):
                 menu_items = {
@@ -747,7 +747,7 @@ Code after change:
 
 And finally I also updated the admin to make it easier for staff and administrative members to update the individual order of the tasting menu without impacting the A La Carte:
 
-Code before the change:
+Before (original code):
 
             @admin.register(MenuItem)
                 class MenuItemAdmin(admin.ModelAdmin):
@@ -756,7 +756,7 @@ Code before the change:
                     search_fields = ('name', 'description')  
                     filter_horizontal = ('allergen',)  
 
-Code after the change:
+After (updated with fix):
 
             @admin.register(MenuItem)
                 class MenuItemAdmin(admin.ModelAdmin):
@@ -772,7 +772,7 @@ Whilst tweaking the administrative panel for reservations, I noticed that for so
 updated the reservation model, and split the time and the date so that this would show up correctly.
 
 #### Reservation date could change to past date
-I noticed that whilst customers couldn't immediately book a date in the past, this didn't stop the booker or the administrator being able to go in and change the booking seperately to the past. To combat this, I added an additional layer of validation at the model level which disabled customers from changing the date to the past. To do this I added the following code to the reservation model to ensure the data is sent cleanly:
+I noticed that whilst customers couldn't immediately book a date in the past, this didn't stop the booker or the administrator being able to go in and change the booking separately to the past. To combat this, I added an additional layer of validation at the model level which disabled customers from changing the date to the past. To do this I added the following code to the reservation model to ensure the data is sent cleanly:
 
             def clean(self):
             """Prevent saving or editing reservations in the past."""
@@ -852,7 +852,7 @@ I used the W3C CSS validator to check the validity of my CSS throughout the proj
 ![CSS Validation](https://github.com/foster95/kytchentable/blob/main/static/images/readme/css-validation.png)
 
 ## Accessibility Testing
-To check that the website was considered accessible, I used WAVE's accessibility checker. This checker raised one issue of contrast errors with the text used on top of the hero image not considered contrasting enough. Whilst I considered changing this to make it more contrasting, changing it made the statement much bolder on the page which made it stand out and ruin the overall sleek subtley of the message on top of the hero image. With that in mind I decided to not change the text colour to improve contrast as I felt that it would have more of a negative impact than a positive impact, and was ultimately minor in terms of the information it provided to a user. WAVE also alerted me that there was a redundant link as I had linked the website title, as well as having a "home" button. Again I decided to leave this as it was, to ensure there was no ambiguity for users when it came to returning to the home page. 
+To check that the website was considered accessible, I used WAVE's accessibility checker. This checker raised one issue of contrast errors with the text used on top of the hero image not considered contrasting enough. Whilst I considered changing this to make it more contrasting, changing it made the statement much bolder on the page which made it stand out and ruin the overall sleek subtlety of the message on top of the hero image. With that in mind I decided to not change the text colour to improve contrast as I felt that it would have more of a negative impact than a positive impact, and was ultimately minor in terms of the information it provided to a user. WAVE also alerted me that there was a redundant link as I had linked the website title, as well as having a "home" button. Again I decided to leave this as it was, to ensure there was no ambiguity for users when it came to returning to the home page. 
 
 ![WAVE Testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/wave-validation.png)
 
@@ -1056,7 +1056,7 @@ Test | Action | Expected Result | Actual Result
 --- | --- | --- | ---
 Sign Up | AllAuth form | AllAuth form loads, asking user to provide a mandatory username and password and an optional email. If the user tries to submit the form without providing this information, they should be prompted to fill in the required fields | AllAuth form loads, asking the user to provide a mandatory username and password, with an optional email. If the user tries to submit a form without providing the required fields, they are prompted to fill in the required fields
 Button | Button colours change | The colours of the buttons should invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to | The colours of the button invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to 
-Button | AllAuth form is successful | Upon the user providing all the required information, the user can hit sign up and the account is created and the page reloads to the home page |  Upon the user providing all the required information, the user can hit sign up and the account is created and the page reloads to the home page
+Button | AllAuth form is successful | Upon the user providing all the required information, the user can hit Sign Up and the account is created and the page reloads to the home page |  Upon the user providing all the required information, the user can hit Sign Up and the account is created and the page reloads to the home page
 Sign In link | Sign In link redirects | If the user clicks on the hyperlinked "log in here" they should be redirected to the sign in page | If the user clicks on the hyperlinked "log in here" they are redirected to the sign in page. 
 
 ### Sign In
@@ -1065,7 +1065,7 @@ Test | Action | Expected Result | Actual Result
 Sign In | AllAuth form | AllAuth form loads, asking user to provide mandatory username and password. If the user tries to log in without providing this information they should be prompted to fill in the required fields | AllAuth form loads, asking user to provide mandatory username and password. If the user tries to log in without providing this information, they are prompted to fill in the required fields.
 Button | Button colours change | The colours of the buttons should invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to | The colours of the button invert when the user hovers their mouse over the button, allowing the user to see where they are pointing to 
 Sign in successful | User is logged in with correct credentials | Provided the correct credentials are provided, the user shoud be logged in and taken back to the home page. If the login credentials are incorrect, the user should be informed that the information provided is incorrect and should not be logged in.  | Providing the correct credentials are provided, the user is logged in and taken back to the home page. If the login credentials are incorrect, the user is informed that the information provided is incorrect and is not logged in
-Sign Up link | Sign Up link redirects | If the user clicks on the hyperlinked "sign up here" they should be redirected to the sign up page | If the user clicks on the hyperlinked "sign up here" they are redirected to the sign up page. 
+Sign Up link | Sign Up link redirects | If the user clicks on the hyperlinked "Sign Up here" they should be redirected to the Sign Up page | If the user clicks on the hyperlinked "Sign Up here" they are redirected to the Sign Up page. 
 
 ### Sign Out
 Test | Action | Expected Result | Actual Result
@@ -1093,7 +1093,7 @@ As a User I can see a home page which provides an overview of the restaurant so 
 As a User I can see the contact details of the restaurant so that I know where to go and what number to call | Should Have | Met
 As a user I can find out about the ethos of the restaurant so that I can decide if it is my sort of place to visit | Should Have | Met
 As a User I can delete my account so that I no longer have an account with Kytchen Table | Should Have | Not Met - Future Feature
-As a user I can sign up to the restaurants mailing list so that I can receive up to date information about changing menus at the restuarant | Could Have | Not Met - Future Feature
+As a user I can sign up to the restaurants mailing list so that I can receive up to date information about changing menus at the restaurant | Could Have | Not Met - Future Feature
 As a User I can see a 404 error page so that I can know I've gone to the wrong page | Could Have | Not Met - Future Feature
 As a User I can filter the menu by allergen so that I can easily see what items contain food I am allergic to | Won't Have | Not Met - Future Feature
 
@@ -1105,7 +1105,7 @@ All essential functionalities of the Kytchen Table website work as intended and 
 * Responsiveness is maintained across all devices and browsers
 * Accessibility standards are mostly met, with only minor colour contrast concerns
 
-The project is stable, functional, and ready for deployment. Any remaining issues are documented in Unsolved Bugs and planned for future development.
+Overall testing confirms that the application is stable, user-friendly, fully responsive, and ready for production deployment. Any remaining issues are documented in Unsolved Bugs and planned for future development.
 
 ## Deployment
 The live deployed application can be found on Heroku
@@ -1139,6 +1139,7 @@ The Procfile can be created with the following command:
 
 echo web: gunicorn app_name.wsgi > Procfile
 replace app_name with the name of your primary Django app name; the folder where settings.py is located
+
 For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
 
 Either (recommended):
@@ -1147,12 +1148,12 @@ Select Automatic Deployment from the Heroku app.
 
 Or:
 
-In the Terminal/CLI, connect to Heroku using this command: heroku login -i
-Set the remote for Heroku: heroku git:remote -a app_name (replace app_name with your app name)
-After performing the standard Git add, commit, and push to GitHub, you can now type:
-git push heroku main
-The project should now be connected and deployed to Heroku
-After deployment, I applied database migrations on Heroku using heroku run python manage.py migrate.
+* In the Terminal/CLI, connect to Heroku using this command: heroku login -i
+* Set the remote for Heroku: heroku git:remote -a app_name (replace app_name with your app name)
+* After performing the standard Git add, commit, and push to GitHub, you can now type:
+        git push heroku main
+* The project should now be connected and deployed to Heroku
+* After deployment, I applied database migrations on Heroku using heroku run python manage.py migrate.
 
 ## Forking and Cloning
 ### Forking
@@ -1166,12 +1167,12 @@ Click on Fork button in upper right hand corner
 Follow the below steps to clone the repository:
 
 Go to the GitHub repository
-Locate the Code button above the list of files and click it
-Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
-Open Git Bash
-Change the current working directory to the one where you want the cloned directory
-Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
-Press Enter to create your local clone.
+* Locate the Code button above the list of files and click it
+* Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
+* Open Git Bash
+* Change the current working directory to the one where you want the cloned directory
+* Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+* Press Enter to create your local clone.
 
 # Tools & Technologies Used
 * Balsamiq for wireframes
