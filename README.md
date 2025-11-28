@@ -1127,18 +1127,22 @@ SECRET_KEY | any-random-secret-key
 
 Heroku needs some additional files in order to deploy properly.
 
-requirements.txt
-Procfile
+            requirements.txt
+            Procfile
+            
 You can install this project's requirements.txt (where applicable) using:
 
-pip3 install -r requirements.txt
+            pip3 install -r requirements.txt
+
 If you have your own packages that have been installed, then the requirements file needs updated using:
 
-pip3 freeze --local > requirements.txt
+            pip3 freeze --local > requirements.txt
+
 The Procfile can be created with the following command:
 
-echo web: gunicorn app_name.wsgi > Procfile
-replace app_name with the name of your primary Django app name; the folder where settings.py is located
+            echo web: gunicorn app_name.wsgi > Procfile
+
+Replace app_name with the name of your primary Django app name; the folder where settings.py is located
 
 For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
 
@@ -1151,7 +1155,9 @@ Or:
 * In the Terminal/CLI, connect to Heroku using this command: heroku login -i
 * Set the remote for Heroku: heroku git:remote -a app_name (replace app_name with your app name)
 * After performing the standard Git add, commit, and push to GitHub, you can now type:
-        git push heroku main
+
+            git push heroku main
+
 * The project should now be connected and deployed to Heroku
 * After deployment, I applied database migrations on Heroku using heroku run python manage.py migrate.
 
