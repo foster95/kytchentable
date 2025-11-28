@@ -914,50 +914,50 @@ I used Blisk to conduct device testing across multiple devices
 
 Type of Device | Devices Tested | Page | Screenshot | Notes
 --- | --- | --- | --- | --- 
-iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Home | | No issues
-iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Our Philosophy | | No issues
-iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Menu | | No issues
-iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Reserve | | No issues
-iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | My Reservations | | No issues
-iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Edit Reservation | | No issues
-iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Delete Reservation | | No issues
-iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Sign In | | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Home | ![iPhone Home testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-home.png)| No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Our Philosophy | ![iPhone Our Philosphy testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-philosophy.png) | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Menu | ![iPhone Menu testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-menu.png) | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Reserve | ![iPhone Reserve testig](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-reserve.png) | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | My Reservations | ![iPhone My Reservations testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-my-reservations.png) | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Edit Reservation | ![iPhone Edit Reservation testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-edit-reservation.png) | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Delete Reservation | ![iPhone Delete Reservation testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-delete-reservation.png) | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Sign In | ![iPhone Sign In testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-sign-in.png) | No issues
 iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Sign Up | | No issues
 iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Sign Out | | No issues
-iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Succesful Sign Out | | No issues
-Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Home | | No issues
-Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Our Philosophy | | No issues
-Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Menu | | No issues
-Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Reserve | | No issues
-Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | My Reservations | | No issues
-Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Edit Reservation | | No issues
-Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Delete Reservation | | No issues
-Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Sign In | | No issues
-Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Sign Up | | No issues
-Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Sign Out | | No issues
-Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Succesful Sign Out | | No issues
-Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Home | | No issues
-Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Our Philosophy | | No issues
-Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Menu | | No issues
-Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Reserve | | No issues
-Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | My Reservations | | No issues
-Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Edit Reservation | | No issues
-Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Delete Reservation | | No issues
-Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Sign In | | No issues
-Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Sign Up | | No issues
-Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Sign Out | | No issues
-Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Succesful Sign Out | | No issues
-Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Home | | No issues
-Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Our Philosophy | | No issues
-Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Menu | | No issues
-Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Reserve | | No issues
-Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | My Reservations | | No issues
-Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Edit Reservation | | No issues
-Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Delete Reservation | | No issues
-Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Sign In | | No issues
-Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Sign Up | | No issues
-Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Sign Out | | No issues
-Desktop | Small Laptop, Medium Laptop | MacBook Pro | iMac Retina | Succesful Sign Out | | No issues
+iPhone | iPhone 16, iPhone 15 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 8 | Succesful Sign Out | ![iPhone Succesful Sign Out testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-iphone-succesful-sign-out.png) | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Home | ![Android Home testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-home.png) | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Our Philosophy | ![Android Our Philosophy testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-philosophy.png) | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Menu | ![Android Menu testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-menu.png)| No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Reserve | ![Android Reserve testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-reserve.png)| No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | My Reservations | ![Android My Reservations testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-my-reservations.png)| No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Edit Reservation | ![Android Edit Reservation testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-edit-reservation.png) | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Delete Reservation | ![Android Delte Reservation testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-delete-reservation.png) | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Sign In | ![Android Sign In testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-sign-in.png) | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Sign Up | ![Android Sign Up testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-sign-up.png) | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Sign Out | ![Android Sign Out testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-sign-out.png) | No issues
+Android | Google Pixel 8, Google Pixel 6, Google Pixel 4XL, Galaxy S23 Plus, Galaxy S21 Plus | Succesful Sign Out | ![Android Succesful Sign Out testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-android-succesful-sign-out.png) | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Home | ![Tablet Home testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-home.png) | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Our Philosophy | ![Tablet Philosophy testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-philosophy.png) | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Menu | ![Tablet Menu testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-menu.png) | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Reserve | ![Tablet Reserve testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-reserve.png) | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | My Reservations | ![Tablet My Reservations testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-my-reservation.png) | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Edit Reservation | ![Tablet Edit Reservation testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-edit-reservation.png) | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Delete Reservation | ![Tablet Delete Reservation testing]() | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Sign In | ![Tablet Sign In testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-sign-in.png) | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Sign Up | ![Tablet Sign Up](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-sign-up.png) | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Sign Out | ![Tablet Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-sign-out.png) | No issues
+Tablet | iPad Mini 4, iPad Pro 9, iPad Pro 11 | Succesful Sign Out | ![Tablet Succesful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-ipad-succesful-sign-out.png) | No issues
+Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Home | ![Desktop Home testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-home.png) | No issues
+Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Our Philosophy | ![Desktop Our Philosophy testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-philosophy.png) | No issues
+Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Menu | ![Desktop Menu testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-menu.png) | No issues
+Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Reserve | ![Desktop Reserve testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-reserve.png) | No issues
+Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | My Reservations | | No issues
+Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Edit Reservation | ![Desktop Edit Reservation testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-edit-reservation.png) | No issues
+Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Delete Reservation | ![Desktop Delete Reservation testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-delete-reservation.png) | No issues
+Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Sign In | ![Desktop Sign In testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-sign-in.png) | No issues
+Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Sign Up | ![Desktop Sign Up testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-sign-up.png) | No issues
+Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Sign Out | ![Desktop Sign Out testing](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-sign-out.png) | No issues
+Desktop | Small Laptop, Medium Laptop, MacBook Pro, iMac Retina | Succesful Sign Out | ![Desktop Succesful Sign Out](https://github.com/foster95/kytchentable/blob/main/static/images/readme/blisk-device-desktop-succesful-sign-out.png) | No issues
 
 
 
