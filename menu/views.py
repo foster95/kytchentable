@@ -11,7 +11,7 @@ def menu(request):
         'side': MenuItem.objects.filter(category='Side'),
         'desserts': MenuItem.objects.filter(category='Dessert'),
         'tasting': (
-            MenuItem.objects    
+            MenuItem.objects
             .filter(category='Tasting')
             .order_by('tasting_order')
         ),
