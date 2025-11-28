@@ -219,11 +219,18 @@ From the beginning of development, I used GitHub Issues as means to manage and c
 ### GitHub Issues - Start of Project Prior to Coding
 ![GitHub Issues - Start of Project Prior to Coding](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ghi-start-of-project.png)
 
+### GitHub Issues - End of Project After Coding
+![GitHub Issues - End of Project after Coding](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ghi-end-of-project.png)
+
+
 ## GitHub Projects
 In the later stages of development I used GitHub Projects kanban board as a tracker. EPICS with user stories inside them, were placed in the Todo section and were steadily moved over as they were completed.
 
 ### GitHub Projects Board - Start of Project Prior to Coding
 ![GitHub Projects - Start of Project Prior to Coding](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ghp-start-of-project.png)
+
+### GitHub Projects Board - End of Project After  Coding
+![GitHub Projects - End of Project after Coding](https://github.com/foster95/kytchentable/blob/main/static/images/readme/ghp-end-of-project.png)
 
 # Database Design
 ## Data Models
@@ -1085,10 +1092,10 @@ As a User I can see the availability of tables at any given day and time slot so
 As a User I can see a home page which provides an overview of the restaurant so that I can know more about the restaurant | Should Have | Met
 As a User I can see the contact details of the restaurant so that I know where to go and what number to call | Should Have | Met
 As a user I can find out about the ethos of the restaurant so that I can decide if it is my sort of place to visit | Should Have | Met
-As a User I can delete my account so that *I no longer have an account with Kytchen Table | Should Have | Not Met
+As a User I can delete my account so that I no longer have an account with Kytchen Table | Should Have | Not Met - Future Feature
 As a user I can sign up to the restaurants mailing list so that I can receive up to date information about changing menus at the restuarant | Could Have | Not Met - Future Feature
 As a User I can see a 404 error page so that I can know I've gone to the wrong page | Could Have | Not Met - Future Feature
-As a User I can filter the menu by allergen so that I can easily see what items contain food I am allergic to | Won't Have | Not Met
+As a User I can filter the menu by allergen so that I can easily see what items contain food I am allergic to | Won't Have | Not Met - Future Feature
 
 ### Overall Testing Conclusion
 
