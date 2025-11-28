@@ -1,80 +1,131 @@
-// Edit Reservation Modal
-document.addEventListener('DOMContentLoaded', function() {
-  const editButtons = document.querySelectorAll('.edit-btn');
-  const editModalEl = document.getElementById('editReservationModal');
-  const editForm = document.getElementById('edit-reservation-form');
+/* jshint esversion: 6 */
+/* global bootstrap */
 
-  const confirmModalEl = document.getElementById('confirmUpdateModal');
-  const confirmModal = confirmModalEl ? new bootstrap.Modal(confirmModalEl) : null;
-  const confirmUpdateBtn = document.getElementById('confirm-update-btn');
+// 
+// edit reservation using AJAX
+//
+document.addEventListener("DOMContentLoaded", function () {
 
-  if (!editButtons.length || !editModalEl || !editForm) return;
+    const editButtons = document.querySelectorAll(".edit-btn");
+    const modalEl = document.getElementById("editReservationModal");
+    const modal = new bootstrap.Modal(modalEl);
 
-  const bookingIdField = editForm.querySelector('input[name="booking_id"]');
-  const editDate = editForm.querySelector('#id_date');
-  const editTimeSlot = editForm.querySelector('#id_time_slot');
-  const editGuestNo = editForm.querySelector('#id_guests');
-  const editSpecialRequests = editForm.querySelector('#id_special_requests');
-  const editAllergyCheckboxes = document.querySelectorAll('.allergy-checkbox');
-  const clearAllergiesBtn = document.getElementById('clear-allergies-button');
+    const editForm = document.getElementById("edit-reservation-form");
 
-  // Clear allergies button
-  if (clearAllergiesBtn) {
-    clearAllergiesBtn.addEventListener('click', function() {
-      editAllergyCheckboxes.forEach(cb => cb.checked = false);
+    // --- All modal fields (STRICTLY inside modal) ---
+    const bookingIdField = modalEl.querySelector('input[name="booking_id"]');
+    const guestNameField = modalEl.querySelector("#id_guest_name");
+    const guestEmailField = modalEl.querySelector("#id_guest_email");
+    const guestPhoneField = modalEl.querySelector("#id_guest_phone");
+    const dateField = modalEl.querySelector("#id_date");
+    const timeField = modalEl.querySelector("#id_time_slot");
+    const guestsField = modalEl.querySelector("#id_guests");
+    const specialField = modalEl.querySelector("#id_special_requests");
+    const allergyBoxes = modalEl.querySelectorAll(".allergy-checkbox");
+    const clearBtn = modalEl.querySelector("#clear-allergies-button");
+
+    // 
+    // Pre-populate fields on edit button click
+    // 
+    editButtons.forEach(btn => {
+        btn.addEventListener("click", function () {
+
+            // Text fields
+            bookingIdField.value = this.dataset.bookingId;
+            guestNameField.value = this.dataset.bookingName || "";
+            guestEmailField.value = this.dataset.bookingEmail || "";
+            guestPhoneField.value = this.dataset.bookingPhone || "";
+            dateField.value = this.dataset.date || "";
+            timeField.value = this.dataset.time || "";
+            guestsField.value = this.dataset.guests || "";
+            specialField.value = (this.dataset.specialRequests || "").trim();
+
+            // Allergies
+            allergyBoxes.forEach(cb => cb.checked = false);
+
+            const allergies = this.dataset.allergies ? this.dataset.allergies.split(",") : [];
+
+            allergies.forEach(id => {
+                const box = modalEl.querySelector(`#allergen_${id}`);
+                if (box) box.checked = true;
+            });
+        });
     });
-  }
 
-  // Handle edit button clicks
-  editButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const bookingId = this.dataset.bookingId;
-      const date = this.dataset.date;
-      const time = this.dataset.time;
-      const guests = this.dataset.guests;
-      const special = this.dataset.specialRequests || "";
-      const allergies = this.dataset.allergies ? this.dataset.allergies.split(',') : [];
+    // 
+    // Clear all allergy checkboxes
+    // 
+    if (clearBtn) {
+        clearBtn.addEventListener("click", () => {
+            allergyBoxes.forEach(cb => (cb.checked = false));
+        });
+    }
 
-      if (bookingIdField) bookingIdField.value = bookingId;
-      if (editDate) editDate.value = date;
-      if (editTimeSlot) editTimeSlot.value = time;
-      if (editGuestNo) editGuestNo.value = guests;
-      if (editSpecialRequests) editSpecialRequests.value = special.trim();
+    // 
+    // AJAX save on form submit
+    // 
+    editForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-      // Reset allergies
-      editAllergyCheckboxes.forEach(cb => cb.checked = false);
-      allergies.forEach(id => {
-        const checkbox = document.getElementById(`allergen_${id}`);
-        if (checkbox) checkbox.checked = true;
-      });
+        const formData = new FormData(editForm);
+
+        fetch(editForm.action, {
+            method: "POST",
+            body: formData,
+            headers: { "X-Requested-With": "XMLHttpRequest" },
+        })
+            .then(res => res.json())
+            .then(data => {
+
+                const errorBox = modalEl.querySelector("#modal-errors");
+                errorBox.innerHTML = "";
+
+                if (data.success) {
+                    modal.hide();
+                    window.location.reload();
+                    return;
+                }
+
+                // Show errors
+                Object.entries(data.errors).forEach(([field, messages]) => {
+                  messages.forEach(msg => {
+                        errorBox.insertAdjacentHTML(
+                            "beforeend",
+                            `<div class="alert alert-danger py-1 mb-2">${msg}</div>`
+                        );
+                    });
+                });
+            });
     });
-  });
 
-  // Delete Reservation Modal
-  const deleteButtons = document.querySelectorAll(".delete-btn");
-  const deleteForm = document.getElementById("delete-form");
+    // 
+    // Prevent past dates from being selected
+    //
+    const setMinDate = () => {
+        const today = new Date().toLocaleDateString("en-CA");
+        dateField.setAttribute("min", today);
+    };
 
-  if (deleteButtons.length && deleteForm) {
-    deleteButtons.forEach(button => {
-      button.addEventListener("click", function() {
-        const bookingId = this.dataset.bookingId;
-        deleteForm.action = `/my_reservations/delete_reservation/${bookingId}/`;
-      });
-    });
-  }
+    setMinDate();
+    modalEl.addEventListener("shown.bs.modal", setMinDate);
+});
 
-  // Don't allow people to book dates in the past — allow today
-  function setMinDate() {
-    const dateInput = document.getElementById('id_date');
-    if (!dateInput) return;
-    const today = new Date().toLocaleDateString('en-CA'); // e.g. 2025-11-06
-    dateInput.setAttribute('min', today);
-  }
+// Delete Modal
+document.addEventListener("DOMContentLoaded", function () {
 
-  setMinDate();
+    const deleteButtons = document.querySelectorAll(".delete-btn");
+    const deleteForm = document.getElementById("delete-form");
 
-  const editModal = document.getElementById('editReservationModal');
-  if (editModal) {
-    editModal.addEventListener('shown.bs.modal', setMinDate);
-  }
+    if (deleteButtons.length && deleteForm) {
+        deleteButtons.forEach(btn => {
+            btn.addEventListener("click", function () {
+
+                const bookingId = this.dataset.bookingId;
+
+                // Set the correct URL for deletion
+                deleteForm.action = `/my_reservations/delete_reservation/${bookingId}/`;
+            });
+        });
+    }
+
 });
